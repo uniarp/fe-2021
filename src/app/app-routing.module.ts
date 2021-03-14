@@ -10,7 +10,27 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'lista-material',
+    loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
   },
+  {
+    path: 'lista-incidentes',
+    loadChildren: () => import('./lista-incidentes/lista-incidentes.module').then( m => m.ListaIncidentesPageModule)
+  },
+  {
+    path: 'lista-entrega-material',
+    loadChildren: () => import('./lista-entrega-material/lista-entrega-material.module').then( m => m.ListaEntregaMaterialPageModule)
+  },
+  {
+    path: 'cadastro-incidentes',
+    loadChildren: () => import('./cadastro-incidentes/cadastro-incidentes.module').then( m => m.CadastroIncidentesPageModule)
+  },
+  {
+    path: 'cadastro-tipo-equipamento',
+    loadChildren: () => import('./cadastro-tipo-equipamento/cadastro-tipo-equipamento.module').then( m => m.CadastroTipoEquipamentoPageModule)
+  },
+
 ];
 
 @NgModule({
