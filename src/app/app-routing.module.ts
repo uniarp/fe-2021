@@ -12,6 +12,26 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'cadastro-sala',
+    loadChildren: () => import('./cadastro-sala/cadastro-sala.module').then( m => m.CadastroSalaPageModule)
+  },
+  {
+    path: 'cadastro-curso',
+    loadChildren: () => import('./cadastro-curso/cadastro-curso.module').then( m => m.CadastroCursoPageModule)
+  },
+  {
+    path: 'cadastro-professor',
+    loadChildren: () => import('./cadastro-professor/cadastro-professor.module').then( m => m.CadastroProfessorPageModule)
+  },
+  {
+    path: 'lista-vistorias',
+    loadChildren: () => import('./lista-vistorias/lista-vistorias.module').then( m => m.ListaVistoriasPageModule)
+  },
+  {
+    path: 'cadastro-material',
+    loadChildren: () => import('./cadastro-material/cadastro-material.module').then( m => m.CadastroMaterialPageModule)
+  },
+  {
     path: 'lista-materiais-entregues',
     loadChildren: () => import('./lista-materiais-entregues/lista-materiais-entregues.module').then( m => m.ListaMateriaisEntreguesPageModule)
   },
@@ -58,7 +78,7 @@ const routes: Routes = [
   {
     path: 'solicitar-reserva-salas',
     loadChildren: () => import('./solicitar-reserva-salas/solicitar-reserva-salas.module').then( m => m.SolicitarReservaSalasPageModule)
-  },
+  }
 
 ];
 
