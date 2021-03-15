@@ -10,7 +10,12 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
-  },  {
+  },
+  {
+    path: 'lista-materiais-entregues',
+    loadChildren: () => import('./lista-materiais-entregues/lista-materiais-entregues.module').then( m => m.ListaMateriaisEntreguesPageModule)
+  },
+  {
     path: 'lista-de-salas',
     loadChildren: () => import('./lista-de-salas/lista-de-salas.module').then( m => m.ListaDeSalasPageModule)
   },
@@ -29,6 +34,18 @@ const routes: Routes = [
   {
     path: 'lista-reserva-de-salas',
     loadChildren: () => import('./lista-reserva-de-salas/lista-reserva-de-salas.module').then( m => m.ListaReservaDeSalasPageModule)
+  },
+  {
+    path: 'lista-reservas-confirmadas',
+    loadChildren: () => import('./lista-reservas-confirmadas/lista-reservas-confirmadas.module').then( m => m.ListaReservasConfirmadasPageModule)
+  },
+  {
+    path: 'faq',
+    loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
+  },
+  {
+    path: 'cadasto-faq',
+    loadChildren: () => import('./cadasto-faq/cadasto-faq.module').then( m => m.CadastoFaqPageModule)
   },
   {
     path: 'lista-de-equipamentos',
