@@ -26,6 +26,22 @@ const routes: Routes = [
     path: 'adicionar-todas-paginas-lista',
     loadChildren: () => import('./adicionar-todas-paginas-lista/adicionar-todas-paginas-lista.module').then( m => m.AdicionarTodasPaginasListaPageModule)
   },
+  {
+    path: 'lista-reserva-de-salas',
+    loadChildren: () => import('./lista-reserva-de-salas/lista-reserva-de-salas.module').then( m => m.ListaReservaDeSalasPageModule)
+  },
+  {
+    path: 'lista-de-equipamentos',
+    loadChildren: () => import('./lista-de-equipamentos/lista-de-equipamentos.module').then( m => m.ListaDeEquipamentosPageModule)
+  },
+  {
+    path: 'buscar-salas',
+    loadChildren: () => import('./buscar-salas/buscar-salas.module').then( m => m.BuscarSalasPageModule)
+  },
+  {
+    path: 'solicitar-reserva-salas',
+    loadChildren: () => import('./solicitar-reserva-salas/solicitar-reserva-salas.module').then( m => m.SolicitarReservaSalasPageModule)
+  },
 
 ];
 
