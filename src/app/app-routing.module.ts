@@ -12,6 +12,26 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'cadastro-equipamento',
+    loadChildren: () => import('./cadastro-equipamento/cadastro-equipamento.module').then( m => m.CadastroEquipamentoPageModule)
+  },
+  {
+    path: 'solicitar-material',
+    loadChildren: () => import('./solicitar-material/solicitar-material.module').then( m => m.SolicitarMaterialPageModule)
+  },
+  {
+    path: 'cadastro-material',
+    loadChildren: () => import('./cadastro-material/cadastro-material.module').then( m => m.CadastroMaterialPageModule)
+  },
+  {
+    path: 'lista-software',
+    loadChildren: () => import('./lista-software/lista-software.module').then( m => m.ListaSoftwarePageModule)
+  },
+  {
+    path: 'solicitar-equipamento',
+    loadChildren: () => import('./solicitar-equipamento/solicitar-equipamento.module').then( m => m.SolicitarEquipamentoPageModule)
+  },
+  {
     path: 'cadastro-sala',
     loadChildren: () => import('./cadastro-sala/cadastro-sala.module').then( m => m.CadastroSalaPageModule)
   },
