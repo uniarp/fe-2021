@@ -15,7 +15,8 @@ export class TipoEquipamentoService {
     return null;
   } 
 
-  gravar(): boolean {
+  gravar(tipoEquipamento:TipoEquipamento): boolean {
+    console.log('Estou no Service-gravar');
     return null;
   }
 
