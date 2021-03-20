@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Pergunta } from '../classes/pergunta';
+import { PerguntaService } from '../services/pergunta.service';
 
 @Component({
   selector: 'app-lista-pergunta',
@@ -6,19 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista-pergunta.page.scss'],
 })
 export class ListaPerguntaPage implements OnInit {
+  perguntas:Pergunta[];
 
-  constructor() { }
+  constructor(
+    private routeService:Router,
+    private perguntaService:PerguntaService
+  ) { }
 
   ngOnInit() {
   }
+  
+  ionViewWillEnter(){
+    this.perguntas=this.perguntaService.listar();
+  }
 
   novo() {
-    return null;
+    this.routeService.navigateByUrl('/adicionar-pergunta')
   }
-    editar() {
-    return null;
+  
+  editar(pergunta:Pergunta) {
+    this.perguntaService.alterar(pergunta)
   }
-  excluir() {
-    return null;
+
+  excluir(pergunta:Pergunta) {
+    this.perguntaService.excluir(pergunta)
   }
 }

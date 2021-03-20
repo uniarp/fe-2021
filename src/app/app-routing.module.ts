@@ -101,6 +101,10 @@ const routes: Routes = [
   },  {
     path: 'lista-pergunta',
     loadChildren: () => import('./lista-pergunta/lista-pergunta.module').then( m => m.ListaPerguntaPageModule)
+  },
+  {
+    path: 'adicionar-pergunta',
+    loadChildren: () => import('./adicionar-pergunta/adicionar-pergunta.module').then( m => m.AdicionarPerguntaPageModule)
   }
 
 
