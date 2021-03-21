@@ -84,10 +84,6 @@ const routes: Routes = [
     loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
   },
   {
-    path: 'cadasto-faq',
-    loadChildren: () => import('./cadasto-faq/cadasto-faq.module').then( m => m.CadastoFaqPageModule)
-  },
-  {
     path: 'lista-de-equipamentos',
     loadChildren: () => import('./lista-de-equipamentos/lista-de-equipamentos.module').then( m => m.ListaDeEquipamentosPageModule)
   },
