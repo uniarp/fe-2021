@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cadastro-equipamento</ion-title>
+    <ion-title>Cadastro Equipamento</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -25,5 +28,6 @@
     <ion-button (click)="gravar()" color="success">Gravar</ion-button>
     <ion-button (click)="cancelar()" color="danger">Cancelar</ion-button>
   </ion-list>
+  <ion-button (click)="listar()" color="danger">Listar</ion-button>
 
 </ion-content>

@@ -32,7 +32,16 @@ export class CadastroEquipamentoPage  {
 
   cancelar(){
     console.log('TipoEquipamento - cancelar');
-    this.routerService.navigate(['']);
+    this.tipoEquipamento.nome = null;
+    this.tipoEquipamento.dataAquisicao = null;
+    this.tipoEquipamento.id = null;
+    this.tipoEquipamento.modelo = null;
+    this.tipoEquipamento.marca = null;
+  }
+
+  listar(){
+    console.log('TipoEquipamento - listar');
+    this.routerService.navigate(['lista-tipo-equipamento']);
   }
 
 }
