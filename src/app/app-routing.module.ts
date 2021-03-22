@@ -83,10 +83,7 @@ const routes: Routes = [
     path: 'faq',
     loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
   },
-  {
-    path: 'cadasto-faq',
-    loadChildren: () => import('./cadasto-faq/cadasto-faq.module').then( m => m.CadastoFaqPageModule)
-  },
+  
   {
     path: 'lista-de-equipamentos',
     loadChildren: () => import('./lista-de-equipamentos/lista-de-equipamentos.module').then( m => m.ListaDeEquipamentosPageModule)
@@ -98,14 +95,16 @@ const routes: Routes = [
   {
     path: 'solicitar-reserva-salas',
     loadChildren: () => import('./solicitar-reserva-salas/solicitar-reserva-salas.module').then( m => m.SolicitarReservaSalasPageModule)
-  },  {
+  },
+  {
     path: 'lista-pergunta',
     loadChildren: () => import('./lista-pergunta/lista-pergunta.module').then( m => m.ListaPerguntaPageModule)
   },
   {
-    path: 'adicionar-pergunta',
-    loadChildren: () => import('./adicionar-pergunta/adicionar-pergunta.module').then( m => m.AdicionarPerguntaPageModule)
+    path: 'cadastro-faq',
+    loadChildren: () => import('./cadastro-faq/cadastro-faq.module').then( m => m.CadastroFaqPageModule)
   }
+
 
 
 ];

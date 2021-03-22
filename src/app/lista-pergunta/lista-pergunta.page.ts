@@ -24,7 +24,7 @@ export class ListaPerguntaPage implements OnInit {
   }
 
   novo() {
-    this.routeService.navigateByUrl('/adicionar-pergunta')
+    this.routeService.navigateByUrl('/cadastro-faq')
   }
   
   editar(pergunta:Pergunta) {
