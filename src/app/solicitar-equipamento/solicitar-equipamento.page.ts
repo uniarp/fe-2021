@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EquipamentoService } from '../services/equipamento.service';
 
 @Component({
   selector: 'app-solicitar-equipamento',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitarEquipamentoPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private equipamentoService: EquipamentoService
+  ) {
+
+   }
 
   ngOnInit() {
   }
+  gravar(){this.equipamentoService.cadastrar()}
+  excluir(){this.equipamentoService.excluir()}
+  alterar(){this.equipamentoService.alterar()}
 
 }

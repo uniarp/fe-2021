@@ -103,7 +103,9 @@ const routes: Routes = [
   {
     path: 'cadastro-faq',
     loadChildren: () => import('./cadastro-faq/cadastro-faq.module').then( m => m.CadastroFaqPageModule)
-  }
+  },
+
+
 
 
 
