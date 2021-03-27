@@ -106,7 +106,11 @@ const routes: Routes = [
   {
     path: 'cadastro-tipo-equipamento',
     loadChildren: () => import('./cadastro-tipo-equipamento/cadastro-tipo-equipamento.module').then( m => m.CadastroTipoEquipamentoPageModule)
+  },  {
+    path: 'lista-material',
+    loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
   }
+
 
 
 ];
