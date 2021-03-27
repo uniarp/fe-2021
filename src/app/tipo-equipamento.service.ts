@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TipoEquipamento } from './tipo-equipamento/tipo-equipamento';
 
@@ -7,24 +8,39 @@ import { TipoEquipamento } from './tipo-equipamento/tipo-equipamento';
 
 export class TipoEquipamentoService {
 
-  constructor() {
-    console.log("serviço iniciado");
+  constructor(public http : HttpClient) {}
+
+  /* Em testes, sujeito a modificações
+  */
+  cadastrar(tipoEquipamento : TipoEquipamento) {
+    var rota = "cadastrar";
+    return new Promise((resolve, reject) => {
+      this.http.post('https://apoio-uniarp.herokuapp.com/tipoEquipamentos/' + rota, tipoEquipamento).subscribe(response => {
+        resolve(response);
+      })
+    });
+  }
+  
+  alterar(id : Number, tipoEquipamento : TipoEquipamento) {
+    var rota = "alterar";
+    return new Promise((resolve, reject) => {
+      this.http.post('https://apoio-uniarp.herokuapp.com/tipoEquipamentos/' + id + rota, tipoEquipamento).subscribe(response => {
+        resolve(response);
+      })
+    });
   }
 
-  alterar(): boolean {
-    return null;
-  } 
-
-  gravar(tipoEquipamento:TipoEquipamento): boolean {
-    console.log('Estou no Service-gravar');
-    return null;
+  listar() {
+    return this.http.get('https://apoio-uniarp.herokuapp.com/tipoEquipamentos/').toPromise();
   }
 
-  listar(): TipoEquipamento[] {
-    return null;
+  excluir(id : Number) {
+    var rota = "excluir";
+    return new Promise((resolve, reject) => {
+      this.http.post('https://apoio-uniarp.herokuapp.com/tipoEquipamentos/' + id + rota, id).subscribe(response => {
+        resolve(response);
+      })
+    });
   }
 
-  excluir(): boolean {
-    return null;
-  }
 }

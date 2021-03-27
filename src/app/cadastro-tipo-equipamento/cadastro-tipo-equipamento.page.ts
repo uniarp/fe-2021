@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TipoEquipamento } from '../tipo-equipamento/tipo-equipamento';
 import { TipoEquipamentoService } from '../tipo-equipamento.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-cadastro-tipo-equipamento',
@@ -10,10 +11,12 @@ import { TipoEquipamentoService } from '../tipo-equipamento.service';
 })
 export class CadastroTipoEquipamentoPage {
 
+  httpClient : HttpClient;
   tipoEquipamento: TipoEquipamento;
 
   constructor(public tipoEquipamentoService:TipoEquipamentoService,
     public routerService:Router) {
+      tipoEquipamentoService = new TipoEquipamentoService(this.httpClient);
   }
 
   ionViewDidEnter(){
@@ -25,7 +28,7 @@ export class CadastroTipoEquipamentoPage {
   gravar(){
     console.log('TipoEquipamento - gravar ');
     //passar a equipamento que esta sendo cadastrada
-    this.tipoEquipamentoService.gravar(this.tipoEquipamento);
+    this.tipoEquipamentoService.cadastrar(this.tipoEquipamento);
     this.routerService.navigate(['lista-tipo-equipamento']);
   }
 
