@@ -25,7 +25,7 @@ export class CadastroMaterialPage {
   gravar(){
     console.log('Cadastro Material - gravar ');
     //passar a equipamento que esta sendo cadastrada
-    this.materialService.gravar(this.material);
+    this.materialService.cadastrar(this.material);
     this.routerService.navigate(['lista-material']);
   }
 

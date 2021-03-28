@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http'; 
 import { Injectable } from '@angular/core';
 import { Material} from './material/material';
 
@@ -6,24 +7,32 @@ import { Material} from './material/material';
 })
 export class MaterialService {
 
-  constructor() { 
-    console.log("serviço iniciado");
+  url = 'https://apoio-uniarp.herokuapp.com/materiais';
+
+  constructor(public http : HttpClient) { 
   }
 
-  alterar(): boolean {
-    return null;
-  } 
-
-  gravar(material:Material): boolean {
-    console.log('Estou no Service-gravar');
-    return null;
+  cadastrar(material : Material) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + 'cadastrar', material).subscribe(response => {
+        resolve(response);
+      })
+    });
+  }
+  
+  alterar(id : Number, material : Material) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + id + '/alterar', material);
+    });
   }
 
-  listar(): Material[] {
-    return null;
+  listar() {
+    return this.http.get(this.url);
   }
 
-  excluir(): boolean {
-    return null;
+  excluir(id : Number) {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.url + id + '/excluir');
+    });
   }
 }
