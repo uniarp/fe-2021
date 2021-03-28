@@ -8,38 +8,33 @@ import { TipoEquipamento } from './tipo-equipamento/tipo-equipamento';
 
 export class TipoEquipamentoService {
 
+  url = 'https://apoio-uniarp.herokuapp.com/tipoEquipamentos/';
+
   constructor(public http : HttpClient) {}
 
   /* Em testes, sujeito a modificações
   */
   cadastrar(tipoEquipamento : TipoEquipamento) {
-    var rota = "cadastrar";
     return new Promise((resolve, reject) => {
-      this.http.post('https://apoio-uniarp.herokuapp.com/tipoEquipamentos/' + rota, tipoEquipamento).subscribe(response => {
+      this.http.post(this.url + 'cadastrar', tipoEquipamento).subscribe(response => {
         resolve(response);
       })
     });
   }
   
   alterar(id : Number, tipoEquipamento : TipoEquipamento) {
-    var rota = "alterar";
     return new Promise((resolve, reject) => {
-      this.http.post('https://apoio-uniarp.herokuapp.com/tipoEquipamentos/' + id + rota, tipoEquipamento).subscribe(response => {
-        resolve(response);
-      })
+      this.http.post(this.url + id + '/alterar', tipoEquipamento);
     });
   }
 
   listar() {
-    return this.http.get('https://apoio-uniarp.herokuapp.com/tipoEquipamentos/').toPromise();
+    return this.http.get(this.url);
   }
 
   excluir(id : Number) {
-    var rota = "excluir";
     return new Promise((resolve, reject) => {
-      this.http.post('https://apoio-uniarp.herokuapp.com/tipoEquipamentos/' + id + rota, id).subscribe(response => {
-        resolve(response);
-      })
+      this.http.get(this.url + id + '/excluir');
     });
   }
 
