@@ -9,6 +9,8 @@ import { TipoEquipamentoService } from '../tipo-equipamento.service'
 })
 export class ListaTipoEquipamentoPage {
 
+  tipoEquipamento : any;
+
   constructor(
     public tipoEquipamentoService:TipoEquipamentoService,
     public routerService:Router
@@ -17,5 +19,12 @@ export class ListaTipoEquipamentoPage {
 
   novo() {
     this.routerService.navigateByUrl('/cadastro-tipo-equipamento')
+  }
+
+  ionViewWillEnter() {
+    this.tipoEquipamentoService.listar().subscribe(dados => {
+      this.tipoEquipamento = dados
+      console.log(this.tipoEquipamento);
+    });
   }
 }

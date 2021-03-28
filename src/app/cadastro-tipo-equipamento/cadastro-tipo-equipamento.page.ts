@@ -11,12 +11,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CadastroTipoEquipamentoPage {
 
-  httpClient : HttpClient;
   tipoEquipamento: TipoEquipamento;
 
   constructor(public tipoEquipamentoService:TipoEquipamentoService,
     public routerService:Router) {
-      tipoEquipamentoService = new TipoEquipamentoService(this.httpClient);
   }
 
   ionViewDidEnter(){
