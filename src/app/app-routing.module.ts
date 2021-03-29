@@ -94,7 +94,19 @@ const routes: Routes = [
   {
     path: 'solicitar-reserva-salas',
     loadChildren: () => import('./solicitar-reserva-salas/solicitar-reserva-salas.module').then( m => m.SolicitarReservaSalasPageModule)
-  }
+  },
+  {
+    path: 'lista-pergunta',
+    loadChildren: () => import('./lista-pergunta/lista-pergunta.module').then( m => m.ListaPerguntaPageModule)
+  },
+  {
+    path: 'cadastro-faq',
+    loadChildren: () => import('./cadastro-faq/cadastro-faq.module').then( m => m.CadastroFaqPageModule)
+  },
+
+
+
+
 
 ];
 
