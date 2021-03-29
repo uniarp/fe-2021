@@ -83,7 +83,6 @@ const routes: Routes = [
     path: 'faq',
     loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
   },
-  
   {
     path: 'lista-de-equipamentos',
     loadChildren: () => import('./lista-de-equipamentos/lista-de-equipamentos.module').then( m => m.ListaDeEquipamentosPageModule)
