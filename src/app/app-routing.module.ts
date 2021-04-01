@@ -110,8 +110,11 @@ const routes: Routes = [
   {
     path: 'cadastro-faq',
     loadChildren: () => import('./cadastro-faq/cadastro-faq.module').then( m => m.CadastroFaqPageModule)
+  },
+  {
+    path: 'cadastro-vistoria',
+    loadChildren: () => import('./cadastro-vistoria/cadastro-vistoria.module').then( m => m.CadastroVistoriaPageModule)
   }
-
 ];
 
 @NgModule({
