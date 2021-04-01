@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { TipoEquipamentoService } from '../tipo-equipamento.service'
+import { TipoEquipamentoService } from '../services/tipo-equipamento.service'
 
 @Component({
   selector: 'app-lista-tipo-equipamento',
@@ -16,14 +16,13 @@ export class ListaTipoEquipamentoPage {
     public routerService:Router
     ) { }
 
-
   novo() {
-    this.routerService.navigateByUrl('/cadastro-tipo-equipamento')
+    this.routerService.navigateByUrl('/cadastro-tipo-equipamento');
   }
 
   ionViewWillEnter() {
     this.tipoEquipamentoService.listar().subscribe(dados => {
-      this.tipoEquipamento = dados
+      this.tipoEquipamento = dados;
       console.log(this.tipoEquipamento);
     });
   }
