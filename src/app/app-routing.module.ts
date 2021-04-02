@@ -55,10 +55,7 @@ const routes: Routes = [
     path: 'lista-materiais-entregues',
     loadChildren: () => import('./lista-materiais-entregues/lista-materiais-entregues.module').then( m => m.ListaMateriaisEntreguesPageModule)
   },
-  {
-    path: 'lista-de-salas',
-    loadChildren: () => import('./lista-de-salas/lista-de-salas.module').then( m => m.ListaDeSalasPageModule)
-  },
+  
   {
     path: 'lista-incidentes-resolvidos',
     loadChildren: () => import('./lista-incidentes-resolvidos/lista-incidentes-resolvidos.module').then( m => m.ListaIncidentesResolvidosPageModule)
@@ -110,7 +107,18 @@ const routes: Routes = [
   {
     path: 'cadastro-faq',
     loadChildren: () => import('./cadastro-faq/cadastro-faq.module').then( m => m.CadastroFaqPageModule)
+  },
+  {
+    path: 'lista-sala',
+    loadChildren: () => import('./lista-sala/lista-sala.module').then( m => m.ListaSalaPageModule)
+  },  {
+    path: 'alterar-sala',
+    loadChildren: () => import('./alterar-sala/alterar-sala.module').then( m => m.AlterarSalaPageModule)
   }
+
+
+  
+
 
 ];
 

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista-sala</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="adicionar()">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-list>
+      <ion-item-sliding *ngIf="listaSala">
+        <ion-item>
+          <ion-label>
+            <h4>{{listaSala.numeroSala}}</h4>
+            <h2>{{listaSala.capacidade}}</h2>
+            <h2>{{listaSala.numeroMaquinas}}</h2>
+            <!-- <h2>{{sala.localizacao}}</h2> -->
+          </ion-label>
+        </ion-item>
+        <ion-item-options side="end" >
+          <ion-item-option (click)="remover(sala.id)">Remover</ion-item-option>          
+        </ion-item-options>
+        <ion-item-options side="start" >
+          <ion-item-option (click)="alterar(sala)">Alterar</ion-item-option>          
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
+
+</ion-content>

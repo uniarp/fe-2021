@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Cadastro de Sala</ion-title>
+    <ion-title>alterar-sala</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list >
+  <ion-list *ngIf="sala">
     <ion-item>
       <ion-label position="floating">Número da Sala:</ion-label>
       <ion-input [(ngModel)]="sala.numeroSala"></ion-input>
@@ -26,5 +26,5 @@
     <ion-button (click)="cancelar()" color="danger">Cancelar</ion-button>
   </ion-list>
   <ion-button (click)="listar()" color="danger">Listar</ion-button>
-  
+
 </ion-content>
