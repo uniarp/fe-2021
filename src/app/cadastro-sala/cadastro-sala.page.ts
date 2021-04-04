@@ -25,10 +25,15 @@ export class CadastroSalaPage {
     this.sala = new Sala();
   }
 
-  gravar(){
+  gravar(sala:Sala){
     console.log('CadastroSala - gravar ');
+    return new Promise((resolve, reject) => {
+    this.salaService.cadastrar(this.sala).subscribe(response=>{
+    resolve(response);})
+    })
     //passar a equipamento que esta sendo cadastrada
-    this.salaService.cadastrar(this.sala);
+    //  this.salaService.cadastrar(this.sala).subscribe(response=>{
+    // resolve(response);})
     //this.routerService.navigate(['listarTodos']);
   }
 

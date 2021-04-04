@@ -8,14 +8,14 @@ import { PerguntaService } from '../services/pergunta.service';
   templateUrl: './cadastro-faq.page.html',
   styleUrls: ['./cadastro-faq.page.scss'],
 })
-export class CadastroFaqPage implements OnInit {
-  pergunta:Pergunta={};
+export class CadastroFaqPage {
+  pergunta:Pergunta;
   constructor(
     private perguntaService:PerguntaService,
     private routeService:Router
   ) { }
-
-  ngOnInit() {
+  ionViewDidEnter(){
+  this.pergunta=new Pergunta();  
   }
 
   gravar(pergunta:Pergunta){

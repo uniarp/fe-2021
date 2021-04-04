@@ -8,22 +8,30 @@ import {HttpClient} from '@angular/common/http';
 })
 export class SalaService {  
   sala:Sala
-  backend: string = "https://apoio-uniarp.herokuapp.com/"
+  backend: string = "https://apoio-uniarp.herokuapp.com/salas"
 
   constructor(private http:HttpClient) { }
 
   cadastrar(sala:Sala){
-    console.log("cadastro de sala")
-  }
+    console.log("cadastro de sala",sala)
+    // return new Promise((resolve, reject) => {
+    return this.http.post(this.backend + 'cadastrar', sala)
+}
   alterar(        
     sala:Sala
   ){
-    console.log("alteração de sala")
+    console.log("alteração de sala");
+    return new Promise((resolve, reject) => {
+    this.http.post(this.backend + sala.id + '/alterar', sala)
+    })
     //this.routerService.navigate(['listarTodos']);
-  }
+ }
   excluir(id:number){
-
     console.log("excluindo sala")
+    return new Promise((resolve, reject) => {
+    this.http.get(this.backend + id + '/excluir')
+    })
+
   }
   listarTodos(){
     console.log("listando todas as salas")
