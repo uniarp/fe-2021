@@ -1,9 +1,8 @@
 export class TipoEquipamento {
-    
-    id : Number;
-    nome : String;
-    dataAquisicao : Date;
-    marca : String;
-    modelo : String;
+    id?: Number;
+    nome?: string;
+    dataAquisicao?: Date;
+    marca?: string;
+    modelo?: string;
 
 }

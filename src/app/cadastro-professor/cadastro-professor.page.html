@@ -1,33 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Cadastro professor</ion-title>
+    <ion-title>Cadastrar  professor</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
+  <ion-list *ngIf="professor">
     <ion-item>
-      <ion-label position="fixed">Matrícula</ion-label>
-      <ion-input [(ngModel)]="professor.matricula"></ion-input>
+      <ion-label position="floating">Login</ion-label>
+      <ion-input [(ngModel)]="professor.login" type="text"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input [(ngModel)]="professor.senha" type="password"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="fixed">Senha</ion-label>
-      <ion-input [(ngModel)]="professor.senha"></ion-input>
+      <ion-label position="floating" >Nome completo</ion-label>
+      <ion-input [(ngModel)]="professor.nomeCompleto" type="text"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="fixed">Nome completo</ion-label>
-      <ion-input [(ngModel)]="professor.nome"></ion-input>
+      <ion-label position="floating" >Nível</ion-label>
+      <ion-input [(ngModel)]="professor.nivel" type="number"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="fixed">Telefone</ion-label>
-      <ion-input [(ngModel)]="professor.telefone"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="fixed">Email</ion-label>
-      <ion-input [(ngModel)]="professor.email"></ion-input>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input [(ngModel)]="professor.email"  type="email"></ion-input>
     </ion-item>
     <br>
-    <ion-button (click)="gravar(professor)" fill="solid" expand="block" color="success">Gravar</ion-button><br>
+    <ion-button  (click)="gravar(professor)" fill="solid" expand="block" color="success">Gravar</ion-button><br>
     <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
   </ion-list>
 </ion-content>

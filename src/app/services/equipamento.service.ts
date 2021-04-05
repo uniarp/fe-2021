@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {  } from '../classes/equipamento';
 
@@ -6,7 +7,15 @@ import {  } from '../classes/equipamento';
 })
 export class EquipamentoService {
 
-  constructor() { }
+  backEnd:string='https://apoio-uniarp.herokuapp.com/reservaEquipamentos'
+  constructor(
+    private http:HttpClient,
+  ) { }
+
+  solicitar(solicitacao:any){
+    console.log("solicitando equipamento",solicitacao);
+    return this.http.post(this.backEnd+'solicitar', solicitacao)
+  }
 
   cadastrar(){
     console.log("cadastro de equipamento")
@@ -23,9 +32,7 @@ export class EquipamentoService {
   listarPorSala(){
     console.log("listando equipamento por sala")
   }
-  solicitar(){
-    console.log("solicitando equipamento")
-  }
+  
   listarEquipamento(){
     console.log("listando equipamento")
   }

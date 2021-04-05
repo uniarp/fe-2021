@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { Professor } from '../classes/professor';
 import { ProfessorService } from '../services/professor.service';
@@ -8,19 +8,25 @@ import { ProfessorService } from '../services/professor.service';
   templateUrl: './cadastro-professor.page.html',
   styleUrls: ['./cadastro-professor.page.scss'],
 })
-export class CadastroProfessorPage implements OnInit {
-  professor:Professor={};
+export class CadastroProfessorPage {
+  professor:Professor;
+  
   constructor(
     private professorService:ProfessorService,
     private routeService:Router
   ) { }
+ 
 
-  ngOnInit() {
+  ionViewWillEnter(){
+    this.professor = new Professor()
   }
-
   gravar(professor:Professor){
-    this.professorService.gravar(professor);
-    this.routeService.navigateByUrl('/lista-professor')
+    return new Promise((resolve,reject)=>{
+      this.professorService.gravar(professor).subscribe(response=>{
+        resolve(response)
+      })
+      
+    })
   }
 
   cancelar(){

@@ -1,7 +1,8 @@
 export class Professor {
-    matricula?: string;
-    nome?: string;
-    senha?: string;
-    telefone?: string;
-    email?: string;
+    id?:number
+    login?:string;
+    senha?:string;
+    nivel?:number;
+    nomeCompleto?: string;
+    email?:string;
 }
