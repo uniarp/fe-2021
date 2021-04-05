@@ -114,6 +114,10 @@ const routes: Routes = [
   {
     path: 'cadastro-vistoria',
     loadChildren: () => import('./cadastro-vistoria/cadastro-vistoria.module').then( m => m.CadastroVistoriaPageModule)
+  },
+  {
+    path: 'lista-material',
+    loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
   }
 ];
 
