@@ -84,10 +84,6 @@ const routes: Routes = [
     loadChildren: () => import('./faq/faq.module').then( m => m.FaqPageModule)
   },
   {
-    path: 'cadasto-faq',
-    loadChildren: () => import('./cadasto-faq/cadasto-faq.module').then( m => m.CadastoFaqPageModule)
-  },
-  {
     path: 'lista-de-equipamentos',
     loadChildren: () => import('./lista-de-equipamentos/lista-de-equipamentos.module').then( m => m.ListaDeEquipamentosPageModule)
   },
@@ -106,13 +102,23 @@ const routes: Routes = [
   {
     path: 'cadastro-tipo-equipamento',
     loadChildren: () => import('./cadastro-tipo-equipamento/cadastro-tipo-equipamento.module').then( m => m.CadastroTipoEquipamentoPageModule)
-  },  {
+  },
+  {
+    path: 'lista-pergunta',
+    loadChildren: () => import('./lista-pergunta/lista-pergunta.module').then( m => m.ListaPerguntaPageModule)
+  },
+  {
+    path: 'cadastro-faq',
+    loadChildren: () => import('./cadastro-faq/cadastro-faq.module').then( m => m.CadastroFaqPageModule)
+  },
+  {
+    path: 'cadastro-vistoria',
+    loadChildren: () => import('./cadastro-vistoria/cadastro-vistoria.module').then( m => m.CadastroVistoriaPageModule)
+  },
+  {
     path: 'lista-material',
     loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
   }
-
-
-
 ];
 
 @NgModule({
