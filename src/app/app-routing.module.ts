@@ -55,7 +55,10 @@ const routes: Routes = [
     path: 'lista-materiais-entregues',
     loadChildren: () => import('./lista-materiais-entregues/lista-materiais-entregues.module').then( m => m.ListaMateriaisEntreguesPageModule)
   },
-  
+  {
+    path: 'lista-sala',
+    loadChildren: () => import('./lista-sala/lista-sala.module').then( m => m.ListaSalaPageModule)
+  },
   {
     path: 'lista-incidentes-resolvidos',
     loadChildren: () => import('./lista-incidentes-resolvidos/lista-incidentes-resolvidos.module').then( m => m.ListaIncidentesResolvidosPageModule)
@@ -109,17 +112,9 @@ const routes: Routes = [
     loadChildren: () => import('./cadastro-faq/cadastro-faq.module').then( m => m.CadastroFaqPageModule)
   },
   {
-    path: 'lista-sala',
-    loadChildren: () => import('./lista-sala/lista-sala.module').then( m => m.ListaSalaPageModule)
-  },  {
-    path: 'alterar-sala',
-    loadChildren: () => import('./alterar-sala/alterar-sala.module').then( m => m.AlterarSalaPageModule)
+    path: 'cadastro-vistoria',
+    loadChildren: () => import('./cadastro-vistoria/cadastro-vistoria.module').then( m => m.CadastroVistoriaPageModule)
   }
-
-
-  
-
-
 ];
 
 @NgModule({

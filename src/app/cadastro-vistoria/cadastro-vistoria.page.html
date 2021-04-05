@@ -1,9 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cadastro-vistoria</ion-title>
+    <ion-title>Cadastro de Vistoria</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list *ngIf="vistoria">
+    <ion-item>
+      <ion-label position="fixed">Nome:</ion-label>
+      <ion-input [(ngModel)]="vistoria.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Em conformidade:</ion-label>
+      <ion-input [(ngModel)]="vistoria.emConformidade" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Data:</ion-label>
+      <ion-input [(ngModel)]="vistoria.data" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Descrição:</ion-label>
+      <ion-input [(ngModel)]="vistoria.descricao" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Período:</ion-label>
+      <ion-input [(ngModel)]="vistoria.periodo" ></ion-input>
+    </ion-item>
+    <ion-button (click)="gravar()" color="success">Gravar</ion-button>
+    <ion-button (click)="cancelar()" color="danger">Cancelar</ion-button>
+  </ion-list>
+  <ion-button (click)="listar()" color="danger">Listar</ion-button>
 </ion-content>
