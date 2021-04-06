@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Professor } from '../classes/professor';
 import { EquipamentoService } from '../services/equipamento.service';
 import { ProfessorService } from '../services/professor.service';
-import { TipoEquipamentoService } from '../tipo-equipamento.service';
-import { TipoEquipamento } from '../tipo-equipamento/tipo-equipamento';
+import { TipoEquipamentoService } from '../services/tipo-equipamento.service';
+import { TipoEquipamento } from '../classes/tipo-equipamento';
 
 @Component({
   selector: 'app-solicitar-equipamento',
