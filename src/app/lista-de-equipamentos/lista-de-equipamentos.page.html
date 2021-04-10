@@ -3,7 +3,24 @@
     <ion-title>lista-de-equipamentos</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-</ion-content>
+  <!-- lista das equipamentos -->
+  <ion-list>
+    <ng-container *ngIf="equipamentos">
+
+          <ion-label>
+            <h3>Tipo de Equipamento: {{equipamentos.tipoEquipamento}}</h3>
+            <h3>Data de Aquisição: {{equipamentos.dataAquisicao}}</h3>
+            <h3>Marca: {{equipamentos.marca}}</h3>
+            <h3>Status: {{equipamentos.status}}</h3>
+            <h3>Modelo: {{equipamentos.modelo}}</h3>
+            <h3>Localização: {{equipamentos.localizacao}}</h3>
+          </ion-label>
+        </ng-container>
+  </ion-list>
