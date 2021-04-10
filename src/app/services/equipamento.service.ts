@@ -2,15 +2,19 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {  } from '../classes/equipamento';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class EquipamentoService {
+  url = 'https://apoio-uniarp.herokuapp.com/equipamentos/';
+
+  constructor(public http : HttpClient,) {
+
+  }
 
   backEnd:string='https://apoio-uniarp.herokuapp.com/reservaEquipamentos'
-  constructor(
-    private http:HttpClient,
-  ) { }
+  
 
   solicitar(solicitacao:any){
     console.log("solicitando equipamento",solicitacao);
@@ -24,6 +28,7 @@ export class EquipamentoService {
     console.log("cadastro de equipamento")
   }
   excluir(){
+
     console.log("excluindo equipamento")
   }
   listarTodos(){
@@ -34,7 +39,7 @@ export class EquipamentoService {
   }
   
   listarEquipamento(){
-    console.log("listando equipamento")
+    return this.http.get(this.url)
   }
 
 }
