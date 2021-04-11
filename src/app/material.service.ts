@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Material} from './material/material';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class MaterialService {
 
-  url = 'https://apoio-uniarp.herokuapp.com/materiais';
+  url = 'https://apoio-uniarp.herokuapp.com/materiais/';
 
   constructor(public http : HttpClient) { 
   }
