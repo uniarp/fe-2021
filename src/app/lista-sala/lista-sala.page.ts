@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Sala } from '../classes/sala';
 import { SalaService } from '../services/sala.service';
 
@@ -8,11 +9,17 @@ import { SalaService } from '../services/sala.service';
   styleUrls: ['./lista-sala.page.scss'],
 })
 export class ListaSalaPage  {
-  listaSala = {}
-  constructor(private salaService:SalaService) {} 
+  listaSala : {}
+  constructor(
+    private salaService:SalaService,
+    public routerService:Router) {
+    
+  }
+  
   
   ionViewDidEnter(){
     this.salaService.listarTodos().subscribe((salas:any)=>this.listaSala=salas)
+    console.log(this.listaSala, "Teste")
   }
   
 
@@ -28,6 +35,8 @@ export class ListaSalaPage  {
     this.salaService.excluir(id)
   }
 
-
+  adicionar() {
+    this.routerService.navigateByUrl('/cadastro-sala');
+  }
 
 }
