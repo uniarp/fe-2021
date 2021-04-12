@@ -10,19 +10,19 @@
 <ion-content>
   <ion-list *ngIf="tipoEquipamento">
     <ion-item>
-      <ion-label position="fixed">Nome:</ion-label>
+      <ion-label position="floating">Nome:</ion-label>
       <ion-input [(ngModel)]="tipoEquipamento.nome"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="fixed">Data Aquisição:</ion-label>
+      <ion-label position="floating">Data Aquisição:</ion-label>
       <ion-input [(ngModel)]="tipoEquipamento.dataAquisicao" ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="fixed">Marca:</ion-label>
+      <ion-label position="floating">Marca:</ion-label>
       <ion-input [(ngModel)]="tipoEquipamento.marca" ></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label position="fixed">Modelo:</ion-label>
+      <ion-label position="floating">Modelo:</ion-label>
       <ion-input [(ngModel)]="tipoEquipamento.modelo" ></ion-input>
     </ion-item>
     <ion-button (click)="gravar()" color="success">Gravar</ion-button>
