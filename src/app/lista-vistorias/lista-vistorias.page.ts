@@ -21,9 +21,6 @@ export class ListaVistoriasPage {
   }
 
   ionVieWillEnter() {
-    this.vistoriaService.listar().subscribe(dados => {
-      this.vistoria = dados;
-      console.log(this.vistoria);
-    })
+    this.vistoriaService.listar();
   }
 }

@@ -21,7 +21,7 @@ export class TipoEquipamentoService {
       })
     });
   }
-  
+
   alterar(id : Number, tipoEquipamento : TipoEquipamento) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url + id + '/alterar', tipoEquipamento);
@@ -30,6 +30,7 @@ export class TipoEquipamentoService {
 
   listar() {
     return this.http.get(this.url);
+    //return this.http.get(this.url);
   }
 
   excluir(id : Number) {

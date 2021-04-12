@@ -1,15 +1,17 @@
+import { Pergunta } from './../classes/pergunta';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pergunta } from '../classes/pergunta';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PerguntaService {
-
   url = 'https://apoio-uniarp.herokuapp.com/questoes/';
 
-  constructor(public http : HttpClient) {}
+  constructor(public http : HttpClient,) {
+
+  }
 
   gravar(pergunta : Pergunta) {
     return new Promise((resolve, reject) => {
@@ -26,13 +28,18 @@ export class PerguntaService {
     // localStorage.setItem('perguntas', JSON.stringify(perguntas))
   // }
 
-  listar():Pergunta[]{
-    console.log('PerguntaService- Listando as perguntas')
-    let perguntas=[];
-    if(localStorage.getItem('perguntas')){
-      perguntas=JSON.parse(localStorage.getItem('perguntas'))
-    }
-    return perguntas
+  // listar():Pergunta[]{
+  //   console.log('PerguntaService- Listando as perguntas')
+  //   let perguntas=[];
+  //   if(localStorage.getItem('perguntas')){
+  //     perguntas=JSON.parse(localStorage.getItem('perguntas'))
+  //   }
+  //   return perguntas
+  // }
+
+  listar(){
+    return this.http.get(this.url)
+
   }
 
   excluir(pergunta:Pergunta){
