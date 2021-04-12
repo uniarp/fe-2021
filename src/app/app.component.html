@@ -2,24 +2,34 @@
   <ion-menu menuId="main-menu" content-id="main">
     <ion-header>
       <ion-toolbar>
-        <ion-tible> <h2 ALIGN=CENTER>Menu</h2></ion-tible>
+        <ion-title class="ion-text-center" >Menu</ion-title>
       </ion-toolbar>
      </ion-header>
      <ion-content>
        <ion-list>
-         <ion-item>
+         <ion-item detail="true">
            <ion-icon name="add-circle"> </ion-icon>
            <ion-label><dd>Cadastrar</dd> </ion-label>
          </ion-item>
-         <ion-item>
+         <ion-item detail="true">
           <ion-icon name="calendar"> </ion-icon>
           <ion-label><dd>Reservas</dd></ion-label>
         </ion-item>
-        <ion-item>
-          <ion-icon name="reader"> </ion-icon>
-          <ion-label><dd>Listar</dd> </ion-label>
+        <ion-item no-lines (click)="isListed()" detail="true">
+          <ion-icon name="reader" slot="start"> </ion-icon>
+          <ion-label>Listar</ion-label> 
         </ion-item>
-        <ion-item>
+
+        <div *ngIf="toListed==true" class="ion-padding">
+          <ion-menu-toggle  *ngFor="let lista of listas; let i = index">
+            <ion-item position="floating" (click)="activeIndex = i" routerDirection="root" [routerLink]="[lista.link]" lines="none"
+              detail="true" [class.selected]="activeIndex == i">
+              <ion-icon slot="start" [name]="lista.icon"></ion-icon>
+              <ion-label>{{ lista.nome }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </div>
+        <ion-item detail="true">
           <ion-icon name="alert-circle"> </ion-icon>
           <ion-label><dd>Reportar</dd></ion-label>
         </ion-item>
