@@ -12,15 +12,16 @@ export class ListaVistoriasPage {
   vistoria : any;
 
   constructor(
+
     public vistoriaService : VistoriaService,
     public routerService : Router
-  ) { }
+  ) {this.vistoria = [] }
 
   novo() {
     this.routerService.navigateByUrl('cadastro-vistoria');
   }
 
-  ionVieWillEnter() {
+  ionViewWillEnter() {
     this.vistoriaService.listar().subscribe(dados => {
       this.vistoria = dados;
       console.log(this.vistoria);
