@@ -26,7 +26,7 @@ export class SolicitarEquipamentoPage{
   ionViewWillEnter(){
     this.tipoEquipamentoService.listar().subscribe(dados=>{
       this.tiposEquipamento=dados
-      console.log('tipoequip',this.tiposEquipamento)
+      console.log('tipoEquipamento',this.tiposEquipamento)
     });
     this.professorService.listar().subscribe((dados:any)=>{
       this.professores=dados

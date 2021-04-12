@@ -9,7 +9,7 @@
     <ion-item>
       <ion-label>Professor</ion-label>
     <ion-select [(ngModel)]="solicitacao.professor">
-      <ion-select-option *ngFor="let professor of professores" [value]="professor.id">{{professor.nom}}</ion-select-option>
+      <ion-select-option *ngFor="let professor of professores" [value]="professor.id">{{professor.nomeCompleto}}</ion-select-option>
        
     </ion-select>
     </ion-item>
@@ -17,8 +17,8 @@
     <ion-item >
       <ion-label position="floating">Tipo de equipamento</ion-label>
       <ion-select  [(ngModel)]="solicitacao.tipoEquipamento">
-        <ion-select-option *ngFor="let tipoEquipamento tiposEquipamento" 
-          [value]="tiposEquipamento.id">{{tiposEquipamento.nome}}
+        <ion-select-option *ngFor="let tipoEquipamento of tiposEquipamento" 
+          [value]="tipoEquipamento.id">{{tipoEquipamento.nome}} {{tipoEquipamento.marca}} {{tipoEquipamento.modelo}} 
         </ion-select-option>
       </ion-select>
     </ion-item>
