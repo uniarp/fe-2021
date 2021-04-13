@@ -16,7 +16,7 @@ export class ListaPerguntaPage{
       private perguntaService:PerguntaService
     ) { }
 
-    ionViewWillEnter() {
+    ionViewDidEnter() {
      this.perguntas = [];
       this.perguntaService.listar().subscribe(dados => {
         this.perguntas = dados;
