@@ -26,7 +26,7 @@
       <ion-label position="fixed">Período:</ion-label>
       <ion-input [(ngModel)]="vistoria.periodo" ></ion-input>
     </ion-item>
-    <ion-button (click)="gravar()" color="success">Gravar</ion-button>
+    <ion-button (click)="gravar(vistoria)" color="success">Gravar</ion-button>
     <ion-button (click)="cancelar()" color="danger">Cancelar</ion-button>
   </ion-list>
   <ion-button (click)="listar()" color="danger">Listar</ion-button>
