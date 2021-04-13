@@ -9,7 +9,7 @@ import { SalaService } from '../services/sala.service';
   styleUrls: ['./lista-sala.page.scss'],
 })
 export class ListaSalaPage  {
-  listaSala : {}
+  listaSala : []
   constructor(
     private salaService:SalaService,
     public routerService:Router) {
