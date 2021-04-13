@@ -2,8 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Professor } from '../classes/professor';
 import { EquipamentoService } from '../services/equipamento.service';
 import { ProfessorService } from '../services/professor.service';
-import { TipoEquipamentoService } from '../services/tipo-equipamento.service';
-import { TipoEquipamento } from '../classes/tipo-equipamento';
+import { equipamentoService } from '../services/tipo-equipamento.service';
+import { equipamento } from '../classes/tipo-equipamento';
+import { Router } from '@angular/router';
+import { Equipamento } from '../classes/equipamento';
 
 @Component({
   selector: 'app-solicitar-equipamento',
@@ -12,21 +14,21 @@ import { TipoEquipamento } from '../classes/tipo-equipamento';
 })
 export class SolicitarEquipamentoPage{
   solicitacao:any={}; //
-
-  tiposEquipamento:TipoEquipamento;
+  
+  equipamento:Equipamento;
   professores:Professor;
   constructor(
-    private equipamentoService:EquipamentoService,
-    private tipoEquipamentoService: TipoEquipamentoService,
-    private professorService: ProfessorService
+    public equipamentoService:EquipamentoService,
+    public professorService:ProfessorService,
+    public routerService:Router
   ) {
 
    }
 
   ionViewWillEnter(){
-    this.tipoEquipamentoService.listar().subscribe(dados=>{
-      this.tiposEquipamento=dados
-      console.log('tipoEquipamento',this.tiposEquipamento)
+    this.equipamentoService.listar().subscribe(dados=>{
+      this.equipamento=dados
+      console.log('equipamento',this.equipamento)
     });
     this.professorService.listar().subscribe((dados:any)=>{
       this.professores=dados
