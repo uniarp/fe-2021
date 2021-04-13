@@ -15,24 +15,14 @@ equipamentos: any;
     private equipamentoService:EquipamentoService
   ) { }
 
-  ngOnInit() {
+  ionViewDidEnter() {
+    this.equipamentos= [];
+    this.equipamentoService.listarEquipamento().subscribe(dados => {
+      this.equipamentos= dados;
+      console.log(this.equipamentos);
+    });
   }
-  ionViewDidEnter(){
-    this.equipamentoService.listarEquipamento().subscribe(
-      resultado => {
-        console.log(resultado)
-        this.equipamentos = resultado;
-      },
-      erro => {
-       if(erro.status == 404) {
-         console.log('Lista de Equipamentos');
-       }
-     }
-   );
-
-    //this.perguntas=this.perguntaService.listar();
-  }
-
+  
   novo() {
     this.routeService.navigateByUrl('/cadastro-equipamento')
   }
