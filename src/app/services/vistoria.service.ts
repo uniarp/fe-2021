@@ -20,15 +20,25 @@ export class VistoriaService {
       })
     });
   }
-  
+
   alterar(id : Number, vistoria : Vistoria) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url + id + '/alterar', vistoria);
     });
   }
 
-  listar() {
-    return this.http.get(this.url);
+  listar(){
+    this.http.get(this.url)
+           .subscribe(
+             resultado => {
+               console.log(resultado)
+             },
+             erro => {
+              if(erro.status == 404) {
+                console.log('Vistoria não localizada');
+              }
+            }
+          );
   }
 
   excluir(id : Number) {
