@@ -5,7 +5,10 @@ export class Sala {
     numeroSala?: number;
     localizacao?: Localizacao;
     capacidade?: number;
-    numeroMaquinas?: number;
     
 
+
+    constructor()
+     { this.localizacao = new Localizacao();
+     }
 }
