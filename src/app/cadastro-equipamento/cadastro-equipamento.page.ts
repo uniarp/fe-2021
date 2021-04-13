@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Equipamento } from '../equipamento';
+import { EquipamentoService } from '../equipamento.service';
 
 @Component({
   selector: 'app-cadastro-equipamento',
@@ -9,23 +11,41 @@ import { Router } from '@angular/router';
 export class CadastroEquipamentoPage  {
   //variavel pra guarda a equipamento
 
-  constructor(
-  ) { }
+  equipamento: Equipamento;
+
+  constructor(public equipamentoService:EquipamentoService,
+    public routerService:Router) {
+  }
 
   ionViewDidEnter(){
+    console.log('Cadastro equipamento page - iondidviewENTER');
+    //instanciando  objeto da classe que vou cadastrar
+    this.equipamento = new Equipamento();
   }
 
   gravar(){
     console.log('Equipamento - gravar ');
     //passar a equipamento que esta sendo cadastrada
+    this.equipamentoService.cadastrar(this.equipamento);
+    this.routerService.navigate(['lista-de-equipamentos']);
   }
 
   cancelar(){
     console.log('Equipamento - cancelar');
+    this.equipamento.tipoEquipamento = null;
+    this.equipamento.dataAquisicao = null;
+    this.equipamento.localizacao = null;
+    this.equipamento.marca = null;
+    this.equipamento.status = null;
+    this.equipamento.modelo = null;
   }
 
   listar(){
     console.log('Equipamento - listar');
+    this.routerService.navigate(['lista-de-equipamento']);
   }
 
+  novo() {
+    this.routerService.navigateByUrl('/cadastro-equipamento')
+  }
 }

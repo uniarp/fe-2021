@@ -1,27 +1,45 @@
+import { Pergunta } from './../classes/pergunta';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Pergunta } from '../classes/pergunta';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class PerguntaService {
+  url = 'https://apoio-uniarp.herokuapp.com/questoes/';
 
-  constructor() { }
-  
-  gravar(pergunta:Pergunta){
-    console.log('PerguntaService- gravando pergunta')
-    let perguntas=this.listar()
-    perguntas.push(pergunta)
-    localStorage.setItem('perguntas', JSON.stringify(perguntas))
+  constructor(public http : HttpClient,) {
+
   }
 
-  listar():Pergunta[]{
-    console.log('PerguntaService- Listando as perguntas')
-    let perguntas=[];
-    if(localStorage.getItem('perguntas')){
-      perguntas=JSON.parse(localStorage.getItem('perguntas'))
-    }
-    return perguntas
+  gravar(pergunta : Pergunta) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + 'cadastrar', pergunta).subscribe(response => {
+        resolve(response);
+      })
+    });
+  }
+
+  // gravar(pergunta:Pergunta){
+    // console.log('PerguntaService- gravando pergunta')
+    // let perguntas=this.listar()
+    // perguntas.push(pergunta)
+    // localStorage.setItem('perguntas', JSON.stringify(perguntas))
+  // }
+
+  // listar():Pergunta[]{
+  //   console.log('PerguntaService- Listando as perguntas')
+  //   let perguntas=[];
+  //   if(localStorage.getItem('perguntas')){
+  //     perguntas=JSON.parse(localStorage.getItem('perguntas'))
+  //   }
+  //   return perguntas
+  // }
+
+  listar(){
+    return this.http.get(this.url)
+
   }
 
   excluir(pergunta:Pergunta){

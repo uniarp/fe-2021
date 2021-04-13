@@ -15,11 +15,11 @@ export class CadastroFaqPage {
     private routeService:Router
   ) { }
   ionViewDidEnter(){
-  this.pergunta=new Pergunta();  
+  this.pergunta=new Pergunta();
   }
 
   gravar(pergunta:Pergunta){
-    this.perguntaService.gravar(pergunta);
+    this.perguntaService.gravar(this.pergunta);
     this.routeService.navigateByUrl('/lista-pergunta')
   }
 

@@ -21,6 +21,7 @@ export class ListaVistoriasPage {
     this.routerService.navigateByUrl('cadastro-vistoria');
   }
 
+
   ionViewWillEnter() {
     this.vistoriaService.listar().subscribe(dados => {
       this.vistoria = dados;
