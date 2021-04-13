@@ -8,32 +8,21 @@ import { PerguntaService } from '../services/pergunta.service';
   templateUrl: './lista-pergunta.page.html',
   styleUrls: ['./lista-pergunta.page.scss'],
 })
-export class ListaPerguntaPage implements OnInit {
-  perguntas: any;
+export class ListaPerguntaPage{
+  perguntas:any;
 
     constructor(
       private routeService:Router,
       private perguntaService:PerguntaService
     ) { }
 
-  ngOnInit() {
-  }
-
-  ionViewDidEnter(){
-    this.perguntaService.listar().subscribe(
-      resultado => {
-        console.log(resultado)
-        this.perguntas = resultado;
-      },
-      erro => {
-       if(erro.status == 404) {
-         console.log('Pergunta não localizada');
-       }
-     }
-   );
-
-    //this.perguntas=this.perguntaService.listar();
-  }
+    ionViewWillEnter() {
+     this.perguntas = [];
+      this.perguntaService.listar().subscribe(dados => {
+        this.perguntas = dados;
+        console.log(this.perguntas);
+      });
+    }
 
 
 
