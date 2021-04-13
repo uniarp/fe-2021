@@ -8,7 +8,7 @@ import { TipoEquipamento } from '../classes/tipo-equipamento';
 
 export class TipoEquipamentoService {
 
-  url = 'https://apoio-uniarp.herokuapp.com/tipoEquipamentos/';
+  url = 'https://apoio-uniarp.herokuapp.com/tiposEquipamento/';
 
   constructor(public http : HttpClient) {}
 

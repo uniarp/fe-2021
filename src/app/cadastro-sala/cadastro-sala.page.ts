@@ -25,16 +25,17 @@ export class CadastroSalaPage {
     this.sala = new Sala();
   }
 
-  gravar(sala:Sala){
+  gravar(){
     console.log('CadastroSala - gravar ');
-    return new Promise((resolve, reject) => {
-    this.salaService.cadastrar(this.sala).subscribe(response=>{
-    resolve(response);})
-    })
-    //passar a equipamento que esta sendo cadastrada
+    //return new Promise((resolve, reject) => {
+    this.salaService.cadastrar(this.sala);
+    this.routerService.navigate(['lista-sala']); 
+    
+    //})
+    //passar a equipamento que esta sendo cadastrada - Jogado para o Service
     //  this.salaService.cadastrar(this.sala).subscribe(response=>{
     // resolve(response);})
-    //this.routerService.navigate(['listarTodos']);
+   
   }
 
   cancelar(){
@@ -44,9 +45,9 @@ export class CadastroSalaPage {
 
   
 
-  listarTodos(){
+  listar(){
     console.log('sala - listar');
-    this.routerService.navigate(['listarTodos']);
+    this.routerService.navigate(['lista-sala']);
   }
 
 
