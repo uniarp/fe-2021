@@ -11,7 +11,7 @@ export class ProfessorService {
     private http:HttpClient,
   ) { }
   
-  gravar(professor: Professor){
+  cadastrar(professor: Professor){
     console.log(professor)
    return this.http.post(this.backEnd+'/cadastrar', professor)
   }
