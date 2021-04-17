@@ -23,7 +23,7 @@ export class ReservaEquipamentoService {
 
   alterar(id : Number, reservaEquipamento : ReservaEquipamento) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url + id + '/alterar', reservaEquipamento);
+      this.http.post(this.url + id + 'alterar', reservaEquipamento);
     });
   }
 
@@ -33,7 +33,7 @@ export class ReservaEquipamentoService {
 
   excluir(id : Number) {
     return new Promise((resolve, reject) => {
-      this.http.get(this.url + id + '/excluir');
+      this.http.get(this.url + id + 'excluir');
     });
   }
 }

@@ -17,14 +17,14 @@ export class CadastroTipoEquipamentoPage {
     public routerService:Router) {
   }
 
-  ionViewDidEnter(){
-    console.log('cadastro equipamento page - iondidviewENTER');
+  ionViewDidEnter() {
+    console.log('cadastro equipamento page - ionviewdidENTER');
     //instanciando  objeto da classe que vou cadastrar
     this.tipoEquipamento = new TipoEquipamento();
   }
 
   gravar(){
-    console.log('TipoEquipamento - gravar ');
+    console.log('TipoEquipamento - gravar');
     //passar a equipamento que esta sendo cadastrada
     this.tipoEquipamentoService.cadastrar(this.tipoEquipamento);
     this.routerService.navigate(['lista-tipo-equipamento']);

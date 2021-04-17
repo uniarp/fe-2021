@@ -1,11 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Professor } from '../classes/professor';
-import { EquipamentoService } from '../services/equipamento.service';
-import { ProfessorService } from '../services/professor.service';
-import { equipamentoService } from '../services/tipo-equipamento.service';
-import { equipamento } from '../classes/tipo-equipamento';
+import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
 import { Router } from '@angular/router';
-import { Equipamento } from '../classes/equipamento';
+import { ReservaEquipamentoService } from '../services/reserva-equipamento.service';
+import { ReservaEquipamento } from '../classes/reserva-equipamento';
 
 @Component({
   selector: 'app-solicitar-equipamento',
@@ -13,36 +9,36 @@ import { Equipamento } from '../classes/equipamento';
   styleUrls: ['./solicitar-equipamento.page.scss'],
 })
 export class SolicitarEquipamentoPage{
-  solicitacao:any={}; //
   
-  equipamento:Equipamento;
-  professores:Professor;
+  reservaEquipamento: ReservaEquipamento;
+
   constructor(
-    public equipamentoService:EquipamentoService,
-    public professorService:ProfessorService,
-    public routerService:Router
-  ) {
+    public reservaEquipamentoService:ReservaEquipamentoService,
+    public routerService:Router) {
+    }
 
-   }
-
-  ionViewWillEnter(){
-    this.equipamentoService.listar().subscribe(dados=>{
-      this.equipamento=dados
-      console.log('equipamento',this.equipamento)
-    });
-    this.professorService.listar().subscribe((dados:any)=>{
-      this.professores=dados
-      console.log('professor',this.professores)
-    })
+  ionViewDidEnter() {
+    this.reservaEquipamento = new ReservaEquipamento();
   }
 
-  gravar(solicitacao:any){
-  return new Promise((resolve,reject)=>{
-    this.equipamentoService.solicitar(solicitacao)
-    .subscribe(response=>{
-      resolve(response)
-    })
-  })
+  gravar(){
+    this.reservaEquipamentoService.cadastrar(this.reservaEquipamento);
+    this.routerService.navigate(['lista-reserva-equipamentos']);
   }
 
+  cancelar() {
+    this.reservaEquipamento.dataEntrega = null;
+    this.reservaEquipamento.dataDevolucao = null;
+    this.reservaEquipamento.observacao = null;
+    this.reservaEquipamento.periodo = null;
+    this.reservaEquipamento.status = null;
+  }
+
+  listar() {
+    this.routerService.navigate(['lista-reserva-equipamentos']);
+  }
+  
+  novo() {
+    this.routerService.navigateByUrl('/solicitar-equipamento');
+  }
 }
