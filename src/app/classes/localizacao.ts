@@ -1,4 +1,4 @@
 export class Localizacao {
     bloco?: string;
-    andar?: number;
+    andar?: string;
 }

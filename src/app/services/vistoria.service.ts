@@ -20,14 +20,14 @@ export class VistoriaService {
       })
     });
   }
-  
+
   alterar(id : Number, vistoria : Vistoria) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url + id + '/alterar', vistoria);
     });
   }
 
-  listar() {
+  listar(){
     return this.http.get(this.url);
   }
 

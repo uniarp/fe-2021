@@ -8,25 +8,28 @@ import { PerguntaService } from '../services/pergunta.service';
   templateUrl: './lista-pergunta.page.html',
   styleUrls: ['./lista-pergunta.page.scss'],
 })
-export class ListaPerguntaPage implements OnInit {
-  perguntas:Pergunta[];
+export class ListaPerguntaPage{
+  perguntas:any;
 
-  constructor(
-    private routeService:Router,
-    private perguntaService:PerguntaService
-  ) { }
+    constructor(
+      private routeService:Router,
+      private perguntaService:PerguntaService
+    ) { }
 
-  ngOnInit() {
-  }
-  
-  ionViewWillEnter(){
-    this.perguntas=this.perguntaService.listar();
-  }
+    ionViewDidEnter() {
+     this.perguntas = [];
+      this.perguntaService.listar().subscribe(dados => {
+        this.perguntas = dados;
+        console.log(this.perguntas);
+      });
+    }
+
+
 
   novo() {
     this.routeService.navigateByUrl('/cadastro-faq')
   }
-  
+
   editar(pergunta:Pergunta) {
     this.perguntaService.alterar(pergunta)
   }

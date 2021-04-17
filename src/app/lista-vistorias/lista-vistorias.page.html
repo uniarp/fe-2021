@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Vistorias</ion-title>
+    <ion-title>Vistoria</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,4 +10,24 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
+  <div *ngIf = vistoria>
+
+    <ion-list *ngFor = "let lista of vistoria">
+    <ion-item>
+      <ion-label>
+        {{lista.emConformidade}}
+      </ion-label>
+      <ion-label>
+        {{lista.data}}
+      </ion-label> 
+      <ion-label>
+        {{lista.descricao}}
+      </ion-label> 
+      <ion-label>
+        {{lista.periodo}}
+      </ion-label> 
+    </ion-item>
+  </ion-list>
+</div>
+
 </ion-content>
