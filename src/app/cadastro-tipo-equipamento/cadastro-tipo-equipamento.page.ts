@@ -23,8 +23,8 @@ export class CadastroTipoEquipamentoPage {
     this.tipoEquipamento = new TipoEquipamento();
   }
 
-  gravar(){
-    console.log('TipoEquipamento - gravar ');
+  cadastrar(){//alterado gravar para cadastrar
+    console.log('TipoEquipamento - cadastrar ');
     //passar a equipamento que esta sendo cadastrada
     this.tipoEquipamentoService.cadastrar(this.tipoEquipamento);
     this.routerService.navigate(['lista-tipo-equipamento']);
