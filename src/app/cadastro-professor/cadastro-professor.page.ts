@@ -20,9 +20,9 @@ export class CadastroProfessorPage {
   ionViewWillEnter(){
     this.professor = new Professor()
   }
-  gravar(professor:Professor){
+  cadastrar(professor:Professor){
     return new Promise((resolve,reject)=>{
-      this.professorService.gravar(professor).subscribe(response=>{
+      this.professorService.cadastrar(professor).subscribe(response=>{
         resolve(response)
       })
       
