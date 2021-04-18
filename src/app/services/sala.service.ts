@@ -37,7 +37,7 @@ export class SalaService {
     })
 
   }
-  listar(){
+  listarTodos(){
     console.log("listando todas as salas")
     return this.http.get(this.backend)   
   }
