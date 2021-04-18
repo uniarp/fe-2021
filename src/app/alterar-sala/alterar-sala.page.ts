@@ -25,7 +25,7 @@ export class AlterarSalaPage {
  }
 
  cadastrar(){
-   console.log('AlterarSala - gravar ');
+   console.log('AlterarSala - cadastrar ');
    //passar a equipamento que esta sendo cadastrada
    this.salaService.alterar(this.sala);
    
