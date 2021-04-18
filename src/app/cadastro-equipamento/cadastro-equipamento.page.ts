@@ -23,7 +23,7 @@ export class CadastroEquipamentoPage  {
     this.equipamento = new Equipamento();
   }
 
-  gravar(){
+  cadastrar(){
     console.log('Equipamento - gravar ');
     //passar a equipamento que esta sendo cadastrada
     this.equipamentoService.cadastrar(this.equipamento);

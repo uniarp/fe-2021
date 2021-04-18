@@ -24,7 +24,7 @@ export class AlterarSalaPage {
    
  }
 
- gravar(){
+ cadastrar(){
    console.log('AlterarSala - gravar ');
    //passar a equipamento que esta sendo cadastrada
    this.salaService.alterar(this.sala);
@@ -38,7 +38,7 @@ export class AlterarSalaPage {
 
  
 
- listarTodos(){
+ listar(){
    console.log('sala - listar');
    this.routerService.navigate(['listarTodos']); }
 

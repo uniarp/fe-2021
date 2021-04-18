@@ -18,8 +18,8 @@ export class CadastroFaqPage {
   this.pergunta=new Pergunta();
   }
 
-  gravar(pergunta:Pergunta){
-    this.perguntaService.gravar(this.pergunta);
+  cadastrar(pergunta:Pergunta){
+    this.perguntaService.cadastrar(this.pergunta);
     this.routeService.navigateByUrl('/lista-pergunta')
   }
 

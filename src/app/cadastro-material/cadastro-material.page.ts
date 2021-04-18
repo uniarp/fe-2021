@@ -22,7 +22,7 @@ export class CadastroMaterialPage {
     this.material = new Material();
   }
 
-  gravar(){
+  cadastrar(){
     console.log('Cadastro Material - gravar ');
     //passar a equipamento que esta sendo cadastrada
     this.materialService.cadastrar(this.material);

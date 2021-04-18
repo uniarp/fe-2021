@@ -8,14 +8,14 @@
   <ion-list *ngIf="pergunta">
     <ion-item>
       <ion-label position="fixed">Pergunta</ion-label>
-      <ion-input [(ngModel)]="pergunta.pergunta"></ion-input>
+      <ion-input type='text' [(ngModel)]="pergunta.pergunta"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="fixed">Resposta</ion-label>      
       <ion-textarea [(ngModel)]="pergunta.resposta" ></ion-textarea>
     </ion-item>
     <br>
-    <ion-button (click)="gravar(pergunta)" fill="solid" expand="block" color="success">Gravar</ion-button><br>
+    <ion-button (click)="gravar(pergunta)" fill="solid" expand="block" color="danger">Gravar</ion-button><br>
     <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
   </ion-list>
 </ion-content>
