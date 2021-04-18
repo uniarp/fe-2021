@@ -24,7 +24,7 @@ export class CadastroEquipamentoPage  {
   }
 
   cadastrar(){
-    console.log('Equipamento - gravar ');
+    console.log('Equipamento - cadastrar ');
     //passar a equipamento que esta sendo cadastrada
     this.equipamentoService.cadastrar(this.equipamento);
     this.routerService.navigate(['lista-de-equipamentos']);
