@@ -1,5 +1,5 @@
-// import { Equipamento } from "../equipamento";
-// import {Professor} from "./professor";
+import { Equipamento } from "../equipamento";
+import { Professor} from "./professor";
 
 export class ReservaEquipamento {
     id?:number;
@@ -8,11 +8,11 @@ export class ReservaEquipamento {
     dataEntrega?:Date;
     dataDevolucao?:Date;
     observacao?:string;
-    // equipamento?:Equipamento;
-    // professor?:Professor;
-    // 
-    // constructor(){
-    //     this.equipamento=new Equipamento();
-    //     this.professor=new Professor();
-    // }
+    equipamento?:Equipamento;
+    professor?:Professor;
+    
+    constructor(){
+        this.equipamento=new Equipamento();
+        this.professor=new Professor();
+    }
 }

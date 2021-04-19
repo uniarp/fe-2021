@@ -2,12 +2,8 @@ import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReservaEquipamentoService } from '../services/reserva-equipamento.service';
 import { ReservaEquipamento } from '../classes/reserva-equipamento';
-import { TipoEquipamentoService } from '../services/tipo-equipamento.service';
-import { TipoEquipamento } from '../classes/tipo-equipamento';
-import { Equipamento } from '../equipamento';
 import { EquipamentoService } from '../equipamento.service';
 import { ProfessorService } from '../services/professor.service';
-import { Professor } from '../classes/professor';
 
 @Component({
   selector: 'app-solicitar-equipamento',
@@ -17,28 +13,34 @@ import { Professor } from '../classes/professor';
 export class SolicitarEquipamentoPage{
   
   reservaEquipamento: ReservaEquipamento;
-  // tipoEquipamentos:TipoEquipamento[];
-  // equipamentos:Equipamento[];
-  // professores:Professor[];
+  equipamentos:any;
+  professores:any;
 
   constructor(
     public reservaEquipamentoService:ReservaEquipamentoService,
-    // public tipoEquipamentoService: TipoEquipamentoService,
-    // public equipamentoService: EquipamentoService,
-    // public professorService:ProfessorService,
+    public equipamentoService: EquipamentoService,
+    public professorService:ProfessorService,
     public routerService:Router) {
     }
 
   ionViewDidEnter() {
     this.reservaEquipamento = new ReservaEquipamento();
+    this.professorService.listar().subscribe(dados => {
+      this.professores = dados;
+      console.log(this.professores);
+    });
+    this.equipamentoService.listar().subscribe(dados => {
+      this.equipamentos = dados;
+      console.log(this.equipamentos);
+    });
+    
   }
 
   cadastrar(){
     this.reservaEquipamento.status= "reservado";
     this.reservaEquipamentoService.cadastrar(this.reservaEquipamento);
-    // this.routerService.navigate(['lista-reserva-equipamentos']);
     console.log(this.reservaEquipamento);
-    // this.routerService.navigate(['lista-reserva-equipamentos']);
+    this.routerService.navigate(['lista-reserva-equipamentos']);
 
   }
 

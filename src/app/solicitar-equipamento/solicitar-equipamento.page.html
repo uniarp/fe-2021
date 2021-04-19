@@ -9,22 +9,22 @@
 
 <ion-content>
   <ion-list *ngIf="reservaEquipamento">
-    <!-- <ion-item >
+    <ion-item >
       <ion-label position="floating">Equipamento</ion-label>
       <ion-select [(ngModel)]="reservaEquipamento.equipamento">
-        <ion-select-option *ngFor="let tipoEquipamento of tipoEquipamentos" [value]="reservaEquipamento.equipamento.id">
-          {{tipoEquipamento.nome}} {{tipoEquipamento.marca}} {{tipoEquipamento.modelo}} 
+        <ion-select-option *ngFor="let equipamento of equipamentos" [value]="equipamento.id">
+          {{equipamento.nome}} {{equipamento.marca}} {{equipamento.modelo}} 
         </ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Professor</ion-label>
       <ion-select [(ngModel)]="reservaEquipamento.professor">
-        <ion-select-option *ngFor="let professor of professores" [value]="reservaEquipamento.professor.id">
+        <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
           {{professor.nomeCompleto}}
         </ion-select-option>
       </ion-select>
-    </ion-item> -->
+    </ion-item>
     <ion-item>
       <ion-label position="floating">Observaçao:</ion-label>
       <ion-input [(ngModel)]="reservaEquipamento.observacao" ></ion-input>
