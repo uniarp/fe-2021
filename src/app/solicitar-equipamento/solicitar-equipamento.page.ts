@@ -2,6 +2,12 @@ import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReservaEquipamentoService } from '../services/reserva-equipamento.service';
 import { ReservaEquipamento } from '../classes/reserva-equipamento';
+import { TipoEquipamentoService } from '../services/tipo-equipamento.service';
+import { TipoEquipamento } from '../classes/tipo-equipamento';
+import { Equipamento } from '../equipamento';
+import { EquipamentoService } from '../equipamento.service';
+import { ProfessorService } from '../services/professor.service';
+import { Professor } from '../classes/professor';
 
 @Component({
   selector: 'app-solicitar-equipamento',
@@ -11,9 +17,15 @@ import { ReservaEquipamento } from '../classes/reserva-equipamento';
 export class SolicitarEquipamentoPage{
   
   reservaEquipamento: ReservaEquipamento;
+  // tipoEquipamentos:TipoEquipamento[];
+  // equipamentos:Equipamento[];
+  // professores:Professor[];
 
   constructor(
     public reservaEquipamentoService:ReservaEquipamentoService,
+    // public tipoEquipamentoService: TipoEquipamentoService,
+    // public equipamentoService: EquipamentoService,
+    // public professorService:ProfessorService,
     public routerService:Router) {
     }
 
@@ -21,9 +33,13 @@ export class SolicitarEquipamentoPage{
     this.reservaEquipamento = new ReservaEquipamento();
   }
 
-  gravar(){
+  cadastrar(){
+    this.reservaEquipamento.status= "reservado";
     this.reservaEquipamentoService.cadastrar(this.reservaEquipamento);
-    this.routerService.navigate(['lista-reserva-equipamentos']);
+    // this.routerService.navigate(['lista-reserva-equipamentos']);
+    console.log(this.reservaEquipamento);
+    // this.routerService.navigate(['lista-reserva-equipamentos']);
+
   }
 
   cancelar() {

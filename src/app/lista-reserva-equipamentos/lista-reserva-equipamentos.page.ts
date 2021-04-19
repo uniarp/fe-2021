@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ReservaEquipamentoService } from '../services/reserva-equipamento.service';
 
 @Component({
   selector: 'app-lista-reserva-equipamentos',
@@ -7,6 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaReservaEquipamentosPage {
 
-  constructor() { }
+  reservaEquipamento:any;
+  constructor(
+    public reservaEquipamentoService:ReservaEquipamentoService,
+    public routerService:Router
+  ) { }
 
+  novo(){
+    this.routerService.navigateByUrl('/solicitar-equipamento');
+  }
+
+  ionViewWillEnter() {
+    this.reservaEquipamentoService.listar().subscribe(dados => {
+      this.reservaEquipamento = dados;
+      console.log(this.reservaEquipamento);
+    });
+  }
 }

@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>lista_reserva_equipamentos</ion-title>
+    <ion-title>Listagem de Reservas de Equipamentos</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list *ngFor = "let lista of reservaEquipamento">
+    <ion-item>
+      <ion-label>
+        {{lista.status}}
+      </ion-label>
+      <ion-label>
+        {{lista.dataEntrega}}
+      </ion-label> 
+      <ion-label>
+        {{lista.dataDevolucao}}
+      </ion-label> 
+      <ion-label>
+        {{lista.dataEntrega}}
+      </ion-label> 
+      <ion-label>
+        {{lista.observacao}}
+      </ion-label> 
+    </ion-item>
+  </ion-list>
 </ion-content>

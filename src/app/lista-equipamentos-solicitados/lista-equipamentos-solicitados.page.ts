@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EquipamentoService } from '../services/equipamento.service';
+import { EquipamentoService } from '../equipamento.service';
 import { TipoEquipamentoService } from '../services/tipo-equipamento.service';
 
 @Component({
