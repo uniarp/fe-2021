@@ -10,19 +10,19 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-list *ngFor = "let lista of material">
+  <ion-list *ngFor="let material of materiais">
     <ion-item>
       <ion-label>
-        {{lista.nome}}
+        {{material.nome}}
       </ion-label>
       <ion-label>
-        {{lista.quantidade}}
+        {{material.quantidade}}
       </ion-label> 
       <ion-label>
-        {{lista.marca}}
+        {{material.marca}}
       </ion-label>
       <ion-label>
-        {{lista.descricao}}
+        {{material.descricao}}
       </ion-label>  
     </ion-item>
   </ion-list>
