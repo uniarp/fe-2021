@@ -32,7 +32,7 @@ export class EquipamentoService {
   listarPorSala(){
     console.log("listando equipamento por sala")
   }
-  
+
   listarEquipamento(){
     console.log("listando equipamento")
   }
