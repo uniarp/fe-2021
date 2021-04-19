@@ -10,14 +10,15 @@
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
-    <ion-list *ngFor="let listaSalas of listaSala">
-      <ion-item >        
+    <ion-list>
+      <ion-item-sliding *ngFor="let sala of salas">
+        <ion-item>
           <ion-label>
-            {{listaSalas.numero}}                    
-            {{listaSalas.capacidade}}          
-            {{listaSalas.numeroMaquinas}}        
-            {{listaSalas.localizacao.bloco}}
-            {{listaSalas.localizacao.andar}}
+            {{listaSala.numero}}                    
+            {{listaSala.capacidade}}          
+            {{listaSala.numeroMaquinas}}        
+            {{listaSala.localizacao.bloco}}
+            {{listaSala.localizacao.andar}}
           </ion-label>             
       </ion-item>
     </ion-list>  
