@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MaterialService } from '../material.service';
+import { Material } from '../material/material';
 
 @Component({
   selector: 'app-lista-material',
@@ -9,22 +10,24 @@ import { MaterialService } from '../material.service';
 })
 export class ListaMaterialPage{
 
-  material : any;
+  materiais : any;
 
   constructor(
     public materialService:MaterialService,
     public routerService:Router
     ) { }
-
+    ngOnInit(){
+      this.materiais = [];
+    }
   novo() {
     this.routerService.navigateByUrl('/cadastro-material');
   }
 
   ionViewWillEnter() {
-    this.materialService.listar().subscribe(dados => {
-      this.material = dados;
-      console.log(this.material);
-    });
-  }
-
+    this.materiais = [];
+     this.materialService.listar().subscribe(dados => {
+       this.materiais = dados;
+       console.log(this.materiais);
+     });
+   }
 }
