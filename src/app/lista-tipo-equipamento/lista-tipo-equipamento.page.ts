@@ -7,9 +7,9 @@ import { TipoEquipamentoService } from '../services/tipo-equipamento.service'
   templateUrl: './lista-tipo-equipamento.page.html',
   styleUrls: ['./lista-tipo-equipamento.page.scss'],
 })
-export class ListaTipoEquipamentoPage {
 
-  tipoEquipamento : any;
+  export class ListaTipoEquipamentoPage {
+      tipoEquipamento : any;
 
   constructor(
     public tipoEquipamentoService:TipoEquipamentoService,
@@ -20,10 +20,11 @@ export class ListaTipoEquipamentoPage {
     this.routerService.navigateByUrl('/cadastro-tipo-equipamento');
   }
 
-  ionViewWillEnter() {
+  ionViewDidEnter() {
+    this.tipoEquipamento=[];
     this.tipoEquipamentoService.listar().subscribe(dados => {
-      this.tipoEquipamento = dados;
-      console.log(this.tipoEquipamento);
+    this.tipoEquipamento = dados;
+    console.log(this.tipoEquipamento);
     });
   }
 }
