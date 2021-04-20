@@ -25,8 +25,8 @@ export class CadastroSalaPage {
     this.sala = new Sala();
   }
 
-  gravar(){
-    console.log('CadastroSala - gravar ');
+  cadastrar(){ //alterado gravar para cadastrar
+    console.log('CadastroSala - cadastrar ');
     //return new Promise((resolve, reject) => {
     this.salaService.cadastrar(this.sala);
     this.routerService.navigate(['lista-sala']); 

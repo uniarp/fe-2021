@@ -28,17 +28,7 @@ export class VistoriaService {
   }
 
   listar(){
-    this.http.get(this.url)
-           .subscribe(
-             resultado => {
-               console.log(resultado)
-             },
-             erro => {
-              if(erro.status == 404) {
-                console.log('Vistoria não localizada');
-              }
-            }
-          );
+    return this.http.get(this.url);
   }
 
   excluir(id : Number) {
