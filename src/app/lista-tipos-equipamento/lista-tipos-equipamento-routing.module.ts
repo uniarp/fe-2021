@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListaTiposEquipamentoPage } from '../lista-tipos-equipamento/lista-tipos-equipamento.page';
+import { ListaTiposEquipamentoPage } from './lista-tipos-equipamento.page';
 
 const routes: Routes = [
   {
