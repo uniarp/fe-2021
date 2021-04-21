@@ -93,7 +93,7 @@ const routes: Routes = [
   },
   {
     path: 'solicitar-reserva-salas',
-    loadChildren: () => import('./solicitar-reserva-salas/solicitar-reservas-sala.module').then( m => m.SolicitarReservasSalaPageModule)
+    loadChildren: () => import('./solicitar-reserva-salas/solicitar-reserva-salas.module').then( m => m.SolicitarReservaSalasPageModule)
   },
   {
     path: 'lista-tipos-equipamento',
