@@ -96,8 +96,8 @@ const routes: Routes = [
     loadChildren: () => import('./solicitar-reserva-salas/solicitar-reserva-salas.module').then( m => m.SolicitarReservaSalasPageModule)
   },
   {
-    path: 'lista-tipo-equipamento',
-    loadChildren: () => import('./lista-tipo-equipamento/lista-tipo-equipamento.module').then( m => m.ListaTipoEquipamentoPageModule)
+    path: 'lista-tipos-equipamento',
+    loadChildren: () => import('./lista-tipos-equipamento/lista-tipos-equipamento.module').then( m => m.ListaTiposEquipamentoPageModule)
   },
   {
     path: 'cadastro-tipo-equipamento',
