@@ -1,3 +1,6 @@
+import { Professor } from "./professor";
+import { Sala } from "./sala";
+
 export class ReservaSala {
 
     id? : Number;
@@ -5,5 +8,7 @@ export class ReservaSala {
     qtdAlunos? : Number;
     status? : String;
     periodo? : String;
+    sala? : Sala;
+    professor? : Professor;
     
 }
