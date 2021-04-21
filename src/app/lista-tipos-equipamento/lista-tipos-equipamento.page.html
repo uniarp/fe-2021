@@ -10,14 +10,11 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-list *ngFor="let tipo-equipamento of tipo-equipamentos">
+  <ion-list *ngFor="let tipoEquipamento of tiposEquipamento">
     <ion-item>
       <ion-label>
-        {{lista.nome}}
+        {{tipoEquipamento.nome}}
       </ion-label>
-      <ion-label>
-      {{lista.dataAquisicao}}
-      </ion-label> 
     </ion-item>
   </ion-list>
 </ion-content>

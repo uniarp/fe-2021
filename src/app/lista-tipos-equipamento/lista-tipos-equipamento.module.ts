@@ -4,17 +4,16 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListaTipoEquipamentoPageRoutingModule } from './lista-tipo-equipamento-routing.module';
-
-import { ListaTipoEquipamentoPage } from './lista-tipo-equipamento.page';
+import { ListaTiposEquipamentoPageRoutingModule } from './lista-tipos-equipamento-routing.module';
+import { ListaTiposEquipamentoPage } from './lista-tipos-equipamento.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListaTipoEquipamentoPageRoutingModule
+    ListaTiposEquipamentoPageRoutingModule
   ],
-  declarations: [ListaTipoEquipamentoPage]
+  declarations: [ListaTiposEquipamentoPage]
 })
-export class ListaTipoEquipamentoPageModule {}
+export class ListaTiposEquipamentoPageModule {}
