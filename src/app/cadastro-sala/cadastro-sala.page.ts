@@ -11,7 +11,7 @@ import { SalaService } from '../services/sala.service';
   styleUrls: ['./cadastro-sala.page.scss'],
 })
 export class CadastroSalaPage {
-  //localizacao: Localizacao=[{'bloco':"Bloco A",'andar':2}]
+  
   sala: Sala;
 
   constructor(
@@ -19,37 +19,22 @@ export class CadastroSalaPage {
     public routerService:Router
   ) { }
 
-  ionViewDidEnter(){
-    console.log('Cadastro de Salas - iondidviewENTER');
-    //instanciando  objeto da classe que vou cadastrar
+  ionViewDidEnter() {
     this.sala = new Sala();
   }
 
-  cadastrar(){ //alterado gravar para cadastrar
+  cadastrar() { 
     console.log(this.sala);
-    //return new Promise((resolve, reject) => {
     this.salaService.cadastrar(this.sala);
-    this.routerService.navigate(['lista-sala']); 
-    
-    //})
-    //passar a equipamento que esta sendo cadastrada - Jogado para o Service
-    //  this.salaService.cadastrar(this.sala).subscribe(response=>{
-    // resolve(response);})
-   
+    this.routerService.navigate(['lista-sala']);  
   }
 
-  cancelar(){
-    console.log('CadastroSala - cancelar');
+  cancelar() {
     this.sala = null
   }
 
-  
-
-  listar(){
-    console.log('sala - listar');
+  listar() {
     this.routerService.navigate(['lista-sala']);
   }
-
-
 
 }

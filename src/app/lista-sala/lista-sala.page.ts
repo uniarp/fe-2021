@@ -9,28 +9,32 @@ import { SalaService } from '../services/sala.service';
   styleUrls: ['./lista-sala.page.scss'],
 })
 export class ListaSalaPage  {
+  
   salas : any;
 
-  constructor(
-    public salaService:SalaService,
-    public routerService:Router
-    ) { }
-    ngOnInit(){
-      this.salas = [];
-    }
-  novo() {
-    this.routerService.navigateByUrl('/cadastrar');
+  constructor(public salaService:SalaService, public routerService:Router) {
   }
-
-  adicionar() {
-    this.routerService.navigateByUrl('/cadastro-sala');
+  
+  ngOnInit() {
+    this.salas = [];
   }
 
   ionViewWillEnter() {
     this.salas = [];
-     this.salaService.listarTodos().subscribe(dados => {
-       this.salas = dados;
-       console.log(this.salas);
-     });
-   }
+      this.salaService.listar().subscribe(dados => {
+        this.salas = dados;
+      });
+  }
+
+  novo() {
+    this.routerService.navigateByUrl('/cadastro-sala');
+  }
+
+  excluir() {
+
+  }
+
+  alterar() {
+
+  }
 }

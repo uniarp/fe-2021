@@ -10,38 +10,44 @@ export class SalaService {
   
   url =  "https://apoio-uniarp.herokuapp.com/salas/"
 
-  constructor(private http:HttpClient) { }
+  constructor(private http : HttpClient) { }
 
-  cadastrar(sala:Sala){
-    console.log(sala);
+  /**
+   * 
+   * @param sala Objeto sala contendo os itens de cadastro
+   * @returns 
+   */
+  cadastrar(sala : Sala) {
     return new Promise((resolve, reject) => {
-    this.http.post(this.url + 'cadastrar', sala).subscribe(response=>{
-      resolve(response);
-      console.log(response, "Ver")})
-    });
-
+      this.http.post(this.url + 'cadastrar', sala).subscribe(response=>{
+          resolve(response);
+        })
+      });
   }
-  alterar(        
-    sala:Sala
-  ){
-    console.log("alteração de sala");
-    return new Promise((resolve, reject) => {
-    this.http.post(this.url + sala.id + '/alterar', sala)
-    })
-    //this.routerService.navigate(['listarTodos']);
- }
-  excluir(id:number){
-    console.log("excluindo sala")
-    return new Promise((resolve, reject) => {
-    this.http.get(this.url + id + '/excluir')
-    })
 
+  alterar(id : Number, sala : Sala) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + sala.id + '/alterar', sala);
+    })
   }
-  listarTodos(){
-    console.log("listando todas as salas")
-    return this.http.get(this.url)   
+
+  /**
+   * Listar Salas
+   * @returns Lista de todas as salas em formato array
+   */
+  listar() {
+    return this.http.get(this.url);   
   }
   
+  /**
+   * 
+   * @param id 
+   * @returns 
+   */
+  excluir(id : Number) {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.url + id + '/excluir');
+    })
+  }
 
- 
 }

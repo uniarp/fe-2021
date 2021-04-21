@@ -30,7 +30,6 @@ export class TipoEquipamentoService {
 
   listar() {
     return this.http.get(this.url);
-    //return this.http.get(this.url);
   }
 
   excluir(id : Number) {

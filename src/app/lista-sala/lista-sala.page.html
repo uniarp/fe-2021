@@ -1,25 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>lista-sala</ion-title>
+    <ion-title>Lista de Salas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>  
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button (click)="adicionar()">
-        <ion-icon name="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-    <ion-list>
-      <ion-item-sliding *ngFor="let sala of salas">
-        <ion-item>
-          <ion-label>
-            {{listaSala.numero}}                    
-            {{listaSala.capacidade}}          
-            {{listaSala.numeroMaquinas}}        
-            {{listaSala.localizacao.bloco}}
-            {{listaSala.localizacao.andar}}
-          </ion-label>             
-      </ion-item>
-    </ion-list>  
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list *ngFor = "let sala of salas">
+    <ion-item>
+      <ion-label>
+        {{sala.numero}}
+      </ion-label>
+      <ion-label>
+        {{sala.localizacao.bloco}}
+      </ion-label> 
+      <ion-label>
+        {{sala.localizacao.andar}}
+      </ion-label>
+      <ion-label>
+        {{sala.capacidade}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
