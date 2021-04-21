@@ -96,8 +96,8 @@ const routes: Routes = [
     loadChildren: () => import('./solicitar-reserva-salas/solicitar-reserva-salas.module').then( m => m.SolicitarReservaSalasPageModule)
   },
   {
-    path: 'lista-tipo-equipamento',
-    loadChildren: () => import('./lista-tipo-equipamento/lista-tipo-equipamento.module').then( m => m.ListaTipoEquipamentoPageModule)
+    path: 'lista-tipos-equipamento',
+    loadChildren: () => import('./lista-tipos-equipamento/lista-tipos-equipamento.module').then( m => m.ListaTiposEquipamentoPageModule)
   },
   {
     path: 'cadastro-tipo-equipamento',
@@ -118,9 +118,6 @@ const routes: Routes = [
   {
     path: 'lista-material',
     loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
-  },  {
-    path: 'lista-equipamentos-solicitados',
-    loadChildren: () => import('./lista-equipamentos-solicitados/lista-equipamentos-solicitados.module').then( m => m.ListaEquipamentosSolicitadosPageModule)
   }
 
 ];

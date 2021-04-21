@@ -1,14 +1,14 @@
 import { Localizacao } from "./localizacao";
 
 export class Sala {
-    id?: number;
-    numeroSala?: number;
-    localizacao?: Localizacao;
-    capacidade?: number;
     
+  id?: Number;
+  numero?: Number;
+  localizacao?: Localizacao;
+  capacidade?: Number;
+    
+  constructor() {
+    this.localizacao = new Localizacao();
+  }
 
-
-    constructor()
-     { this.localizacao = new Localizacao();
-     }
 }

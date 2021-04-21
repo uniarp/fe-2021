@@ -8,21 +8,21 @@
   <ion-list *ngIf="sala">
     <ion-item>
       <ion-label position="floating">Número da Sala:</ion-label>
-      <ion-input [(ngModel)]="sala.numeroSala"></ion-input>
+      <ion-input type="numeric" [(ngModel)]="sala.numeroSala"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Localização:</ion-label>
-      <ion-input [(ngModel)]="sala.localizacao" ></ion-input>
+      <ion-input type="text" [(ngModel)]="sala.localizacao" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Capacidade:</ion-label>
-      <ion-input [(ngModel)]="sala.capacidade" ></ion-input>
+      <ion-input type='numeric' [(ngModel)]="sala.capacidade" ></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Nº de Máquinas:</ion-label>
-      <ion-input [(ngModel)]="sala.numeroMaquinas" ></ion-input>
+      <ion-input type='numeric'[(ngModel)]="sala.numeroMaquinas" ></ion-input>
     </ion-item>
-    <ion-button (click)="gravar()" color="success">Gravar</ion-button>
+    <ion-button (click)="cadastrar()" color="danger">Cadastrar</ion-button>
     <ion-button (click)="cancelar()" color="danger">Cancelar</ion-button>
   </ion-list>
   <ion-button (click)="listar()" color="danger">Listar</ion-button>

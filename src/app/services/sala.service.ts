@@ -7,48 +7,47 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class SalaService {  
-  sala:Sala
-  backend: string = "https://apoio-uniarp.herokuapp.com/salas/"
+  
+  url =  "https://apoio-uniarp.herokuapp.com/salas/"
 
-  constructor(private http:HttpClient) { }
+  constructor(private http : HttpClient) { }
 
-  cadastrar(sala:Sala){
-    console.log("cadastro de sala",sala)
+  /**
+   * 
+   * @param sala Objeto sala contendo os itens de cadastro
+   * @returns 
+   */
+  cadastrar(sala : Sala) {
     return new Promise((resolve, reject) => {
-    this.http.post(this.backend + 'cadastrar', sala).subscribe(response=>{
-      resolve(response);
-      console.log(response, "Ver")})
-    });
-
+      this.http.post(this.url + 'cadastrar', sala).subscribe(response=>{
+          resolve(response);
+        })
+      });
   }
-  alterar(        
-    sala:Sala
-  ){
-    console.log("alteração de sala");
-    return new Promise((resolve, reject) => {
-    this.http.post(this.backend + sala.id + '/alterar', sala)
-    })
-    //this.routerService.navigate(['listarTodos']);
- }
-  excluir(id:number){
-    console.log("excluindo sala")
-    return new Promise((resolve, reject) => {
-    this.http.get(this.backend + id + '/excluir')
-    })
 
+  alterar(id : Number, sala : Sala) {
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + sala.id + '/alterar', sala);
+    })
   }
-  listarTodos(){
-    console.log("listando todas as salas")
-    return this.http.get(this.backend)   
+
+  /**
+   * Listar Salas
+   * @returns Lista de todas as salas em formato array
+   */
+  listar() {
+    return this.http.get(this.url);   
   }
   
-  setSala(sala:Sala){
-    this.sala=sala
-    console.log(this.sala, "sala")
+  /**
+   * 
+   * @param id 
+   * @returns 
+   */
+  excluir(id : Number) {
+    return new Promise((resolve, reject) => {
+      this.http.get(this.url + id + '/excluir');
+    })
   }
 
-  getSala(){
-    return this.sala
-  }
- 
 }

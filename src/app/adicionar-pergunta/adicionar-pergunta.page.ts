@@ -18,8 +18,8 @@ export class AdicionarPerguntaPage implements OnInit {
   ngOnInit() {
   }
 
-  gravar(pergunta:Pergunta){
-    this.perguntaService.gravar(pergunta);
+  cadastrar(pergunta:Pergunta){
+    this.perguntaService.cadastrar(pergunta);
     this.routeService.navigateByUrl('/lista-pergunta')
   }
 

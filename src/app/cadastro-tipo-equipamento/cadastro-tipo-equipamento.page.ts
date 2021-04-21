@@ -18,33 +18,26 @@ export class CadastroTipoEquipamentoPage {
   }
 
   ionViewDidEnter() {
-    console.log('cadastro equipamento page - ionviewdidENTER');
-    //instanciando  objeto da classe que vou cadastrar
     this.tipoEquipamento = new TipoEquipamento();
   }
 
-  cadastrar(){
-    console.log('TipoEquipamento - gravar');
-    //passar a equipamento que esta sendo cadastrada
+  /**
+   * Método de cadastro de Salas
+   */
+  cadastrar() {
     this.tipoEquipamentoService.cadastrar(this.tipoEquipamento);
-    this.routerService.navigate(['lista-tipo-equipamento']);
+    this.routerService.navigate(['lista-tipos-equipamento']);
   }
 
-  cancelar(){
-    console.log('TipoEquipamento - cancelar');
-    this.tipoEquipamento.nome = null;
-    this.tipoEquipamento.dataAquisicao = null;
-    this.tipoEquipamento.id = null;
-    this.tipoEquipamento.modelo = null;
-    this.tipoEquipamento.marca = null;
+  cancelar() {
+    this.tipoEquipamento = null;
   }
 
-  listar(){
-    console.log('TipoEquipamento - listar');
-    this.routerService.navigate(['lista-tipo-equipamento']);
+  listar() {
+    this.routerService.navigate(['lista-tipos-equipamento']);
   }
 
   novo() {
-    this.routerService.navigateByUrl('/cadastro-tipo-equipamento')
+    this.routerService.navigateByUrl('/cadastro-tipo-equipamento');
   }
 }

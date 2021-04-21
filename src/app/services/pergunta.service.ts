@@ -13,7 +13,7 @@ export class PerguntaService {
 
   }
 
-  gravar(pergunta : Pergunta) {
+  cadastrar(pergunta : Pergunta) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url + 'cadastrar', pergunta).subscribe(response => {
         resolve(response);

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Cadastrar  professor</ion-title>
+    <ion-title>Cadastrar Professor</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,26 +8,26 @@
   <ion-list *ngIf="professor">
     <ion-item>
       <ion-label position="floating">Login</ion-label>
-      <ion-input [(ngModel)]="professor.login" type="text"></ion-input>
+      <ion-input type = "text" [(ngModel)]="professor.login"></ion-input>
     </ion-item> 
     <ion-item>
       <ion-label position="floating">Senha</ion-label>
-      <ion-input [(ngModel)]="professor.senha" type="password"></ion-input>
+      <ion-input type= "password" [(ngModel)]="professor.senha"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" >Nome completo</ion-label>
-      <ion-input [(ngModel)]="professor.nomeCompleto" type="text"></ion-input>
+      <ion-input type="text" [(ngModel)]="professor.nomeCompleto"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating" >Nível</ion-label>
-      <ion-input [(ngModel)]="professor.nivel" type="number"></ion-input>
+      <ion-input type="number" [(ngModel)]="professor.nivel"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Email</ion-label>
-      <ion-input [(ngModel)]="professor.email"  type="email"></ion-input>
+      <ion-input type="email" [(ngModel)]="professor.email"></ion-input>
     </ion-item>
     <br>
-    <ion-button  (click)="gravar(professor)" fill="solid" expand="block" color="success">Gravar</ion-button><br>
+    <ion-button  (click)="cadastrar(professor)" fill="solid" expand="block" color="danger">Cadastrar</ion-button><br>
     <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
   </ion-list>
 </ion-content>
