@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Professor } from '../classes/professor';
-import { EquipamentoService } from '../services/equipamento.service';
+import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
+import { Router } from '@angular/router';
+import { ReservaEquipamentoService } from '../services/reserva-equipamento.service';
+import { ReservaEquipamento } from '../classes/reserva-equipamento';
+import { EquipamentoService } from '../equipamento.service';
 import { ProfessorService } from '../services/professor.service';
-import { TipoEquipamentoService } from '../services/tipo-equipamento.service';
-import { TipoEquipamento } from '../classes/tipo-equipamento';
 
 @Component({
   selector: 'app-solicitar-equipamento',
@@ -11,36 +11,52 @@ import { TipoEquipamento } from '../classes/tipo-equipamento';
   styleUrls: ['./solicitar-equipamento.page.scss'],
 })
 export class SolicitarEquipamentoPage{
-  solicitacao:any={}; //
+  
+  reservaEquipamento: ReservaEquipamento;
+  equipamentos:any;
+  professores:any;
 
-  tiposEquipamento:TipoEquipamento;
-  professores:Professor;
   constructor(
-    private equipamentoService:EquipamentoService,
-    private tipoEquipamentoService: TipoEquipamentoService,
-    private professorService: ProfessorService
-  ) {
+    public reservaEquipamentoService:ReservaEquipamentoService,
+    public equipamentoService: EquipamentoService,
+    public professorService:ProfessorService,
+    public routerService:Router) {
+    }
 
-   }
-
-  ionViewWillEnter(){
-    this.tipoEquipamentoService.listar().subscribe(dados=>{
-      this.tiposEquipamento=dados
-      console.log('tipoequip',this.tiposEquipamento)
+  ionViewDidEnter() {
+    this.reservaEquipamento = new ReservaEquipamento();
+    this.professorService.listar().subscribe(dados => {
+      this.professores = dados;
+      console.log(this.professores);
     });
-    this.professorService.listar().subscribe((dados:any)=>{
-      this.professores=dados
-      console.log('professor',this.professores)
-    })
+    this.equipamentoService.listar().subscribe(dados => {
+      this.equipamentos = dados;
+      console.log(this.equipamentos);
+    });
+    
   }
 
-  gravar(solicitacao:any){
-  return new Promise((resolve,reject)=>{
-    this.equipamentoService.solicitar(solicitacao)
-    .subscribe(response=>{
-      resolve(response)
-    })
-  })
+  cadastrar(){
+    this.reservaEquipamento.status= "reservado";
+    this.reservaEquipamentoService.cadastrar(this.reservaEquipamento);
+    console.log(this.reservaEquipamento);
+    this.routerService.navigate(['lista-reserva-equipamentos']);
+
   }
 
+  cancelar() {
+    this.reservaEquipamento.dataEntrega = null;
+    this.reservaEquipamento.dataDevolucao = null;
+    this.reservaEquipamento.observacao = null;
+    this.reservaEquipamento.periodo = null;
+    this.reservaEquipamento.status = null;
+  }
+
+  listar() {
+    this.routerService.navigate(['lista-reserva-equipamentos']);
+  }
+  
+  novo() {
+    this.routerService.navigateByUrl('/solicitar-equipamento');
+  }
 }

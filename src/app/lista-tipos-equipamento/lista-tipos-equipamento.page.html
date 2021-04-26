@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Materiais</ion-title>
+    <ion-title>Tipos de equipamento</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,20 +10,11 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-list *ngFor="let material of materiais">
+  <ion-list *ngFor="let tipoEquipamento of tiposEquipamento">
     <ion-item>
       <ion-label>
-        {{material.nome}}
+        {{tipoEquipamento.nome}}
       </ion-label>
-      <ion-label>
-        {{material.quantidade}}
-      </ion-label> 
-      <ion-label>
-        {{material.marca}}
-      </ion-label>
-      <ion-label>
-        {{material.descricao}}
-      </ion-label>  
     </ion-item>
   </ion-list>
 </ion-content>
