@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { MaterialService } from '../material.service';
 import { Material } from '../material/material';
@@ -10,16 +10,16 @@ import { Material } from '../material/material';
 })
 export class ListaEntregaMaterialPage  {
 
-  tipoMaterial : any;
+  tipoMaterial: any;
 
   constructor(
-    public materialService:MaterialService,
-    public routerService:Router
+    public materialService: MaterialService,
+    public routerService: Router
     ) { }
 
 
   ionViewWillEnter() {
-    this.materialService.listarEntregas().subscribe(dados => {
+    this.materialService.listar().subscribe(dados => {
       this.tipoMaterial = dados;
       console.log(this.tipoMaterial);
     });
@@ -28,11 +28,11 @@ export class ListaEntregaMaterialPage  {
   novo() {
     this.routerService.navigateByUrl('/entregar-material');
   }
-  alterar(id : Number, material : Material){
+  alterar(id: Number, material: Material){
     this.materialService.alterar(id, material);
     console.log(this.alterar);
   }
-  excluir(id : Number){
+  excluir(id: Number){
     this.materialService.excluir(id);
     console.log(this.excluir);
   }
