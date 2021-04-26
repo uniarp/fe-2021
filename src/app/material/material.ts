@@ -3,5 +3,7 @@ export class Material {
     nome : String;
     quantidade : Number;
     marca : String;
-    descricao : String; 
+    descricao : String;
+    data: String;
+    professor: String;
 }

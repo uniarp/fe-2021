@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Material} from './material/material';
 
@@ -10,7 +10,7 @@ export class MaterialService {
 
   url = 'https://apoio-uniarp.herokuapp.com/materiais/';
 
-  constructor(public http : HttpClient) { 
+  constructor(public http : HttpClient) {
   }
 
   cadastrar(material : Material) {
@@ -20,7 +20,7 @@ export class MaterialService {
       })
     });
   }
-  
+
   alterar(id : Number, material : Material) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url + id + '/alterar', material);
@@ -35,5 +35,8 @@ export class MaterialService {
     return new Promise((resolve, reject) => {
       this.http.get(this.url + id + '/excluir');
     });
+  }
+  listarEntregas(){
+    return this.http.get(this.url);
   }
 }

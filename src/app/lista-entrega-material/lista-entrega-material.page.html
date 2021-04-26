@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista-entrega-material</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list *ngFor = "let material of tipoMaterial">
+    <ion-fab vertical="end" horizontal="end" >
+      <ion-fab-button >
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-list side="start">
+        <ion-fab-button (click)="alterar()"><ion-icon name="pencil-outline"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="excluir()"><ion-icon name="trash-outline"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>
+    <ion-item>
+      <ion-label>
+        {{material.nome}}
+      </ion-label>
+      <ion-label>
+      {{material.quantidade}}
+      </ion-label>
+      <ion-label>
+        {{material.marca}}
+        </ion-label>
+        <ion-label>
+          {{material.descricao}}
+          </ion-label>
+          <ion-label>
+            {{material.data}}
+            </ion-label>
+
+    </ion-item>
+  </ion-list>
+</ion-content>
+

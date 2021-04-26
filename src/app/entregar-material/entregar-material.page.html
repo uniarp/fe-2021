@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>entregar-material</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="material">
+    <ion-item>
+      <ion-label position="fixed">Nome:</ion-label>
+      <ion-input [(ngModel)]="material.nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Quantidade:</ion-label>
+      <ion-input [(ngModel)]="material.quantidade" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Marca:</ion-label>
+      <ion-input [(ngModel)]="material.marca" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Descricao:</ion-label>
+      <ion-input [(ngModel)]="material.descricao" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="fixed">Data:</ion-label>
+      <ion-input [(ngModel)]="material.data" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Professor:</ion-label>
+      <ion-select position="fixed" placeholder="Select One">
+        <ion-select-option value="xavier">Xavier Silva</ion-select-option>
+        <ion-select-option value="inherits">Inherits</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button (click)="gravar()" color="success">Gravar</ion-button>
+  </ion-list>
+  <ion-button (click)="listar()" color="danger">Listar</ion-button>
+
+</ion-content>

@@ -118,7 +118,15 @@ const routes: Routes = [
   {
     path: 'lista-material',
     loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
+  },  {
+    path: 'entregar-material',
+    loadChildren: () => import('./entregar-material/entregar-material.module').then( m => m.EntregarMaterialPageModule)
+  },
+  {
+    path: 'lista-entrega-material',
+    loadChildren: () => import('./lista-entrega-material/lista-entrega-material.module').then( m => m.ListaEntregaMaterialPageModule)
   }
+
 ];
 
 @NgModule({
