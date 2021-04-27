@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MaterialService } from '../material.service';
-import { Material } from '../material/material';
+import { MaterialService } from '../services/material.service';
+import { Material } from '../classes/material';
 
 @Component({
   selector: 'app-lista-entrega-material',
