@@ -118,7 +118,15 @@ const routes: Routes = [
   {
     path: 'lista-material',
     loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
+  },  {
+    path: 'cadastro-incidente',
+    loadChildren: () => import('./cadastro-incidente/cadastro-incidente.module').then( m => m.CadastroIncidentePageModule)
+  },
+  {
+    path: 'lista-incidentes',
+    loadChildren: () => import('./lista-incidentes/lista-incidentes.module').then( m => m.ListaIncidentesPageModule)
   }
+
 
 ];
 

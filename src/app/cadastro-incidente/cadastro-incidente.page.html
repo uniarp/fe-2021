@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cadastro-incidente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="incidente">
+    <ion-item >
+      <ion-label position="floating">Professor</ion-label>
+      <ion-select [(ngModel)]="incidente.professor">
+        <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
+          {{professor.nomeCompleto}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Sala</ion-label>
+      <ion-select [(ngModel)]="incidente.sala">
+        <ion-select-option *ngFor="let sala of salas" [value]="sala.id">
+          {{sala.numero}} {{sala.localizacao.bloco}} {{sala.localizacao.andar}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Descricao do Problema:</ion-label>
+      <ion-input [(ngModel)]="incidente.descricao" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data de Abertura:</ion-label>
+      <ion-datetime [(ngModel)]="incidente.dataAbertura" pickerFormat="DD MM YYYY"></ion-datetime>
+    </ion-item>
+    
+    <br>
+    <ion-button (click)="cadastrar()" fill="solid" expand="block" color="success">Cadastrar</ion-button><br>
+    <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
+  </ion-list>
+
+</ion-content>
