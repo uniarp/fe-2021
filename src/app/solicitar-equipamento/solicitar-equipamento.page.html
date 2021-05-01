@@ -1,41 +1,53 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Solicitar equipamento</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list *ngIf="solicitacao">
-    <ion-item>
-      <ion-label>Professor</ion-label>
-    <ion-select [(ngModel)]="solicitacao.professor">
-      <ion-select-option *ngFor="let professor of professores" [value]="professor.id">{{professor.nom}}</ion-select-option>
-       
-    </ion-select>
-    </ion-item>
-
+  <ion-list *ngIf="reservaEquipamento">
     <ion-item >
-      <ion-label position="floating">Tipo de equipamento</ion-label>
-      <ion-select  [(ngModel)]="solicitacao.tipoEquipamento">
-        <ion-select-option *ngFor="let tipoEquipamento tiposEquipamento" 
-          [value]="tiposEquipamento.id">{{tiposEquipamento.nome}}
+      <ion-label position="floating">Equipamento</ion-label>
+      <ion-select [(ngModel)]="reservaEquipamento.equipamento">
+        <ion-select-option *ngFor="let equipamento of equipamentos" [value]="equipamento.id">
+          {{equipamento.nome}} {{equipamento.marca}} {{equipamento.modelo}} 
         </ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Período</ion-label>
-      <ion-select [(ngModel)]="solicitacao.periodo">
+      <ion-label position="floating">Professor</ion-label>
+      <ion-select [(ngModel)]="reservaEquipamento.professor">
+        <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
+          {{professor.nomeCompleto}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Observaçao:</ion-label>
+      <ion-input [(ngModel)]="reservaEquipamento.observacao" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Período:</ion-label>
+      <ion-select [(ngModel)]="reservaEquipamento.periodo">
         <ion-select-option value="matutino">Matutino</ion-select-option>
         <ion-select-option value="vespertino">Vespertino</ion-select-option>
         <ion-select-option value="noturno">Noturno</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label position="floating">Data de uso</ion-label>
-      <ion-datetime [(ngModel)]="solicitacao.dataUso" pickerFormat="DD MM YYYY"></ion-datetime>
+      <ion-label position="floating">Data de Entrega de equipamento:</ion-label>
+      <ion-datetime [(ngModel)]="reservaEquipamento.dataEntrega" pickerFormat="DD MM YYYY"></ion-datetime>
     </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data de Devoluçao prevista do equipamento:</ion-label>
+      <ion-datetime [(ngModel)]="reservaEquipamento.dataDevolucao" pickerFormat="DD MM YYYY"></ion-datetime>
+    </ion-item>
+    
     <br>
-    <ion-button (click)="gravar(solicitacao)" fill="solid" expand="block" color="success">Gravar</ion-button><br>
+    <ion-button (click)="cadastrar()" fill="solid" expand="block" color="success">Gravar</ion-button><br>
     <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
   </ion-list>
 </ion-content>

@@ -13,18 +13,6 @@
       <ion-label position="floating">Nome:</ion-label>
       <ion-input type = 'text'[(ngModel)]="tipoEquipamento.nome"></ion-input>
     </ion-item>
-    <ion-item>
-      <ion-label position="floating">Data Aquisição:</ion-label>
-      <ion-input type = 'date'[(ngModel)]="tipoEquipamento.dataAquisicao" ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Marca:</ion-label>
-      <ion-input type = 'text'[(ngModel)]="tipoEquipamento.marca" ></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Modelo:</ion-label>
-      <ion-input type = 'text'[(ngModel)]="tipoEquipamento.modelo" ></ion-input>
-    </ion-item>
     <ion-button (click)="cadastrar()" color="danger">Cadastrar</ion-button>
     <ion-button (click)="cancelar()" color="danger">Cancelar</ion-button>
   </ion-list>

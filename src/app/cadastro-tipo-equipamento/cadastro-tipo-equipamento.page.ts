@@ -17,8 +17,7 @@ export class CadastroTipoEquipamentoPage {
     public routerService:Router) {
   }
 
-  ionViewDidEnter(){
-    console.log('cadastro equipamento page - iondidviewENTER');
+  ionViewDidEnter() {
     this.tipoEquipamento = new TipoEquipamento();
   }
 
@@ -27,15 +26,15 @@ export class CadastroTipoEquipamentoPage {
    */
   cadastrar() {
     this.tipoEquipamentoService.cadastrar(this.tipoEquipamento);
-    this.routerService.navigate(['lista-tipo-equipamento']);
+    this.routerService.navigate(['lista-tipos-equipamento']);
   }
 
-  cancelar(){
+  cancelar() {
     this.tipoEquipamento = null;
   }
 
-  listar(){
-    this.routerService.navigate(['lista-tipo-equipamento']);
+  listar() {
+    this.routerService.navigate(['lista-tipos-equipamento']);
   }
 
   novo() {

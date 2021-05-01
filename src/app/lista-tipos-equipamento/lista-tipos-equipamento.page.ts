@@ -3,13 +3,14 @@ import { Router } from '@angular/router';
 import { TipoEquipamentoService } from '../services/tipo-equipamento.service'
 
 @Component({
-  selector: 'app-lista-tipo-equipamento',
-  templateUrl: './lista-tipo-equipamento.page.html',
-  styleUrls: ['./lista-tipo-equipamento.page.scss'],
+  selector: 'app-lista-tipos-equipamento',
+  templateUrl: './lista-tipos-equipamento.page.html',
+  styleUrls: ['./lista-tipos-equipamento.page.scss'],
 })
 
-  export class ListaTipoEquipamentoPage {
-      tipoEquipamento : any;
+  export class ListaTiposEquipamentoPage {
+      
+    tiposEquipamento : any;
 
   constructor(
     public tipoEquipamentoService:TipoEquipamentoService,
@@ -20,11 +21,10 @@ import { TipoEquipamentoService } from '../services/tipo-equipamento.service'
     this.routerService.navigateByUrl('/cadastro-tipo-equipamento');
   }
 
-  ionViewDidEnter() {
-    this.tipoEquipamento=[];
+  ionViewWillEnter() {
+    this.tiposEquipamento=[];
     this.tipoEquipamentoService.listar().subscribe(dados => {
-    this.tipoEquipamento = dados;
-    console.log(this.tipoEquipamento);
+      this.tiposEquipamento = dados;
     });
   }
 }

@@ -62,7 +62,7 @@ export class AppComponent {
     },
     {
       'nome':'Lista de tipos de equipamento',
-      'link':'lista-tipo-equipamento',
+      'link':'lista-tipos-equipamento',
       'icon':'reader-outline',
     },
     {

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>solicitar-reserva-salas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="reservaSala">
+    <ion-item >
+      <ion-label position="floating">Sala</ion-label>
+      <ion-select [(ngModel)]="reservaSala.sala">
+        <ion-select-option *ngFor="let sala of salas" [value]="sala.id">
+          {{sala.numero}} {{sala.localizacao.bloco}} {{sala.localizacao.andar}} {{sala.capacidade}} 
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Professor</ion-label>
+      <ion-select [(ngModel)]="reservaSala.professor">
+        <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
+          {{professor.nomeCompleto}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data:</ion-label>
+      <ion-datetime [(ngModel)]="reservaSala.data" pickerFormat="DD MM YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Período:</ion-label>
+      <ion-select [(ngModel)]="reservaSala.periodo">
+        <ion-select-option value="matutino">Matutino</ion-select-option>
+        <ion-select-option value="vespertino">Vespertino</ion-select-option>
+        <ion-select-option value="noturno">Noturno</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Quantidade de alunos:</ion-label>
+      <ion-input [(ngModel)]="reservaSala.qtdAlunos"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Status:</ion-label>
+      <ion-select [(ngModel)]="reservaSala.periodo">
+        <ion-select-option value="solcitado">Solicitado</ion-select-option>
+        <ion-select-option value="reservado">Reservado</ion-select-option>
+        <ion-select-option value="cancelado">Cancelado</ion-select-option>
+      </ion-select>
+    </ion-item>
+    
+    <br>
+    <ion-button (click)="cadastrar()" fill="solid" expand="block" color="success">Gravar</ion-button><br>
+    <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
+  </ion-list>
+</ion-content>

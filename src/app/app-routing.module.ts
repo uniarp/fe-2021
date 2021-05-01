@@ -72,8 +72,8 @@ const routes: Routes = [
     loadChildren: () => import('./adicionar-todas-paginas-lista/adicionar-todas-paginas-lista.module').then( m => m.AdicionarTodasPaginasListaPageModule)
   },
   {
-    path: 'lista-reserva-de-salas',
-    loadChildren: () => import('./lista-reserva-de-salas/lista-reserva-de-salas.module').then( m => m.ListaReservaDeSalasPageModule)
+    path: 'lista-reservas-sala',
+    loadChildren: () => import('./lista-reservas-sala/lista-reservas-sala.module').then( m => m.ListaReservasSalaPageModule)
   },
   {
     path: 'lista-reservas-confirmadas',
@@ -92,12 +92,12 @@ const routes: Routes = [
     loadChildren: () => import('./buscar-salas/buscar-salas.module').then( m => m.BuscarSalasPageModule)
   },
   {
-    path: 'solicitar-reserva-salas',
-    loadChildren: () => import('./solicitar-reserva-salas/solicitar-reserva-salas.module').then( m => m.SolicitarReservaSalasPageModule)
+    path: 'solicitar-reserva-sala',
+    loadChildren: () => import('./solicitar-reserva-sala/solicitar-reserva-sala.module').then( m => m.SolicitarReservaSalaPageModule)
   },
   {
-    path: 'lista-tipo-equipamento',
-    loadChildren: () => import('./lista-tipo-equipamento/lista-tipo-equipamento.module').then( m => m.ListaTipoEquipamentoPageModule)
+    path: 'lista-tipos-equipamento',
+    loadChildren: () => import('./lista-tipos-equipamento/lista-tipos-equipamento.module').then( m => m.ListaTiposEquipamentoPageModule)
   },
   {
     path: 'cadastro-tipo-equipamento',
@@ -119,6 +119,7 @@ const routes: Routes = [
     path: 'lista-material',
     loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
   }
+
 ];
 
 @NgModule({
