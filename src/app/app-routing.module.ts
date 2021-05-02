@@ -118,7 +118,20 @@ const routes: Routes = [
   {
     path: 'lista-material',
     loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
+  },
+  {
+    path: 'lista-chaves',
+    loadChildren: () => import('./lista-chaves/lista-chaves.module').then( m => m.ListaChavesPageModule)
+  },
+  {
+    path: 'cadastro-chave',
+    loadChildren: () => import('./cadastro-chave/cadastro-chave.module').then( m => m.CadastroChavePageModule)
+  },
+  {
+    path: 'cadastro-entrega-chave',
+    loadChildren: () => import('./cadastro-entrega-chave/cadastro-entrega-chave.module').then( m => m.CadastroEntregaChavePageModule)
   }
+
 
 ];
 
