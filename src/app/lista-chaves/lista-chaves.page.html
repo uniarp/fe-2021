@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de chaves</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list *ngFor="let chave of chaves">
+    <ion-item>
+      <ion-label>
+        {{chave.id}}
+      </ion-label>
+      <ion-button (click)="devolverEntregaChave()" fill="solid" expand="block" color="success">Devolver</ion-button>
+      <ion-button (click)="cadastrarEntregaChave()" fill="solid" expand="block" color="success">Entregar</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
