@@ -28,7 +28,24 @@ export class ListaReservasSalaPage {
       header: 'Aviso',
       subHeader: 'Cancelamento de Reserva',
       message: 'Tem certeza que deseja cancelar a reserva?',
-      buttons: ['Sim', 'Não']
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            // rota backend
+            console.log('Confirm Cancel');
+          }
+        }, {
+          text: 'Confirmar',
+          handler: () => {
+            // rota backend
+            console.log('Confirm Ok');
+          }
+        }
+      ]
+    
     });
 
     await alert.present();
