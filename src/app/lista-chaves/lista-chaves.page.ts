@@ -20,7 +20,7 @@ export class ListaChavesPage {
 
   ionViewWillEnter() {
     this.chaves = [];
-     this.chaveService.listar().subscribe(dados => {
+    this.chaveService.listar().subscribe(dados => {
       this.chaves = dados;
     });
   }
