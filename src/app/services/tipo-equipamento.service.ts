@@ -12,8 +12,6 @@ export class TipoEquipamentoService {
 
   constructor(public http : HttpClient) {}
 
-  /* Em testes, sujeito a modificações
-  */
   cadastrar(tipoEquipamento : TipoEquipamento) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url + 'cadastrar', tipoEquipamento).subscribe(response => {
