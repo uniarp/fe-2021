@@ -127,7 +127,6 @@ const routes: Routes = [
     path: 'lista-materiais',
     loadChildren: () => import('./lista-materiais/lista-materiais.module').then( m => m.ListaMateriaisPageModule)
   }
-
 ];
 
 @NgModule({
