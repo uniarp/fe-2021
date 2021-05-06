@@ -1,18 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cadastro-entrega-chave</ion-title>
+    <ion-title>Cadastro de entrega de chave</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-item>
-    <ion-label position="floating">Data e hora de Entrega de chave:</ion-label>
-    <ion-datetime [(ngModel)]="entregaChave.dataHoraEntrega" pickerFormat="DD MM YYYY HH:mm" ></ion-datetime>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Data e hora de devoluçao de chave:</ion-label>
-    <ion-datetime [(ngModel)]="entregaChave.dataHoraDevolucao" pickerFormat="DD MM YYYY HH:mm" disabled></ion-datetime>
-  </ion-item>
+<ion-content *ngIf="entregaChave">
   <ion-item>
     <ion-label position="floating">Professor</ion-label>
     <ion-select [(ngModel)]="entregaChave.professor">
@@ -20,6 +12,22 @@
         {{professor.nomeCompleto}}
       </ion-select-option>
     </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Chave</ion-label>
+    <ion-select [(ngModel)]="entregaChave.chave">
+      <ion-select-option *ngFor="let chave of chaves" [value]="chave.id">
+        {{chave.id}}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Data e hora de Entrega de chave:</ion-label>
+    <ion-datetime [(ngModel)]="entregaChave.dataHoraEntrega" pickerFormat="DD MM YYYY HH:mm" ></ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Data e hora de devoluçao de chave:</ion-label>
+    <ion-datetime [(ngModel)]="entregaChave.dataHoraDevolucao" pickerFormat="DD MM YYYY HH:mm" disabled></ion-datetime>
   </ion-item>
   <br>
   <ion-button (click)="cadastrar()" fill="solid" expand="block" color="success">Gravar</ion-button>
