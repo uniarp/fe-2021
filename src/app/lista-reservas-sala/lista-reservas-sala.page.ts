@@ -24,4 +24,8 @@ export class ListaReservasSalaPage {
     });
   }
 
+  cadastrarEntregaChave() {
+    this.routerService.navigateByUrl('/cadastro-entrega-chave');
+  }
+  
 }
