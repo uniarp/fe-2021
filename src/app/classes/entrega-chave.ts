@@ -9,4 +9,9 @@ export class EntregaChave {
     dataHoraEntrega? : String;
     dataHoraDevolucao : String;
 
+    constructor() {
+        this.chave = new Chave();
+        this.professor = new Professor();
+    }
+
 }
