@@ -9,6 +9,7 @@ import { ProfessorService } from '../services/professor.service';
   styleUrls: ['./cadastro-professor.page.scss'],
 })
 export class CadastroProfessorPage {
+  
   professor:Professor;
   
   constructor(
@@ -20,14 +21,9 @@ export class CadastroProfessorPage {
   ionViewWillEnter(){
     this.professor = new Professor()
   }
-  cadastrar(professor:Professor){
-    return new Promise((resolve,reject)=>{
-      this.professorService.cadastrar(professor).subscribe(response=>{
-        resolve(response)
-      })
-      
-    })
-  }
+  cadastrar() {
+    this.professorService.cadastrar(this.professor);
+  } 
 
   cancelar(){
     this.routeService.navigateByUrl('/lista-professor')
