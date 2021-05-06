@@ -41,13 +41,11 @@ export class SolicitarReservaSalaPage {
 
   cancelar() {
     this.reservaSala = null;
-  }
-
-  listar() {
     this.routerService.navigate(['lista-reservas-sala']);
   }
 
   novo() {
     this.routerService.navigateByUrl('solicitar-reserva-sala');
   }
+  
 }
