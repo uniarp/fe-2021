@@ -120,6 +120,22 @@ const routes: Routes = [
     loadChildren: () => import('../pages/cadastro-faq/cadastro-faq.module').then( m => m.CadastroFaqPageModule)
   },
   {
+    path: 'cadastro-chave',
+    loadChildren: () => import('../pages/cadastro-chave/cadastro-chave.module').then( m => m.CadastroChavePageModule)
+  },
+  {
+    path: 'cadastro-software',
+    loadChildren: () => import('../pages/cadastro-software/cadastro-software.module').then( m => m.CadastroSoftwarePageModule)
+  },
+  {
+    path: 'cadastro-curso',
+    loadChildren: () => import('../pages/cadastro-curso/cadastro-curso.module').then( m => m.CadastroCursoPageModule)
+  },
+  {
+    path: 'cadastro-disciplina',
+    loadChildren: () => import('../pages/cadastro-disciplina/cadastro-disciplina.module').then( m => m.CadastroDisciplinaPageModule)
+  },
+  {
     path: 'cadastro-vistoria',
     loadChildren: () => import('../pages/cadastro-vistoria/cadastro-vistoria.module').then( m => m.CadastroVistoriaPageModule)
   },
