@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista-disciplina</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list *ngFor="let disciplina of disciplinas">
+    <ion-item>
+      <ion-label>
+        {{disciplina.nome}}
+      </ion-label>
+      <ion-label>
+        {{disciplina.periodo}}
+      </ion-label> 
+      <ion-label>
+        {{disciplina.diaSemana}}
+      </ion-label>
+      <ion-label>
+        <!-- {{disciplina.curso}} -->
+      </ion-label>  
+    </ion-item>
+  </ion-list>
+</ion-content>

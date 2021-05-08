@@ -118,7 +118,19 @@ const routes: Routes = [
   {
     path: 'lista-material',
     loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
+  },  {
+    path: 'lista-curso',
+    loadChildren: () => import('./lista-curso/lista-curso.module').then( m => m.ListaCursoPageModule)
+  },
+  {
+    path: 'lista-disciplina',
+    loadChildren: () => import('./lista-disciplina/lista-disciplina.module').then( m => m.ListaDisciplinaPageModule)
+  },
+  {
+    path: 'cadastro-disciplina',
+    loadChildren: () => import('./cadastro-disciplina/cadastro-disciplina.module').then( m => m.CadastroDisciplinaPageModule)
   }
+
 
 ];
 

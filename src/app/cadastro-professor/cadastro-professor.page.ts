@@ -25,7 +25,6 @@ export class CadastroProfessorPage {
       this.professorService.cadastrar(professor).subscribe(response=>{
         resolve(response)
       })
-      
     })
   }
 
