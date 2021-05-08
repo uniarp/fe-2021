@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Equipamento } from '../equipamento';
+import { Equipamento } from '../classes/equipamento';
 import { EquipamentoService } from '../services/equipamento.service';
 
 @Component({
@@ -9,7 +9,9 @@ import { EquipamentoService } from '../services/equipamento.service';
   styleUrls: ['./lista-de-equipamentos.page.scss'],
 })
 export class ListaDeEquipamentosPage  {
-equipamentos: any;
+  
+  equipamentos: any;
+  
   constructor(
     private routeService:Router,
     private equipamentoService:EquipamentoService
@@ -17,7 +19,7 @@ equipamentos: any;
 
   ionViewDidEnter() {
     this.equipamentos= [];
-    this.equipamentoService.listarEquipamento().subscribe(dados => {
+    this.equipamentoService.listar().subscribe(dados => {
       this.equipamentos= dados;
       console.log(this.equipamentos);
     });
@@ -27,13 +29,6 @@ equipamentos: any;
     this.routeService.navigateByUrl('/cadastro-equipamento')
   }
 
-  editar(equipamentos:Equipamento) {
-    this.equipamentoService.alterar()
-  }
-
-  excluir(equipamentos:Equipamento) {
-    this.equipamentoService.excluir()
-  }
 }
 
 
