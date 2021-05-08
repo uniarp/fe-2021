@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { VistoriaService } from '../services/vistoria.service';
+import { VistoriaService } from '../../services/vistoria.service';
 
 @Component({
   selector: 'app-lista-vistorias',

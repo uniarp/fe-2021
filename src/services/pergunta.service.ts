@@ -1,4 +1,4 @@
-import { Pergunta } from './../classes/pergunta';
+import { Pergunta } from '../app/classes/pergunta';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 

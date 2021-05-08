@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Localizacao } from '../classes/localizacao';
 import { Sala } from '../classes/sala';
-import { SalaService } from '../services/sala.service';
+import { SalaService } from '../../services/sala.service';
 
 
 @Component({

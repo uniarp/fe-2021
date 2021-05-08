@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Vistoria } from '../classes/vistoria';
-import { VistoriaService } from '../services/vistoria.service'
+import { VistoriaService } from '../../services/vistoria.service'
 
 @Component({
   selector: 'app-cadastro-vistoria',

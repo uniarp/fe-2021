@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EntregaChave } from '../classes/entrega-chave';
-import { ChaveService } from '../services/chave.service';
-import { EntregaChaveService } from '../services/entrega-chave.service';
-import { ProfessorService } from '../services/professor.service';
+import { ChaveService } from '../../services/chave.service';
+import { EntregaChaveService } from '../../services/entrega-chave.service';
+import { ProfessorService } from '../../services/professor.service';
 
 @Component({
   selector: 'app-cadastro-entrega-chave',

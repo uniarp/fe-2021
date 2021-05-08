@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pergunta } from '../classes/pergunta';
-import { PerguntaService } from '../services/pergunta.service';
+import { PerguntaService } from '../../services/pergunta.service';
 
 @Component({
   selector: 'app-lista-pergunta',

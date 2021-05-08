@@ -1,34 +1,33 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Equipamento } from '../classes/equipamento';
-
+import { HttpClient } from '@angular/common/http';
+import { Vistoria } from '../app/classes/vistoria';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EquipamentoService {
+export class VistoriaService {
 
-  url = 'https://apoio-uniarp.herokuapp.com/equipamentos/';
+  url = 'https://apoio-uniarp.herokuapp.com/vistorias/';
 
   constructor(public http : HttpClient) {}
 
   /* Em testes, sujeito a modificações
   */
-  cadastrar(equipamento : Equipamento) {
+  cadastrar(vistoria : Vistoria) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url + 'cadastrar', equipamento).subscribe(response => {
+      this.http.post(this.url + 'cadastrar', Vistoria).subscribe(response => {
         resolve(response);
       })
     });
   }
 
-  alterar(id : Number, equipamento : Equipamento) {
+  alterar(id : Number, vistoria : Vistoria) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url + id + '/alterar', equipamento);
+      this.http.post(this.url + id + '/alterar', vistoria);
     });
   }
 
-  listar() {
+  listar(){
     return this.http.get(this.url);
   }
 
@@ -37,6 +36,4 @@ export class EquipamentoService {
       this.http.get(this.url + id + '/excluir');
     });
   }
-
 }
-

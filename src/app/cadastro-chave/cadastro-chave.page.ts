@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Chave } from '../classes/chave';
-import { ChaveService } from '../services/chave.service';
-import { SalaService } from '../services/sala.service';
+import { ChaveService } from '../../services/chave.service';
+import { SalaService } from '../../services/sala.service';
 
 @Component({
   selector: 'app-cadastro-chave',

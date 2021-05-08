@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { TipoEquipamento } from '../classes/tipo-equipamento';
-import { TipoEquipamentoService } from '../services/tipo-equipamento.service';
+import { TipoEquipamentoService } from '../../services/tipo-equipamento.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({

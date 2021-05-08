@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MaterialService } from '../services/material.service';
+import { MaterialService } from '../../services/material.service';
 
 @Component({
   selector: 'app-lista-material',

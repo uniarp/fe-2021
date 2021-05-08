@@ -1,33 +1,33 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Vistoria } from '../classes/vistoria';
+import { Injectable } from '@angular/core';
+import { Chave } from '../app/classes/chave';
 
 @Injectable({
   providedIn: 'root'
 })
-export class VistoriaService {
+export class ChaveService {
 
-  url = 'https://apoio-uniarp.herokuapp.com/vistorias/';
+  url = 'https://apoio-uniarp.herokuapp.com/chaves/';
 
   constructor(public http : HttpClient) {}
 
   /* Em testes, sujeito a modificações
   */
-  cadastrar(vistoria : Vistoria) {
+  cadastrar(chave : Chave) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url + 'cadastrar', Vistoria).subscribe(response => {
+      this.http.post(this.url + 'cadastrar', chave).subscribe(response => {
         resolve(response);
       })
     });
   }
 
-  alterar(id : Number, vistoria : Vistoria) {
+  alterar(id : Number, chave : Chave) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url + id + '/alterar', vistoria);
+      this.http.post(this.url + id + '/alterar', chave);
     });
   }
 
-  listar(){
+  listar() {
     return this.http.get(this.url);
   }
 
@@ -36,4 +36,5 @@ export class VistoriaService {
       this.http.get(this.url + id + '/excluir');
     });
   }
+  
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Sala } from '../classes/sala';
+import { Sala } from '../app/classes/sala';
 import {HttpClient} from '@angular/common/http';
 
 

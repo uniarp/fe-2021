@@ -1,29 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Chave } from '../classes/chave';
+import { Equipamento } from '../app/classes/equipamento';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class ChaveService {
+export class EquipamentoService {
 
-  url = 'https://apoio-uniarp.herokuapp.com/chaves/';
+  url = 'https://apoio-uniarp.herokuapp.com/equipamentos/';
 
   constructor(public http : HttpClient) {}
 
   /* Em testes, sujeito a modificações
   */
-  cadastrar(chave : Chave) {
+  cadastrar(equipamento : Equipamento) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url + 'cadastrar', chave).subscribe(response => {
+      this.http.post(this.url + 'cadastrar', equipamento).subscribe(response => {
         resolve(response);
       })
     });
   }
 
-  alterar(id : Number, chave : Chave) {
+  alterar(id : Number, equipamento : Equipamento) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url + id + '/alterar', chave);
+      this.http.post(this.url + id + '/alterar', equipamento);
     });
   }
 
@@ -36,5 +37,6 @@ export class ChaveService {
       this.http.get(this.url + id + '/excluir');
     });
   }
-  
+
 }
+

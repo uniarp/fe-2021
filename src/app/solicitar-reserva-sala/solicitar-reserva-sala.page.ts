@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReservaSala } from '../classes/reserva-sala';
-import { ProfessorService } from '../services/professor.service';
-import { ReservaSalaService } from '../services/reserva-sala.service';
-import { SalaService } from '../services/sala.service';
+import { ProfessorService } from '../../services/professor.service';
+import { ReservaSalaService } from '../../services/reserva-sala.service';
+import { SalaService } from '../../services/sala.service';
 
 @Component({
   selector: 'app-solicitar-reserva-sala',

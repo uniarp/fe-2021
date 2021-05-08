@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ReservaSalaService } from '../services/reserva-sala.service';
+import { ReservaSalaService } from '../../services/reserva-sala.service';
 
 @Component({
   selector: 'app-lista-reservas-sala',

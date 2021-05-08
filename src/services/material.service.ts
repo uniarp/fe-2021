@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Material } from '../classes/material';
+import { Material } from '../app/classes/material';
 
 
 @Injectable({

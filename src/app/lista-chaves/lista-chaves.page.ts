@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ChaveService } from '../services/chave.service';
+import { ChaveService } from '../../services/chave.service';
 
 @Component({
   selector: 'app-lista-chaves',

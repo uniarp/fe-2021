@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ReservaEquipamentoService } from '../services/reserva-equipamento.service';
+import { ReservaEquipamentoService } from '../../services/reserva-equipamento.service';
 
 @Component({
   selector: 'app-lista-reserva-equipamentos',

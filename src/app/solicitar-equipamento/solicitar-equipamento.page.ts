@@ -1,9 +1,9 @@
 import { Component, OnInit, ResolvedReflectiveFactory } from '@angular/core';
 import { Router } from '@angular/router';
-import { ReservaEquipamentoService } from '../services/reserva-equipamento.service';
+import { ReservaEquipamentoService } from '../../services/reserva-equipamento.service';
 import { ReservaEquipamento } from '../classes/reserva-equipamento';
-import { EquipamentoService } from '../services/equipamento.service';
-import { ProfessorService } from '../services/professor.service';
+import { EquipamentoService } from '../../services/equipamento.service';
+import { ProfessorService } from '../../services/professor.service';
 
 @Component({
   selector: 'app-solicitar-equipamento',

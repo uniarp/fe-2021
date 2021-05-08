@@ -1,9 +1,9 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { Entrega } from '../classes/entrega';
-import { MaterialService } from '../services/material.service';
-import { EntregaService } from '../services/entrega.service';
-import { ProfessorService } from '../services/professor.service';
+import { MaterialService } from '../../services/material.service';
+import { EntregaService } from '../../services/entrega.service';
+import { ProfessorService } from '../../services/professor.service';
 
 @Component({
   selector: 'app-entregar-material',

@@ -1,7 +1,7 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 import { Professor } from '../classes/professor';
-import { ProfessorService } from '../services/professor.service';
+import { ProfessorService } from '../../services/professor.service';
 
 @Component({
   selector: 'app-cadastro-professor',
