@@ -6,12 +6,16 @@
 
 <ion-content>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
-    <ion-fab-button color="success" >
+    <ion-fab-button color="danger" >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-  </ion-fab>
+  </ion-fab> 
   <ion-list *ngFor = "let reservaSala of reservasSala">
-    <ion-item>
+    <ion-item-sliding>
+      <ion-item-options side = "start">        
+        <ion-item-option color="danger" (click)="alterar(reserva)">Alterar</ion-item-option>
+      </ion-item-options>
+      <ion-item>
       <ion-label>
         {{reservaSala.data}}
       </ion-label>
@@ -28,5 +32,9 @@
         Entregar chave
       </ion-button>
     </ion-item>
+    <ion-item-options side = "end">
+      <ion-item-option color="danger" (click)="presentAlertMultipleButtons(cancelar)">Cancelar</ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
   </ion-list>
 </ion-content>

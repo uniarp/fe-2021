@@ -6,24 +6,32 @@
 
 <ion-content>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
-    <ion-fab-button color="success" >
+    <ion-fab-button color="danger" >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
   <ion-list *ngFor = "let sala of salas">
-    <ion-item>
-      <ion-label>
-        {{sala.numero}}
-      </ion-label>
-      <ion-label>
-        {{sala.localizacao.bloco}}
-      </ion-label> 
-      <ion-label>
-        {{sala.localizacao.andar}}
-      </ion-label>
-      <ion-label>
-        {{sala.capacidade}}
-      </ion-label>
-    </ion-item>
+    <ion-item-sliding>
+      <ion-item-options side = "start">        
+        <ion-item-option color="danger" (click)="Alterar(sala)">Alterar</ion-item-option>
+      </ion-item-options>
+      <ion-item>
+        <ion-label>
+          Número: {{sala.numero}}
+        </ion-label>
+        <ion-label>
+          Bloco: {{sala.localizacao.bloco}}
+        </ion-label> 
+        <ion-label>
+          Andar: {{sala.localizacao.andar}}
+        </ion-label>
+        <ion-label>
+          Capacidade: {{sala.capacidade}}
+        </ion-label>
+      </ion-item>
+      <ion-item-options side = "end">
+        <ion-item-option color="danger" (click)="Excluir(sala)">Excluir</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>
