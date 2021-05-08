@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { Router } from '@angular/router';
-import { Entrega } from '../classes/entrega';
+import { Entrega } from '../../model/entrega';
 import { MaterialService } from '../../services/material.service';
 import { EntregaService } from '../../services/entrega.service';
 import { ProfessorService } from '../../services/professor.service';

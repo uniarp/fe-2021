@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Equipamento } from '../classes/equipamento';
 import { EquipamentoService } from '../../services/equipamento.service';
 
 @Component({

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Equipamento } from '../app/classes/equipamento';
+import { Equipamento } from '../model/equipamento';
 
 
 @Injectable({

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { EntregaChave } from '../app/classes/entrega-chave';
+import { EntregaChave } from '../model/entrega-chave';
 
 @Injectable({
   providedIn: 'root'

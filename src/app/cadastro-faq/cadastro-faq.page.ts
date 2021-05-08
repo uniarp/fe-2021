@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pergunta } from '../classes/pergunta';
+import { Pergunta } from '../../model/pergunta';
 import { PerguntaService } from '../../services/pergunta.service';
 
 @Component({

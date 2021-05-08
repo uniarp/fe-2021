@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Material } from '../classes/material';
+import { Material } from '../../model/material';
 import { MaterialService } from '../../services/material.service';
 import { Router } from '@angular/router';
 

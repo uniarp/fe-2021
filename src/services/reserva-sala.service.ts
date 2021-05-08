@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ReservaSala } from '../app/classes/reserva-sala';
+import { ReservaSala } from '../model/reserva-sala';
 
 @Injectable({
   providedIn: 'root'

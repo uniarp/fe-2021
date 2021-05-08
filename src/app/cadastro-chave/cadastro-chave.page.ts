@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Chave } from '../classes/chave';
+import { Chave } from '../../model/chave';
 import { ChaveService } from '../../services/chave.service';
 import { SalaService } from '../../services/sala.service';
 

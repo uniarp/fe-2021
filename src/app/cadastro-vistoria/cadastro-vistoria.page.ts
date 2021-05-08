@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Vistoria } from '../classes/vistoria';
+import { Vistoria } from '../../model/vistoria';
 import { VistoriaService } from '../../services/vistoria.service'
 
 @Component({

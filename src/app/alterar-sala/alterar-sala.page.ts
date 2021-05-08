@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Sala } from '../classes/sala';
+import { Sala } from '../../model/sala';
 import { SalaService } from '../../services/sala.service';
 
 @Component({

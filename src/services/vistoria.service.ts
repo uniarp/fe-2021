@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Vistoria } from '../app/classes/vistoria';
+import { Vistoria } from '../model/vistoria';
 
 @Injectable({
   providedIn: 'root'

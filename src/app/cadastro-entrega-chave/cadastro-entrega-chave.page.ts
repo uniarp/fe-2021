@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { EntregaChave } from '../classes/entrega-chave';
+import { EntregaChave } from '../../model/entrega-chave';
 import { ChaveService } from '../../services/chave.service';
 import { EntregaChaveService } from '../../services/entrega-chave.service';
 import { ProfessorService } from '../../services/professor.service';
