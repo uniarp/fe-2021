@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListaMaterialPageRoutingModule } from './lista-material-routing.module';
+import { ListaMateriaisPageRoutingModule } from './lista-materiais-routing.module';
 
-import { ListaMaterialPage } from './lista-material.page';
+import { ListaMateriaisPage } from './lista-materiais.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListaMaterialPageRoutingModule
+    ListaMateriaisPageRoutingModule
   ],
-  declarations: [ListaMaterialPage]
+  declarations: [ListaMateriaisPage]
 })
-export class ListaMaterialPageModule {}
+export class ListaMateriaisPageModule {}

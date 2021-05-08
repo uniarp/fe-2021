@@ -1,15 +1,34 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Equipamento } from '../classes/equipamento';
+import { EquipamentoService } from '../services/equipamento.service';
 
 @Component({
   selector: 'app-lista-de-equipamentos',
   templateUrl: './lista-de-equipamentos.page.html',
   styleUrls: ['./lista-de-equipamentos.page.scss'],
 })
-export class ListaDeEquipamentosPage implements OnInit {
+export class ListaDeEquipamentosPage  {
+  
+  equipamentos: any;
+  
+  constructor(
+    private routeService:Router,
+    private equipamentoService:EquipamentoService
+  ) { }
 
-  constructor() { }
-
-  ngOnInit() {
+  ionViewDidEnter() {
+    this.equipamentos= [];
+    this.equipamentoService.listar().subscribe(dados => {
+      this.equipamentos= dados;
+      console.log(this.equipamentos);
+    });
+  }
+  
+  novo() {
+    this.routeService.navigateByUrl('/cadastro-equipamento')
   }
 
 }
+
+
