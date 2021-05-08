@@ -1,33 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Sala } from '../classes/sala';
-import { SalaService } from '../services/sala.service';
+import { SalaService } from '../../services/sala.service';
 
 @Component({
   selector: 'app-alterar-sala',
   templateUrl: './alterar-sala.page.html',
   styleUrls: ['./alterar-sala.page.scss'],
 })
+
+//REVISAR, não era para ter sido feito para alteração
 export class AlterarSalaPage {
  //localizacao: Localizacao=[{'bloco':"Bloco A",'andar':2}]
- sala: Sala;
+  
+  sala: Sala;
  
- constructor(
-   public salaService:SalaService,
-   public routerService:Router
- ) { }
+  constructor(public salaService:SalaService, public routerService:Router) {
+  }
 
  ionViewWillEnter(){
-   console.log('Cadastro de Salas - iondidviewENTER');
+  
+  console.log('Cadastro de Salas - iondidviewENTER');
    //instanciando  objeto da classe que vou cadastrar
-   this.sala=this.salaService.getSala()
-   
+   this.sala=new Sala();
  }
 
  cadastrar(){
    console.log('AlterarSala - cadastrar ');
    //passar a equipamento que esta sendo cadastrada
-   this.salaService.alterar(this.sala);
+   this.salaService.cadastrar(this.sala);
    
  }
 
