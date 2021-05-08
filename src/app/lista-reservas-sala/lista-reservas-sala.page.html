@@ -27,7 +27,10 @@
       </ion-label> 
       <ion-label>
         {{reservaSala.periodo}}
-      </ion-label> 
+      </ion-label>
+      <ion-button (click)="cadastrarEntregaChave()" fill="solid" expand="block" color="success">
+        Entregar chave
+      </ion-button>
     </ion-item>
     <ion-item-options side = "end">
       <ion-item-option color="danger" (click)="presentAlertMultipleButtons(cancelar)">Cancelar</ion-item-option>

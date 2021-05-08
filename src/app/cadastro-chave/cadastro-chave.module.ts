@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListaMaterialPageRoutingModule } from './lista-material-routing.module';
+import { CadastroChavePageRoutingModule } from './cadastro-chave-routing.module';
 
-import { ListaMaterialPage } from './lista-material.page';
+import { CadastroChavePage } from './cadastro-chave.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListaMaterialPageRoutingModule
+    CadastroChavePageRoutingModule
   ],
-  declarations: [ListaMaterialPage]
+  declarations: [CadastroChavePage]
 })
-export class ListaMaterialPageModule {}
+export class CadastroChavePageModule {}

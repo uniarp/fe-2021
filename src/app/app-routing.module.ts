@@ -20,6 +20,14 @@ const routes: Routes = [
     loadChildren: () => import('./solicitar-material/solicitar-material.module').then( m => m.SolicitarMaterialPageModule)
   },
   {
+    path: 'entregar-material',
+    loadChildren : () => import('./entregar-material/entregar-material.module').then( m => m.EntregarMaterialPageModule)
+  },
+  {
+    path : 'lista-entrega-material',
+    loadChildren : () => import('./lista-entrega-material/lista-entrega-material.module').then( m => m.ListaEntregaMaterialPageModule)
+  },
+  {
     path: 'cadastro-material',
     loadChildren: () => import('./cadastro-material/cadastro-material.module').then( m => m.CadastroMaterialPageModule)
   },
@@ -116,10 +124,9 @@ const routes: Routes = [
     loadChildren: () => import('./cadastro-vistoria/cadastro-vistoria.module').then( m => m.CadastroVistoriaPageModule)
   },
   {
-    path: 'lista-material',
-    loadChildren: () => import('./lista-material/lista-material.module').then( m => m.ListaMaterialPageModule)
+    path: 'lista-materiais',
+    loadChildren: () => import('./lista-materiais/lista-materiais.module').then( m => m.ListaMateriaisPageModule)
   }
-
 ];
 
 @NgModule({

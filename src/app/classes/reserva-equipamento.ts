@@ -1,4 +1,4 @@
-import { Equipamento } from "../equipamento";
+import { Equipamento } from "./equipamento";
 import { Professor} from "./professor";
 
 export class ReservaEquipamento {

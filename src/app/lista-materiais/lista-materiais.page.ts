@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MaterialService } from '../material.service';
-import { Material } from '../material/material';
+import { MaterialService } from '../services/material.service';
 
 @Component({
   selector: 'app-lista-material',
-  templateUrl: './lista-material.page.html',
-  styleUrls: ['./lista-material.page.scss'],
+  templateUrl: './lista-materiais.page.html',
+  styleUrls: ['./lista-materiais.page.scss'],
 })
-export class ListaMaterialPage{
+export class ListaMateriaisPage{
 
   materiais : any;
 
