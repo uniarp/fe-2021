@@ -42,7 +42,7 @@ export class CadastroEquipamentoPage  {
 
   listar(){
     console.log('Equipamento - listar');
-    this.routerService.navigate(['lista-de-equipamento']);
+    this.routerService.navigate(['lista-de-equipamentos']);
   }
 
   novo() {
