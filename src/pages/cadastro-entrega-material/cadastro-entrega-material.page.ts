@@ -37,7 +37,7 @@ export class CadastroEntregaMaterialPage {
       id : 1
     }
     this.entregaService.cadastrar(this.entrega);
-    this.routerService.navigate(['lista-entrega-material']);
+    this.routerService.navigate(['lista-entregas-material']);
   }
 
   cancelar() {
@@ -45,7 +45,7 @@ export class CadastroEntregaMaterialPage {
   }
 
   listar() {
-    this.routerService.navigate(['lista-entrega-material']);
+    this.routerService.navigate(['lista-entregas-material']);
   }
 
   novo() {
