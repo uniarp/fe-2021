@@ -32,7 +32,7 @@ export class AppComponent {
   cadastros =[
     {
       'nome':'Cadastro de Equipamento',
-      'link':'lista-equipamento',
+      'link':'cadastro-equipamento',
       'icon':'reader-outline',
     },
     {
