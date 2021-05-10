@@ -1,19 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Lista Materiais Entregues</ion-title>
+    <ion-title>Lista de entregas de Materiais</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
-
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
     <ion-fab-button color="success" >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-list *ngFor = "let material of tipoMaterial">
-    <ion-fab vertical="end" horizontal="end" >
+  <ion-list *ngFor = "let entregaMaterial of entregasMaterial">
+    <!-- <ion-fab vertical="end" horizontal="end" >
       <ion-fab-button >
         <ion-icon name="ellipsis-vertical-outline"></ion-icon>
       </ion-fab-button>
@@ -21,25 +19,20 @@
         <ion-fab-button (click)="alterar()"><ion-icon name="pencil-outline"></ion-icon></ion-fab-button>
         <ion-fab-button (click)="excluir()"><ion-icon name="trash-outline"></ion-icon></ion-fab-button>
       </ion-fab-list>
-    </ion-fab>
+    </ion-fab> !-->
     <ion-item>
       <ion-label>
-        {{material.nome}}
+        {{ entregaMaterial.qtd }}
       </ion-label>
       <ion-label>
-      {{material.quantidade}}
+        {{ entregaMaterial.nome_material }}
       </ion-label>
       <ion-label>
-        {{material.marca}}
-        </ion-label>
-        <ion-label>
-          {{material.descricao}}
-          </ion-label>
-          <ion-label>
-            {{material.data}}
-            </ion-label>
-
+        {{ entregaMaterial.data }}
+      </ion-label>
+      <ion-label>
+        {{entregaMaterial.nome_professor}}
+      </ion-label>
     </ion-item>
   </ion-list>
 </ion-content>
-

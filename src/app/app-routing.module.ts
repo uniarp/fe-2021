@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path : 'lista-entregas-material',
-    loadChildren : () => import('../pages/lista-entregas-material/lista-entregas-material.module').then( m => m.ListaEntregaMaterialPageModule)
+    loadChildren : () => import('../pages/lista-entregas-material/lista-entregas-material.module').then( m => m.ListaEntregasMaterialPageModule)
   },
   {
     path: 'cadastro-material',
