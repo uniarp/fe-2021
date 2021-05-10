@@ -92,7 +92,7 @@ export class AppComponent {
     },
     {
       'nome':'Lista de materiais',
-      'link':'lista-material',
+      'link':'lista-materiais',
       'icon':'layers-outline',
     },
     {
