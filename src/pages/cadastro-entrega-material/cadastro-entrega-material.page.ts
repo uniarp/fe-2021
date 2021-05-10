@@ -6,11 +6,11 @@ import { EntregaService } from '../../services/entrega.service';
 import { ProfessorService } from '../../services/professor.service';
 
 @Component({
-  selector: 'app-entregar-material',
-  templateUrl: './entregar-material.page.html',
-  styleUrls: ['./entregar-material.page.scss'],
+  selector: 'app-cadastro-entrega-material',
+  templateUrl: './cadastro-entrega-material.page.html',
+  styleUrls: ['./cadastro-entrega-material.page.scss'],
 })
-export class EntregarMaterialPage {
+export class CadastroEntregaMaterialPage {
 
   entrega : Entrega;
   materiais : any;
@@ -49,6 +49,6 @@ export class EntregarMaterialPage {
   }
 
   novo() {
-    this.routerService.navigateByUrl('/entregar-material');
+    this.routerService.navigateByUrl('/cadastro-entrega-material');
   }
 }
