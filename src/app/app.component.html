@@ -7,10 +7,21 @@
      </ion-header>
      <ion-content>
        <ion-list>
-         <ion-item detail="true">
-           <ion-icon name="add-circle"> </ion-icon>
+         <ion-item no-lines (click)="isRegister()" detail="true">
+           <ion-icon name="add-circle" slot="start"> </ion-icon>
            <ion-label><dd>Cadastrar</dd> </ion-label>
          </ion-item>
+         
+         <div *ngIf="toRegister==true" class="ion-padding">
+          <ion-menu-toggle  *ngFor="let cadastro of cadastros; let e = index">
+            <ion-item position="floating" (click)="activeIndex = e" routerDirection="root" [routerLink]="[cadastro.link]" lines="none"
+              detail="true" [class.selected]="activeIndex == e">
+              <ion-icon slot="start" [name]="cadastro.icon"></ion-icon>
+              <ion-label>{{ cadastro.nome }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </div>
+         
          <ion-item detail="true">
           <ion-icon name="calendar"> </ion-icon>
           <ion-label><dd>Reservas</dd></ion-label>

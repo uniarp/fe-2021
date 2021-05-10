@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   toListed:boolean=false
+  toRegister:boolean=false
+  
   constructor() {}
   
   //Abrir ou fechar o submenu listar
@@ -17,6 +19,59 @@ export class AppComponent {
       this.toListed=false
     }
   }
+
+  isRegister(){
+    if(this.toRegister==false){
+      this.toRegister=true
+    }else{
+      this.toRegister=false
+    }
+  }
+  //conteudo sub-menu cadastro
+
+  cadastros =[
+    {
+      'nome':'Cadastro de Equipamento',
+      'link':'lista-equipamento',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Cadastro de Material',
+      'link':'cadastro-material',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Cadastro de Sala',
+      'link':'cadastro-sala',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Cadastro de Curso',
+      'link':'cadastro-curso',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Cadastro de Professor',
+      'link':'cadastro-professor',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Cadastro Tipo Equipamento',
+      'link':'cadastro-tipo-equipamento',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Cadastro Faq',
+      'link':'cadastro-faq',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Cadastro de Vistoria',
+      'link':'cadastro-vistoria',
+      'icon':'reader-outline',
+    },
+
+  ];
 
   //conteudo sub-menu listar
   listas = [
