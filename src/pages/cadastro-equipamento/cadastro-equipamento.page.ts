@@ -30,14 +30,8 @@ export class CadastroEquipamentoPage  {
     this.routerService.navigate(['lista-de-equipamentos']);
   }
 
-  cancelar(){
-    console.log('Equipamento - cancelar');
-    this.equipamento.tipoEquipamento = null;
-    this.equipamento.dataAquisicao = null;
-    this.equipamento.localizacao = null;
-    this.equipamento.marca = null;
-    this.equipamento.status = null;
-    this.equipamento.modelo = null;
+  cancelar() {
+    this.equipamento = null;
   }
 
   listar(){

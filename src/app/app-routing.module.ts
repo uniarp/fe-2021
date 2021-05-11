@@ -20,12 +20,12 @@ const routes: Routes = [
     loadChildren: () => import('../pages/solicitar-material/solicitar-material.module').then( m => m.SolicitarMaterialPageModule)
   },
   {
-    path: 'entregar-material',
-    loadChildren : () => import('../pages/entregar-material/entregar-material.module').then( m => m.EntregarMaterialPageModule)
+    path: 'cadastro-entrega-material',
+    loadChildren : () => import('../pages/cadastro-entrega-material/cadastro-entrega-material.module').then( m => m.CadastroEntregaMaterialPageModule)
   },
   {
-    path : 'lista-entrega-material',
-    loadChildren : () => import('../pages/lista-entrega-material/lista-entrega-material.module').then( m => m.ListaEntregaMaterialPageModule)
+    path : 'lista-entregas-material',
+    loadChildren : () => import('../pages/lista-entregas-material/lista-entregas-material.module').then( m => m.ListaEntregasMaterialPageModule)
   },
   {
     path: 'cadastro-material',

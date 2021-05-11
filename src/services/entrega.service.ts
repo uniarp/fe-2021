@@ -12,7 +12,9 @@ export class EntregaService {
 
   cadastrar(entrega : Entrega) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url+'cadastrar', entrega);
+      this.http.post(this.url + 'cadastrar', entrega).subscribe(response => {
+        resolve(response);
+      })
     });
   }
 
