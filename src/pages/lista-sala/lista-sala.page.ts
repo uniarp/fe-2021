@@ -22,6 +22,7 @@ export class ListaSalaPage  {
     this.salas = [];
       this.salaService.listar().subscribe(dados => {
         this.salas = dados;
+        console.log(this.salas);
       });
   }
 
