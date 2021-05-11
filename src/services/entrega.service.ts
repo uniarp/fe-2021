@@ -10,9 +10,11 @@ export class EntregaService {
 
   constructor(private http : HttpClient) { }
 
-  cadastrar(entrega : Entrega) {
+  cadastrar(entrega : Entrega) {a
     return new Promise((resolve, reject) => {
-      this.http.post(this.url+'cadastrar', entrega);
+      this.http.post(this.url + 'cadastrar', entrega).subscribe(response => {
+        resolve(response);
+      })
     });
   }
 
