@@ -30,7 +30,7 @@ export class CadastroTipoEquipamentoPage {
   }
 
   cancelar() {
-    this.tipoEquipamento = null;
+    this.tipoEquipamento.nome = null;
   }
 
   listar() {
