@@ -56,6 +56,16 @@ export class AppComponent {
       'link':'faq',
       'icon':'reader-outline',
     },
+    {
+      'nome':'Lista de perguntas',
+      'link':'/lista-pergunta',
+      'icon':'information-circle-outline',
+    },
+    {
+      'nome':'Lista de Incidentes Resolvidos',
+      'link':'lista-incidentes-resolvidos',
+      'icon':'reader-outline',
+    },
 
   ]
    //onteudo sub-menu reservas
@@ -81,6 +91,7 @@ export class AppComponent {
       'link':'solicitar-reserva-sala',
       'icon':'reader-outline',
     },
+    
   ]
 
 
@@ -150,11 +161,6 @@ export class AppComponent {
       'icon':'layers-outline',
     },
     {
-      'nome':'Lista de perguntas',
-      'link':'/lista-pergunta',
-      'icon':'information-circle-outline',
-    },
-    {
       'nome':'Lista de professores',
       'link':'',
       'icon':'person-outline',
@@ -177,6 +183,11 @@ export class AppComponent {
     {
       'nome':'Lista de vistorias',
       'link':'lista-vistoria',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Adicionar Todas as Paginas a Lista',
+      'link':'adicionar-todas-paginas-lista',
       'icon':'reader-outline',
     },
   ];
