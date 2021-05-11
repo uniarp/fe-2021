@@ -33,7 +33,6 @@ export class CadastroSalaPage {
     this.sala.localizacao.bloco= null;
     this.sala.localizacao.andar= null;
     this.sala.capacidade= null;
-
   }
 
   listar() {

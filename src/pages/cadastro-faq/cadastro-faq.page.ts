@@ -24,6 +24,7 @@ export class CadastroFaqPage {
   }
 
   cancelar(){
-    this.routeService.navigateByUrl('/lista-pergunta')
+    this.pergunta.pergunta= null;
+    this.pergunta.resposta= null;
   }
 }
