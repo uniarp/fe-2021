@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   toListed:boolean=false
   toRegister:boolean=false
+  toReservation:boolean=false
+  toReport:boolean=false
   
   constructor() {}
   
@@ -27,6 +29,63 @@ export class AppComponent {
       this.toRegister=false
     }
   }
+
+  isReservation(){
+    if(this.toReservation==false){
+      this.toReservation=true
+    }else{
+      this.toReservation=false
+    }
+  }
+
+  isReport(){
+    if(this.toReport==false){
+      this.toReport=true
+    }else{
+      this.toReport=false
+    }
+  }
+  reportares =[
+    {
+      'nome':'Cadastro Faq',
+      'link':'cadastro-faq',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Faq',
+      'link':'faq',
+      'icon':'reader-outline',
+    },
+
+  ]
+   //onteudo sub-menu reservas
+     
+  reservas =[
+    {
+      'nome':'Solicitar Material',
+      'link':'solicitar-material',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Entregar Material',
+      'link':'entregar-material',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Solicitar Equipamento',
+      'link':'solicitar-equipamento',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Solicitar Reserva de Sala',
+      'link':'solicitar-reserva-sala',
+      'icon':'reader-outline',
+    },
+  ]
+
+
+
+
   //conteudo sub-menu cadastro
 
   cadastros =[
@@ -58,11 +117,6 @@ export class AppComponent {
     {
       'nome':'Cadastro Tipo Equipamento',
       'link':'cadastro-tipo-equipamento',
-      'icon':'reader-outline',
-    },
-    {
-      'nome':'Cadastro Faq',
-      'link':'cadastro-faq',
       'icon':'reader-outline',
     },
     {
