@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   toListed:boolean=false
   toRegister:boolean=false
+  toReservation:boolean=false
+  toReport:boolean=false
   
   constructor() {}
   
@@ -27,6 +29,74 @@ export class AppComponent {
       this.toRegister=false
     }
   }
+
+  isReservation(){
+    if(this.toReservation==false){
+      this.toReservation=true
+    }else{
+      this.toReservation=false
+    }
+  }
+
+  isReport(){
+    if(this.toReport==false){
+      this.toReport=true
+    }else{
+      this.toReport=false
+    }
+  }
+  reportares =[
+    {
+      'nome':'Cadastro Faq',
+      'link':'cadastro-faq',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Faq',
+      'link':'faq',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Lista de perguntas',
+      'link':'/lista-pergunta',
+      'icon':'information-circle-outline',
+    },
+    {
+      'nome':'Lista de Incidentes Resolvidos',
+      'link':'lista-incidentes-resolvidos',
+      'icon':'reader-outline',
+    },
+
+  ]
+   //onteudo sub-menu reservas
+     
+  reservas =[
+    {
+      'nome':'Solicitar Material',
+      'link':'solicitar-material',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Entregar Material',
+      'link':'entregar-material',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Solicitar Equipamento',
+      'link':'solicitar-equipamento',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Solicitar Reserva de Sala',
+      'link':'solicitar-reserva-sala',
+      'icon':'reader-outline',
+    },
+    
+  ]
+
+
+
+
   //conteudo sub-menu cadastro
 
   cadastros =[
@@ -61,11 +131,6 @@ export class AppComponent {
       'icon':'reader-outline',
     },
     {
-      'nome':'Cadastro Faq',
-      'link':'cadastro-faq',
-      'icon':'reader-outline',
-    },
-    {
       'nome':'Cadastro de Vistoria',
       'link':'cadastro-vistoria',
       'icon':'reader-outline',
@@ -96,11 +161,6 @@ export class AppComponent {
       'icon':'layers-outline',
     },
     {
-      'nome':'Lista de perguntas',
-      'link':'/lista-pergunta',
-      'icon':'information-circle-outline',
-    },
-    {
       'nome':'Lista de professores',
       'link':'',
       'icon':'person-outline',
@@ -123,6 +183,11 @@ export class AppComponent {
     {
       'nome':'Lista de vistorias',
       'link':'lista-vistoria',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Adicionar Todas as Paginas a Lista',
+      'link':'adicionar-todas-paginas-lista',
       'icon':'reader-outline',
     },
   ];
