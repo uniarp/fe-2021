@@ -142,7 +142,7 @@ export class AppComponent {
   listas = [
     {
       'nome':'Lista de cursos',
-      'link':'lista-curso',
+      'link':'lista-de-cursos',
       'icon':'school',
     },
     {
