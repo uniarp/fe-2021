@@ -150,6 +150,14 @@ const routes: Routes = [
   {
     path: 'lista-de-cursos',
     loadChildren: () => import('../pages/lista-de-cursos/lista-de-cursos.module').then( m => m.ListaDeCursosPageModule)
+  },
+  {
+    path:'lista-equipamentos-solicitados',
+    loadChildren:()=>import('../pages/lista-equipamentos-solicitados/lista-equipamentos-solicitados.module').then(m=>m.ListaEquipamentosSolicitadosPageModule)
+  },
+  {
+    path:'lista-chaves',
+    loadChildren:()=>import('../pages/lista-chaves/lista-chaves.module').then(m=>m.ListaChavesPageModule)
   }
 
 ];
