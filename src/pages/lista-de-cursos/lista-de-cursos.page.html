@@ -13,9 +13,11 @@
     </ion-fab-button>
   </ion-fab>
   <ion-list *ngFor="let curso of curso">
-
+      <ion-item>
           <ion-label>
-            <h3>Nome do Curso: {{curso.nome}}</h3>
-          </ion-label>
+            <h3>Curso de:</h3>
+            <h2>{{curso.nome}}</h2>
+          </ion-label>   
+      </ion-item>
   </ion-list>
   </ion-content>
