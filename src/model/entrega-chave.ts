@@ -4,14 +4,15 @@ import { Professor } from "./professor";
 export class EntregaChave {
 
     id? : Number;
-    chave? : Chave;
-    professor? : Professor;
+    id_chave? : Number;
+    id_professor? : Number;
     dataHoraEntrega? : String;
-    dataHoraDevolucao : String;
 
-    constructor() {
+   /* constructor() {
+        
         this.chave = new Chave();
         this.professor = new Professor();
-    }
+        
+    }*/
 
 }
