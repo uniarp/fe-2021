@@ -54,4 +54,8 @@ export class ReservaSalaService {
       this.http.get(this.url + id + '/excluir');
     });
   }
+  
+  listaSolicitada(){
+    return this.http.get(this.url+'solicitada')
+  }
 }

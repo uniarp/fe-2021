@@ -158,6 +158,12 @@ const routes: Routes = [
   {
     path:'lista-chaves',
     loadChildren:()=>import('../pages/lista-chaves/lista-chaves.module').then(m=>m.ListaChavesPageModule)
+  },
+  {
+    path:'lista-espera-sala',
+    loadChildren:()=>import('../pages/lista-espera-sala/lista-espera-sala.module').then(
+      m=>m.ListaEsperaSalaPageModule
+    )
   }
 
 ];

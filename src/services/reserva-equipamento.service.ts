@@ -36,4 +36,8 @@ export class ReservaEquipamentoService {
       this.http.get(this.url + id + 'excluir');
     });
   }
+
+  listaSolicitada(){
+    return this.http.get(this.url+'solicitada')
+  }
 }

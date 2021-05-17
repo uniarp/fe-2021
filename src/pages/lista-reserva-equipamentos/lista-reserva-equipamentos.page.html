@@ -12,34 +12,28 @@
   </ion-fab>
   
   <ion-list inset *ngFor = "let lista of reservaEquipamento">
-      <ion-item><h2>Equipamento: </h2>
-        <h3> {{lista.tipo_equipamento}} - {{lista.marca_equipamento}}/{{lista.modelo_equipamento}}</h3>
-      </ion-item>
-      <ion-item>
-        <h2>Nome do professor:</h2>
-        <h3>{{lista.nome_professor}}</h3>
-      </ion-item>
-      <ion-item> 
-        <h2>Status:</h2>
-        <h3>{{lista.status}}</h3>
-      </ion-item>
-      <ion-item>
-        <h2>Data de entrega:</h2>
-        <h3>{{lista.dataentrega}}</h3>
-      </ion-item>
-      <ion-item>
-        <h2>Data de devolução:</h2>
-        <h3>{{lista.datadevolucao}}</h3>      
-      </ion-item>
-      <ion-item>
-        <h2>Observação:</h2>
-        <h3>{{lista.observacao}}</h3>
-      </ion-item>
+    <ion-item>
+      <ion-label>
+        Equipamento:{{lista.tipo_equipamento}}
+      </ion-label>
+      <ion-label>
+      Nome do professor: {{lista.nome_professor}}
+      </ion-label>
+      <ion-label> 
+      Status: {{lista.status}}
+      </ion-label>
+      <ion-label>
+      Data de entrega:{{lista.dataentrega}}
+      </ion-label>
+      <ion-label>
+      Data de devolução:{{lista.datadevolucao}} 
+      </ion-label>
+      <ion-label>
+      Observação:{{lista.observacao}}
+      </ion-label>
       <div *ngIf='lista.id_usuario!=null'>
-        <ion-item>
-          <h2>Nome do usuário:</h2>
-          <h3>{{lista.nome_usuario}}</h3>
-        </ion-item>
+        <ion-label>Nome do usuário:{{lista.nome_usuario}}</ion-label>
       </div>
+    </ion-item>
     </ion-list>
 </ion-content>
