@@ -28,6 +28,7 @@ export class CadastroDisciplinaPage {
   }
 
   cadastrar(disciplina:Disciplina){
+    console.log(this.disciplina); 
     return new Promise((resolve,reject)=>{
       this.disciplinaService.cadastrar(disciplina).subscribe(response=>{
         resolve(response)

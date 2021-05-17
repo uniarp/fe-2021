@@ -6,12 +6,12 @@ import { Disciplina } from '../classes/disciplina';
   providedIn: 'root'
 })
 export class DisciplinaService {
-  
+
   backEnd:string='https://apoio-uniarp.herokuapp.com/disciplinas'
   constructor( 
     private http:HttpClient,
   ) { }
-  
+
   cadastrar(disciplina: Disciplina){
     console.log(disciplina)
    return this.http.post(this.backEnd+'/cadastrar', disciplina)

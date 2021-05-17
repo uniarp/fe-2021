@@ -8,8 +8,8 @@ import { DisciplinaService } from '../services/disciplina.service';
   styleUrls: ['./lista-disciplina.page.scss'],
 })
 export class ListaDisciplinaPage {
+  diasDaSemana={1:"Domingo",2:"Segunda-Feira",3:"Terça-Feira",4:"Quarta-Feira",5:"Quinta-Feira",6:"Sexta-Feira",7:"Sábado"}
   disciplinas : any;
-
   constructor(
     public disciplinaService:DisciplinaService,
     public routerService:Router
@@ -25,9 +25,15 @@ export class ListaDisciplinaPage {
 
   ionViewWillEnter() {
     this.disciplinas = [];
-     this.disciplinaService.listar().subscribe(dados => {
-       this.disciplinas = dados;
-       console.log(this.disciplinas);
-     });
+    this.disciplinaService.listar().subscribe(dados => {
+      this.disciplinas = dados;
+      
+      console.log(this.disciplinas);
+    });
+   }
+
+   verDiasSemana(dias){
+    //  console.log(dias);
+     return dias.map(dia=>this.diasDaSemana[dia]);
    }
 }
