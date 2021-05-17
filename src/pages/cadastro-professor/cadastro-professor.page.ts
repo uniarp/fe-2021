@@ -9,23 +9,31 @@ import { ProfessorService } from '../../services/professor.service';
   styleUrls: ['./cadastro-professor.page.scss'],
 })
 export class CadastroProfessorPage {
-  
+
   professor:Professor;
-  
+
   constructor(
     private professorService:ProfessorService,
-    private routeService:Router
+    private routerService:Router
   ) { }
- 
+
 
   ionViewWillEnter(){
     this.professor = new Professor()
   }
   cadastrar() {
     this.professorService.cadastrar(this.professor);
-  } 
+  }
 
   cancelar(){
-    this.routeService.navigateByUrl('/lista-professor')
+    this.professor.login = null;
+    this.professor.senha = null;
+    this.professor.nomeCompleto = null;
+    this.professor.nivel = null;
+    this.professor.email = null;
+  }
+
+  listar(){
+    this.routerService.navigate(['lista-professores']);
   }
 }

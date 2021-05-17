@@ -3,6 +3,6 @@ export class Professor {
     login?:string;
     senha?:string;
     nivel?:number;
-    nomecompleto?: string;
+    nomeCompleto?: string;
     email?:string;
 }

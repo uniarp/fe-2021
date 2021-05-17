@@ -158,7 +158,12 @@ const routes: Routes = [
   {
     path:'lista-chaves',
     loadChildren:()=>import('../pages/lista-chaves/lista-chaves.module').then(m=>m.ListaChavesPageModule)
+  },
+  {
+    path: 'lista-professores',
+    loadChildren: () => import('../pages/lista-professores/lista-professores.module').then( m => m.ListaProfessoresPageModule)
   }
+
 
 ];
 

@@ -26,7 +26,7 @@ export class CadastroMaterialPage {
     console.log('Cadastro Material - cadastrar ');
     //passar a equipamento que esta sendo cadastrada
     this.materialService.cadastrar(this.material);
-    this.routerService.navigate(['lista-material']);
+    this.routerService.navigate(['lista-materiais']);
   }
 
   cancelar(){
