@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>lista-equipamentos-solicitados</ion-title>
+    <ion-title>Lista de equipamentos solicitados</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,20 +10,21 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-list *ngFor = "let lista of solicitacao">
+  <ion-list *ngFor = "let lista of reservaSolicitadas">
     <ion-item>
       <ion-label>
-        {{lista.nome}}
+       Professor: {{lista.nome_professor}}
       </ion-label>
       <ion-label>
-        {{lista.quantidade}}
+        Tipo de equipamento: {{lista.tipo_equipamento}}
       </ion-label> 
       <ion-label>
-        {{lista.marca}}
+        Período: {{lista.periodo}}
       </ion-label>
       <ion-label>
-        {{lista.descricao}}
+        Observacao: {{lista.observacao}}
       </ion-label>  
+      <ion-label>Status: {{lista.status}}</ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

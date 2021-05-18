@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>lista-espera-sala</ion-title>
+    <ion-title>Lista de espera-sala</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list inset *ngFor = "let lista of reservas">
+    <ion-item>
+      <ion-label>
+       Professor: {{lista.nome_professor}}
+      </ion-label>
+      <ion-label>
+        Sala: {{lista.numerosala}}
+      </ion-label> 
+      <ion-label>
+        Período: {{lista.periodo}}
+      </ion-label>
+      <ion-label>
+        Quantidade de alunos: {{lista.observacao}}
+      </ion-label>  
+      <ion-label>Status: {{lista.status}}</ion-label>
+      <div *ngIf='lista.id_usuario!=null'>
+        <ion-label>Usuário: {{lista.nome_usuario}}</ion-label>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>

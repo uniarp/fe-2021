@@ -161,10 +161,12 @@ const routes: Routes = [
   },
   {
     path: 'lista-entregas-chave',
-    loadChildren: () => import('../pages/lista-entregas-chave/lista-entregas-chave.module').then( m => m.ListaEntregasChavePageModule)
+    loadChildren: () => import('../pages/lista-entregas-chave/lista-entregas-chave.module').then( m => m.ListaEntregasChavePageModule),
+  },
+  {
+    path:'lista-espera-sala',
+    loadChildren:()=>import('../pages/lista-espera-sala/lista-espera-sala.module').then(m=>m.ListaEsperaSalaPageModule)
   }
-
-
 ];
 
 @NgModule({
