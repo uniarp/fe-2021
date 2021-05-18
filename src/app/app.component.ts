@@ -121,6 +121,11 @@ export class AppComponent {
       'icon':'reader-outline',
     },
     {
+      'nome':'Cadastro de Disciplina',
+      'link':'cadastro-disciplina',
+      'icon':'reader-outline',
+    },
+    {
       'nome':'Cadastro de Professor',
       'link':'cadastro-professor',
       'icon':'reader-outline',
@@ -147,7 +152,7 @@ export class AppComponent {
     },
     {
       'nome':'Lista de disciplinas',
-      'link':'',
+      'link':'lista-disciplinas',
       'icon':'documents-outline',
     },
     {
