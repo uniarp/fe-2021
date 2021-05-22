@@ -61,14 +61,9 @@ export class AppComponent {
       'link':'/lista-pergunta',
       'icon':'information-circle-outline',
     },
-    {
-      'nome':'Lista de Incidentes Resolvidos',
-      'link':'lista-incidentes-resolvidos',
-      'icon':'reader-outline',
-    },
 
   ]
-   //onteudo sub-menu reservas
+   //conteudo sub-menu reservas
      
   reservas =[
     {
@@ -78,7 +73,7 @@ export class AppComponent {
     },
     {
       'nome':'Entregar Material',
-      'link':'entregar-material',
+      'link':'cadastro-entrega-material',
       'icon':'reader-outline',
     },
     {
@@ -147,7 +142,7 @@ export class AppComponent {
     },
     {
       'nome':'Lista de disciplinas',
-      'link':'',
+      'link':'lista-disciplinas',
       'icon':'documents-outline',
     },
     {
@@ -156,13 +151,18 @@ export class AppComponent {
       'icon':'file-tray-stacked-outline',
     },
     {
+      'nome':'Lista de equipamentos Solicitados',
+      'link':'lista-equipamentos-solicitados',
+      'icon':'layers-outline',
+    },
+    {
       'nome':'Lista de materiais',
       'link':'lista-materiais',
       'icon':'layers-outline',
     },
     {
       'nome':'Lista de professores',
-      'link':'',
+      'link':'lista-professor',
       'icon':'person-outline',
     },
     {
@@ -171,8 +171,18 @@ export class AppComponent {
       'icon':'reader-outline',
     },
     {
+      'nome':'Lista de Esperas Salas',
+      'link':'lista-espera-sala',
+      'icon':'reader-outline',
+    },
+    {
       'nome':'Lista de softwares',
       'link':'lista-software',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Lista de Chaves',
+      'link':'lista-chaves',
       'icon':'reader-outline',
     },
     {
@@ -182,12 +192,17 @@ export class AppComponent {
     },
     {
       'nome':'Lista de vistorias',
-      'link':'lista-vistoria',
+      'link':'lista-vistorias',
       'icon':'reader-outline',
     },
     {
       'nome':'Adicionar Todas as Paginas a Lista',
       'link':'adicionar-todas-paginas-lista',
+      'icon':'reader-outline',
+    },
+    {
+      'nome':'Lista de Incidentes Resolvidos',
+      'link':'lista-incidentes-resolvidos',
       'icon':'reader-outline',
     },
   ];

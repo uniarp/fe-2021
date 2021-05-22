@@ -68,6 +68,10 @@ const routes: Routes = [
     loadChildren: () => import('../pages/lista-sala/lista-sala.module').then( m => m.ListaSalaPageModule)
   },
   {
+    path: 'lista-professor',
+    loadChildren: () => import('../pages/lista-professor/lista-professor.module').then( m => m.ListaProfessorPageModule)
+  },
+  {
     path: 'lista-incidentes-resolvidos',
     loadChildren: () => import('../pages/lista-incidentes-resolvidos/lista-incidentes-resolvidos.module').then( m => m.ListaIncidentesResolvidosPageModule)
   },
@@ -166,7 +170,8 @@ const routes: Routes = [
   {
     path:'lista-espera-sala',
     loadChildren:()=>import('../pages/lista-espera-sala/lista-espera-sala.module').then(m=>m.ListaEsperaSalaPageModule)
-  }
+  },
+
 ];
 
 @NgModule({
