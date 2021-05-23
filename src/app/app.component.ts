@@ -6,204 +6,232 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  toListed:boolean=false
-  toRegister:boolean=false
-  toReservation:boolean=false
-  toReport:boolean=false
   
-  constructor() {}
+  toListed : boolean = false;
+  toRegister : boolean = false;
+  toReservation :boolean = false;
+  toReport : boolean = false;
   
-  //Abrir ou fechar o submenu listar
-  isListed(){
-    if(this.toListed==false){
-      this.toListed=true
-    }else{
-      this.toListed=false
+  constructor() {
+  }
+  
+  isListed() {
+    if(this.toListed == false) {
+      this.toListed = true;
+    } else {
+      this.toListed = false;
     }
   }
 
-  isRegister(){
-    if(this.toRegister==false){
-      this.toRegister=true
-    }else{
-      this.toRegister=false
+  isRegister() {
+    if(this.toRegister == false) {
+      this.toRegister = true;
+    } else {
+      this.toRegister = false;
     }
   }
 
-  isReservation(){
-    if(this.toReservation==false){
-      this.toReservation=true
+  isReservation() {
+    if(this.toReservation == false) {
+      this.toReservation = true;
     }else{
-      this.toReservation=false
+      this.toReservation = false;
     }
   }
 
-  isReport(){
-    if(this.toReport==false){
-      this.toReport=true
-    }else{
-      this.toReport=false
+  isReport() {
+    if(this.toReport==false) {
+      this.toReport = true;
+    } else {
+      this.toReport = false;
     }
   }
-  reportares =[
+  reportares = [
     {
       'nome':'Cadastro Faq',
       'link':'cadastro-faq',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
       'nome':'Faq',
       'link':'faq',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Lista de perguntas',
+      'nome':'perguntas',
       'link':'/lista-pergunta',
-      'icon':'information-circle-outline',
-    },
-
+      'icon':'information-circle-outline'
+    }
   ]
-   //conteudo sub-menu reservas
-     
-  reservas =[
+  
+  reservas = [
     {
       'nome':'Solicitar Material',
       'link':'solicitar-material',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
       'nome':'Entregar Material',
       'link':'cadastro-entrega-material',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
+    },
+    {
+      'nome':'Entregar Chave',
+      'link':'cadastro-entrega-chave',
+      'icon':'reader-outline'
     },
     {
       'nome':'Solicitar Equipamento',
       'link':'solicitar-equipamento',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
       'nome':'Solicitar Reserva de Sala',
       'link':'solicitar-reserva-sala',
-      'icon':'reader-outline',
-    },
-    
+      'icon':'reader-outline'
+    }
   ]
 
-
-
-
-  //conteudo sub-menu cadastro
-
-  cadastros =[
+  cadastros = [
     {
-      'nome':'Cadastro de Equipamento',
+      'nome':'Equipamento',
       'link':'cadastro-equipamento',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Cadastro de Material',
+      'nome':'Material',
       'link':'cadastro-material',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Cadastro de Sala',
+      'nome':' Sala',
       'link':'cadastro-sala',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Cadastro de Curso',
+      'nome':'Curso',
       'link':'cadastro-curso',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Cadastro de Professor',
+      'nome':'Disciplina',
+      'link':'cadastro-disciplina',
+      'icon':'reader-outline'
+    },
+    {
+      'nome':'Professor',
       'link':'cadastro-professor',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Cadastro Tipo Equipamento',
+      'nome':'Tipo Equipamento',
       'link':'cadastro-tipo-equipamento',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Cadastro de Vistoria',
+      'nome':'Vistoria',
       'link':'cadastro-vistoria',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
-
+    {
+      'nome':'Chave',
+      'link':'cadastro-chave',
+      'icon':'reader-outline'
+    },
+    
+      
   ];
 
-  //conteudo sub-menu listar
   listas = [
     {
-      'nome':'Lista de cursos',
+      'nome':'Cursos',
       'link':'lista-de-cursos',
-      'icon':'school',
+      'icon':'school'
     },
     {
-      'nome':'Lista de disciplinas',
+      'nome':'Disciplinas',
       'link':'lista-disciplinas',
-      'icon':'documents-outline',
+      'icon':'documents-outline'
     },
     {
-      'nome':'Lista de equipamentos',
+      'nome':'Equipamentos',
       'link':'lista-de-equipamentos',
-      'icon':'file-tray-stacked-outline',
+      'icon':'file-tray-stacked-outline'
     },
     {
-      'nome':'Lista de equipamentos Solicitados',
+      'nome':'Equipamentos Solicitados',
       'link':'lista-equipamentos-solicitados',
-      'icon':'layers-outline',
+      'icon':'layers-outline'
     },
     {
-      'nome':'Lista de materiais',
+      'nome':'Materiais',
       'link':'lista-materiais',
-      'icon':'layers-outline',
+      'icon':'layers-outline'
     },
     {
-      'nome':'Lista de professores',
+      'nome':'Professores',
       'link':'lista-professor',
-      'icon':'person-outline',
+      'icon':'person-outline'
     },
     {
-      'nome':'Lista de salas',
+      'nome':'Salas',
       'link':'lista-sala',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Lista de Esperas Salas',
+      'nome':'Esperas de Sala',
       'link':'lista-espera-sala',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Lista de softwares',
+      'nome':'Softwares',
       'link':'lista-software',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Lista de Chaves',
+      'nome':'Chaves',
       'link':'lista-chaves',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Lista de tipos de equipamento',
+      'nome':'Entregas de Material',
+      'link':'lista-entregas-material',
+      'icon':'reader-outline'
+    },
+    {
+      'nome':'Entregas de Chave',
+      'link':'lista-entregas-chave',
+      'icon':'reader-outline'
+    },
+    {
+      'nome':'Tipos de Equipamento',
       'link':'lista-tipos-equipamento',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Lista de vistorias',
+      'nome':'Vistorias',
       'link':'lista-vistorias',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
       'nome':'Adicionar Todas as Paginas a Lista',
       'link':'adicionar-todas-paginas-lista',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
     {
-      'nome':'Lista de Incidentes Resolvidos',
+      'nome':'Incidentes Resolvidos',
       'link':'lista-incidentes-resolvidos',
-      'icon':'reader-outline',
+      'icon':'reader-outline'
     },
+    {
+      'nome':'Reservas de Equipamento',
+      'link':'lista-reserva-equipamentos',
+      'icon':'reader-outline'
+    },
+    {
+      'nome':'Reservas de Sala',
+      'link':'lista-reservas-sala',
+      'icon':'reader-outline'
+    }
   ];
 }
