@@ -4,6 +4,7 @@ import { Curso } from 'src/model/curso';
 import { Disciplina } from 'src/model/disciplina';
 import { CursoService } from 'src/services/curso.service';
 import { DisciplinaService } from 'src/services/disciplina.service';
+import { ProfessorService } from 'src/services/professor.service';
 
 @Component({
   selector: 'app-cadastro-disciplina',
@@ -14,8 +15,10 @@ export class CadastroDisciplinaPage {
 
   disciplina:Disciplina
   cursos:any;
+  professores:any;
   constructor(
     private cursoService:CursoService,
+    private professorService:ProfessorService,
     private disciplinaService:DisciplinaService,
     private routeService:Router
   ) { }
@@ -24,6 +27,9 @@ export class CadastroDisciplinaPage {
     this.disciplina = new Disciplina();
     this.cursoService.listar().subscribe(dados => {
       this.cursos = dados;
+    });    
+    this.professorService.listar().subscribe(dados => {
+      this.professores = dados;
     });
   }
 

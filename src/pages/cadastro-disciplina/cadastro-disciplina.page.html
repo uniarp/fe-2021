@@ -15,9 +15,17 @@
     </ion-item> 
     <ion-item>
       <ion-label position="floating">Curso:</ion-label>
-      <ion-select multiple="true" [(ngModel)]="disciplina.curso">
+      <ion-select [(ngModel)]="disciplina.curso">
         <ion-select-option *ngFor="let curso of cursos" [value]="curso.id">
           {{curso.nome}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Professor Encarregado:</ion-label>
+      <ion-select [(ngModel)]="disciplina.professor">
+        <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
+          {{professor.nomecompleto}}
         </ion-select-option>
       </ion-select>
     </ion-item>
