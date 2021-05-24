@@ -28,7 +28,8 @@ export class CadastroCursoPage {
     }
   
     cancelar() {
-      this.curso = null;
+      this.curso.id = null;
+      this.curso.nomeCurso = null;
     }
   
     listar(){

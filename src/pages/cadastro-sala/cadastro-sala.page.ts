@@ -29,7 +29,11 @@ export class CadastroSalaPage {
   }
 
   cancelar() {
-    this.sala = null
+    this.sala.andar = null;
+    this.sala.bloco = null;
+    this.sala.capacidade = null;
+    this.sala.id = null;
+    this.sala.numerosala = null;
   }
 
   listar() {

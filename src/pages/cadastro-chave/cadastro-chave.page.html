@@ -13,7 +13,7 @@
       <ion-label position="floating">Sala</ion-label>
       <ion-select [(ngModel)]="chave.sala">
         <ion-select-option *ngFor="let sala of salas" [value]="sala.id">
-          {{sala.numero}} 
+          {{sala.numerosala}} 
         </ion-select-option>
       </ion-select>
     </ion-item>
@@ -21,5 +21,8 @@
     <ion-button (click)="cadastrar()" fill="solid" expand="block" color="success">Gravar</ion-button>
     <br>
     <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
+    <br>
+    <ion-button (click)="listar()" fill="solid" expand="block" color="danger">Listar</ion-button>
+    <br>
   </ion-list>
 </ion-content>

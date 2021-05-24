@@ -2,7 +2,7 @@ export class Material {
 
     id : Number;
     nome : String;
-    quantidade : Number;
+    qtd : Number;
     marca : String;
     descricao : String;
 

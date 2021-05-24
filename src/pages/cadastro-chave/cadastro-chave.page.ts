@@ -34,7 +34,8 @@ export class CadastroChavePage {
   }
 
   cancelar() {
-    this.chave = null;
+    this.chave.id = null;
+    this.chave.sala = null;
   }
 
   listar() {

@@ -31,7 +31,12 @@ export class CadastroEquipamentoPage  {
   }
 
   cancelar() {
-    this.equipamento = null;
+    this.equipamento.localizacao = null;
+    this.equipamento.marca = null;
+    this.equipamento.modelo = null;
+    this.equipamento.status = null;
+    this.equipamento.tipoEquipamento = null;
+    this.equipamento.dataAquisicao = null;
   }
 
   listar(){
