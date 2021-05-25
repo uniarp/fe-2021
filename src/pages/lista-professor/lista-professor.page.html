@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Professores</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list *ngFor="let professor of professor">
+      <ion-item>
+          <ion-label>
+            <h3>Login Professor:</h3>
+            <h2>{{professor.login}}</h2>
+          </ion-label>   
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          <h3>Nivel professor:</h3>
+          <h2>{{professor.nivel}}</h2>
+        </ion-label>   
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        <h3>Nome Completo:</h3>
+        <h2>{{professor.nomecompleto}}</h2>
+      </ion-label>
+      <ion-item>
+        <ion-label>
+          <h3>Email:</h3>
+          <h2>{{professor.email}}</h2>
+        </ion-label>   
+    </ion-item>   
+  </ion-item>
+  </ion-list>
+  </ion-content>

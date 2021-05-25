@@ -7,11 +7,10 @@ export class EntregaChave {
     chave? : Chave;
     professor? : Professor;
     dataHoraEntrega? : String;
-    dataHoraDevolucao : String;
 
-    constructor() {
+    constructor() {    
         this.chave = new Chave();
-        this.professor = new Professor();
+        this.professor = new Professor();   
     }
 
 }
