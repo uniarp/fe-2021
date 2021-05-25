@@ -169,9 +169,13 @@ const routes: Routes = [
   },
   {
     path:'lista-espera-sala',
-    loadChildren:()=>import('../pages/lista-espera-sala/lista-espera-sala.module').then(m=>m.ListaEsperaSalaPageModule)
+    loadChildren:()=>import('../pages/lista-espera-sala/lista-espera-sala.module').then(m=>m.ListaEsperaSalaPageModule
+    )
   },
-
+  {
+    path: 'lista-disciplinas',
+    loadChildren: () => import('../pages/lista-disciplinas/lista-disciplinas.module').then( m => m.ListaDisciplinasPageModule)
+  }
 ];
 
 @NgModule({

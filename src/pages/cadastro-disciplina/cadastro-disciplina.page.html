@@ -1,9 +1,56 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>cadastro-disciplina</ion-title>
+    <ion-title>Cadastro Disciplina</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list *ngIf="disciplina">
+    <ion-item>
+      <ion-label position="floating">Nome da disciplina:</ion-label>
+      <ion-input type = "text" [(ngModel)]="disciplina.nome"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">Curso:</ion-label>
+      <ion-select [(ngModel)]="disciplina.curso">
+        <ion-select-option *ngFor="let curso of cursos" [value]="curso.id">
+          {{curso.nome}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Professor Encarregado:</ion-label>
+      <ion-select [(ngModel)]="disciplina.professor">
+        <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
+          {{professor.nomecompleto}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Período:</ion-label>
+      <ion-select [(ngModel)]="disciplina.periodo">
+        <ion-select-option value="matutino">Matutino</ion-select-option>
+        <ion-select-option value="vespertino">Vespertino</ion-select-option>
+        <ion-select-option value="noturno">Noturno</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Dias de aulas:</ion-label>
+      <ion-select multiple="true" [(ngModel)]="disciplina.diaSemana">
+        <ion-select-option value=1>Domingo</ion-select-option>
+        <ion-select-option value=2>Segunda-feira</ion-select-option>
+        <ion-select-option value=3>Terça-feira</ion-select-option>
+        <ion-select-option value=4>Quarta-feira</ion-select-option>
+        <ion-select-option value=5>Quinta-feira</ion-select-option>
+        <ion-select-option value=6>Sexta-feira</ion-select-option>
+        <ion-select-option value=7>Sábado</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-button  (click)="cadastrar(disciplina)" fill="solid" expand="block" color="danger">Cadastrar</ion-button><br>
+    <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
+  </ion-list>
 </ion-content>
