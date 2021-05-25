@@ -138,6 +138,11 @@ export class AppComponent {
       'link':'cadastro-chave',
       'icon':'reader-outline'
     },
+    {
+      'nome':'Software',
+      'link':'cadastro-software',
+      'icon':'reader-outline'
+    },
     
       
   ];
