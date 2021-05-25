@@ -13,9 +13,8 @@ export class DisciplinaService {
   ) { }
 
   cadastrar(disciplina:any){
-    disciplina.diasemana=disciplina.diasemana.map(dia=>parseInt(dia))
-    console.log(disciplina)
-   return this.http.post(this.backEnd+'/cadastrar', disciplina)
+    disciplina.diaSemana=disciplina.diaSemana.map(dia=>parseInt(dia));
+    return this.http.post(this.backEnd+'/cadastrar', disciplina);
   }
 
   alterar(disciplina: Disciplina){

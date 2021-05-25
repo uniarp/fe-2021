@@ -11,7 +11,7 @@
   <ion-list *ngIf="disciplina">
     <ion-item>
       <ion-label position="floating">Nome da disciplina:</ion-label>
-      <ion-input type = "text" [(ngModel)]="disciplina.nomeDisciplina"></ion-input>
+      <ion-input type = "text" [(ngModel)]="disciplina.nome"></ion-input>
     </ion-item> 
     <ion-item>
       <ion-label position="floating">Curso:</ion-label>
@@ -39,7 +39,7 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Dias de aulas:</ion-label>
-      <ion-select multiple="true" [(ngModel)]="disciplina.diasemana">
+      <ion-select multiple="true" [(ngModel)]="disciplina.diaSemana">
         <ion-select-option value=1>Domingo</ion-select-option>
         <ion-select-option value=2>Segunda-feira</ion-select-option>
         <ion-select-option value=3>Terça-feira</ion-select-option>

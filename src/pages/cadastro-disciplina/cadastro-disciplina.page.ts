@@ -35,14 +35,11 @@ export class CadastroDisciplinaPage {
 
   cadastrar(disciplina:Disciplina){
     console.log(this.disciplina); 
-    return new Promise((resolve,reject)=>{
-      this.disciplinaService.cadastrar(disciplina).subscribe(response=>{
-        resolve(response)
-      })
-    })
+    this.disciplinaService.cadastrar(disciplina);
+    this.routeService.navigateByUrl('/lista-disciplinas');
   }
 
   cancelar(){
-    this.routeService.navigateByUrl('/lista-disciplina')
+    this.routeService.navigateByUrl('/lista-disciplinas')
   }
 }
