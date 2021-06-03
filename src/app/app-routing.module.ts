@@ -152,8 +152,8 @@ const routes: Routes = [
     loadChildren: () => import('../pages/lista-materiais/lista-materiais.module').then( m => m.ListaMateriaisPageModule)
   },
   {
-    path: 'lista-de-cursos',
-    loadChildren: () => import('../pages/lista-de-cursos/lista-de-cursos.module').then( m => m.ListaDeCursosPageModule)
+    path: 'lista-cursos',
+    loadChildren: () => import('../pages/lista-cursos/lista-cursos.module').then( m => m.ListaCursosPageModule)
   },
   {
     path:'lista-equipamentos-solicitados',

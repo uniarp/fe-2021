@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { CursoService } from '../../services/curso.service';
 
 @Component({
-  selector: 'app-lista-de-cursos',
-  templateUrl: './lista-de-cursos.page.html',
-  styleUrls: ['./lista-de-cursos.page.scss'],
+  selector: 'app-lista-cursos',
+  templateUrl: './lista-cursos.page.html',
+  styleUrls: ['./lista-cursos.page.scss'],
 })
-export class ListaDeCursosPage  {
+export class ListaCursosPage  {
 
   curso: any;
 
