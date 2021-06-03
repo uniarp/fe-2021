@@ -13,9 +13,10 @@ import { ProfessorService } from 'src/services/professor.service';
 })
 export class CadastroDisciplinaPage {
 
-  disciplina:Disciplina
-  cursos:any;
-  professores:any;
+  disciplina : Disciplina;
+  cursos : any;
+  professores : any;
+
   constructor(
     private cursoService:CursoService,
     private professorService:ProfessorService,
@@ -33,9 +34,9 @@ export class CadastroDisciplinaPage {
     });
   }
 
-  cadastrar(disciplina:Disciplina){
+  cadastrar() {
     console.log(this.disciplina); 
-    this.disciplinaService.cadastrar(disciplina);
+    this.disciplinaService.cadastrar(this.disciplina);
     this.routeService.navigateByUrl('/lista-disciplinas');
   }
 
