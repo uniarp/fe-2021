@@ -24,16 +24,12 @@ export class CadastroCursoPage {
       console.log('Curso - cadastrar ');
       //passar a equipamento que esta sendo cadastrada
       this.cursoService.cadastrar(this.curso);
-      this.routerService.navigate(['lista-de-cursos']);
+      this.routerService.navigate(['lista-cursos']);
     }
   
     cancelar() {
       this.curso = null;
-    }
-  
-    listar(){
-      console.log('Curso - listar');
-      this.routerService.navigate(['lista-de-cursos']);
+      this.routerService.navigate(['lista-cursos']);
     }
 
 }
