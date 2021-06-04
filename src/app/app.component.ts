@@ -160,7 +160,7 @@ export class AppComponent {
     },
     {
       'nome':'Equipamentos',
-      'link':'lista-de-equipamentos',
+      'link':'lista-equipamentos',
       'icon':'file-tray-stacked-outline'
     },
     {
