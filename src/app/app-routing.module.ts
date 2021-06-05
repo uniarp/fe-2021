@@ -96,8 +96,8 @@ const routes: Routes = [
     loadChildren: () => import('../pages/faq/faq.module').then( m => m.FaqPageModule)
   },
   {
-    path: 'lista-de-equipamentos',
-    loadChildren: () => import('../pages/lista-de-equipamentos/lista-de-equipamentos.module').then( m => m.ListaDeEquipamentosPageModule)
+    path: 'lista-equipamentos',
+    loadChildren: () => import('../pages/lista-equipamentos/lista-equipamentos.module').then( m => m.ListaEquipamentosPageModule)
   },
   {
     path: 'buscar-salas',
