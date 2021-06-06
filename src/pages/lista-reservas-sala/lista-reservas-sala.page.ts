@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { EntregaChaveService } from 'src/services/entrega-chave.service';
 import { ReservaSalaService } from '../../services/reserva-sala.service';
 
 @Component({
@@ -10,9 +11,15 @@ import { ReservaSalaService } from '../../services/reserva-sala.service';
 })
 export class ListaReservasSalaPage {
 
-  reservasSala : any;
-
-  constructor(public reservaSalaService : ReservaSalaService, public routerService : Router, public alertController: AlertController) {
+  reservasSala : {}
+  private entregaChave:any;
+  alert:any
+  constructor(
+    public reservaSalaService : ReservaSalaService,
+    public routerService : Router, 
+    public alertController: AlertController,
+    private entregaChaveService:EntregaChaveService
+  ) {
   }
 
   cancelar (){
@@ -56,13 +63,63 @@ export class ListaReservasSalaPage {
   }
 
   ionViewWillEnter() {
-    this.reservaSalaService.listar().subscribe(dados => {
+    this.reservaSalaService.listar().subscribe((dados:any) => {
       this.reservasSala = dados;
+      console.log("🚀this.reservasSala", this.reservasSala)
     });
   }
 
-  cadastrarEntregaChave() {
-    this.routerService.navigateByUrl('/cadastro-entrega-chave');
+  EntregaChave(id_reservaSala:number) {
+    this.alertEntregarDevolver("Você está confirmando uma entrega de chave, deseja continuar?","Entrega de chave").then((resposta)=>{
+      if(resposta==true){
+        let data = new Date().toLocaleString()
+        const entrega={
+          "reservasala":id_reservaSala,
+          "dataHoraEntrega":data,
+          "status":"entregue"
+        }
+        console.log("🚀 ~ ~ entrega", entrega)
+        this.entregaChaveService.cadastrar(entrega)
+      }
+    })
   }
-  
+
+  devolverChave(id_reservaSala:number):void{
+    this.alertEntregarDevolver("Você está confirmando uma devolução de chave, deseja continuar?","Devolução de chave").then((resposta)=>{
+      if(resposta==true){
+        let data = new Date().toLocaleString();
+        const dados={
+          "status":"devolvida",
+          "dataDevolucao": data
+        }
+        console.log("🚀 ~ ~ entrega",dados)
+        this.entregaChaveService.alterarStatus(id_reservaSala,dados)
+      }
+    })
+  }
+
+  async alertEntregarDevolver(message:string,header:string): Promise<boolean> {
+    let resultado: (confirm: boolean) => void;
+    const promise = new Promise<boolean>(resolve => {
+      resultado = resolve;
+    });
+    const alert = await this.alertController.create({
+      header,
+      message,
+      backdropDismiss: false,
+      buttons: [
+        {
+          text: 'Cancelar',
+          role:'cancel',
+          handler: () => resultado(false)
+        },
+        {
+          text: 'Continuar',
+          handler: () => resultado(true)
+        }
+      ]
+    });
+    await alert.present();
+    return promise;
+  }
 }
