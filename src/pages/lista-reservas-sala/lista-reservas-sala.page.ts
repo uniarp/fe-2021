@@ -56,6 +56,7 @@ export class ListaReservasSalaPage {
   }
 
   ionViewWillEnter() {
+    this.reservasSala = [];
     this.reservaSalaService.listar().subscribe(dados => {
       this.reservasSala = dados;
     });
