@@ -27,7 +27,7 @@ export class HomePage {
     });
   }
 
-  listarReservaSala() {
+  listarReservasSala() {
     this.routerService.navigate(['lista-reservas-sala']);
   }
 
@@ -35,7 +35,7 @@ export class HomePage {
     this.routerService.navigate(['cadastro-reserva-sala']);
   }
 
-  listarReservaEquipamento() {
+  listarReservasEquipamento() {
     this.routerService.navigate(['lista-reservas-equipamento']);
   }
 
