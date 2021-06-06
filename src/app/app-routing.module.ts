@@ -76,8 +76,8 @@ const routes: Routes = [
     loadChildren: () => import('../pages/lista-incidentes-resolvidos/lista-incidentes-resolvidos.module').then( m => m.ListaIncidentesResolvidosPageModule)
   },
   {
-    path: 'lista-reserva-equipamentos',
-    loadChildren: () => import('../pages/lista-reserva-equipamentos/lista-reserva-equipamentos.module').then( m => m.ListaReservaEquipamentosPageModule)
+    path: 'lista-reservas-equipamento',
+    loadChildren: () => import('../pages/lista-reservas-equipamento/lista-reservas-equipamento.module').then( m => m.ListaReservasEquipamentoPageModule)
   },
   {
     path: 'adicionar-todas-paginas-lista',

@@ -230,7 +230,7 @@ export class AppComponent {
     },
     {
       'nome':'Reservas de Equipamento',
-      'link':'lista-reserva-equipamentos',
+      'link':'lista-reservas-equipamento',
       'icon':'reader-outline'
     },
     {
