@@ -12,40 +12,31 @@
     <ion-fab-button color="danger" >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
-  </ion-fab> 
-  <ion-grid class="ion-padding" *ngIf="reservasSala != ''">
+  </ion-fab>
+  <ion-grid *ngIf="reservasSala != ''">
     <ion-row>
-      <ion-col><h4>Data:</h4></ion-col>
-      <ion-col><h4>Professor:</h4></ion-col>
-      <ion-col><h4>Qtd de alunos</h4></ion-col>
-      <ion-col><h4>Status da reserva</h4></ion-col>
-      <ion-col><h4>Número de sala</h4></ion-col>
-      <ion-col><h4>Período</h4></ion-col>
-      <ion-col><h4>Ações</h4></ion-col>
+      <ion-col><h6>Sala</h6></ion-col>
+      <ion-col><h6>Professor</h6></ion-col>
+      <ion-col><h6>Data</h6></ion-col>
+      <ion-col><h6>Quantidade de Alunos</h6></ion-col>
+      <ion-col><h6>Status</h6></ion-col>
+      <ion-col><h6>Período</h6></ion-col>
+      <ion-col><h6>Cadastrado por</h6></ion-col>
+      <ion-col><h6>Ações</h6></ion-col>
     </ion-row>
     <ion-row *ngFor="let reservaSala of reservasSala">
-      <ion-col>{{reservaSala.data | date:'dd-MM-yyyy'}}</ion-col>
-      <ion-col>{{reservaSala.nome_professor}}</ion-col>
-      <ion-col>{{reservaSala.qtdalunos}}</ion-col>
-      <ion-col>{{reservaSala.status | titlecase}}</ion-col>
       <ion-col>{{reservaSala.numerosala}}</ion-col>
-      <ion-col>{{reservaSala.periodo | titlecase}}</ion-col>
-      <ion-col *ngIf= 'reservaSala.status_entregachave==null'>
-        <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="EntregaChave(reservaSala.id)">
+      <ion-col>{{reservaSala.nome_professor}}</ion-col>
+      <ion-col>{{reservaSala.data}}</ion-col>
+      <ion-col>{{reservaSala.qtdalunos}}</ion-col>
+      <ion-col>{{reservaSala.status}}</ion-col>
+      <ion-col>{{reservaSala.periodo}}</ion-col>
+      <ion-col>{{reservaSala.nome_usuario}}</ion-col>
+      <ion-col>
+        <ion-button (click)="cadastrarEntregaChave()" fill="solid" expand="block" color="success">
           Entregar chave
         </ion-button>
       </ion-col>
-      <ion-col *ngIf= "reservaSala.status_entregachave=='entregue'">
-        <ion-button disable=true expand="block" fill="solid" color="secondary" shape="round" (click)="devolverChave(reservaSala.id)">
-          Devolver chave
-        </ion-button>
-      </ion-col>
-      <ion-col *ngIf= "reservaSala.status_entregachave=='devolvida'">
-        <ion-button disable=true expand="block" fill="clear" color="tertiary">
-          Chave já devolvida
-        </ion-button>
-      </ion-col>
-
     </ion-row>
   </ion-grid>
 </ion-content>
