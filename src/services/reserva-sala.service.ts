@@ -6,9 +6,9 @@ import { ReservaSala } from '../model/reserva-sala';
   providedIn: 'root'
 })
 export class ReservaSalaService {
-
+  
   url = 'https://apoio-uniarp.herokuapp.com/reservasSala/';
-
+  
   constructor(public http : HttpClient) { }
 
   /**

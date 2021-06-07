@@ -138,6 +138,11 @@ export class AppComponent {
       'link':'cadastro-chave',
       'icon':'reader-outline'
     },
+    {
+      'nome':'Software',
+      'link':'cadastro-software',
+      'icon':'reader-outline'
+    },
     
       
   ];
@@ -145,7 +150,7 @@ export class AppComponent {
   listas = [
     {
       'nome':'Cursos',
-      'link':'lista-de-cursos',
+      'link':'lista-cursos',
       'icon':'school'
     },
     {
@@ -155,7 +160,7 @@ export class AppComponent {
     },
     {
       'nome':'Equipamentos',
-      'link':'lista-de-equipamentos',
+      'link':'lista-equipamentos',
       'icon':'file-tray-stacked-outline'
     },
     {
@@ -225,7 +230,7 @@ export class AppComponent {
     },
     {
       'nome':'Reservas de Equipamento',
-      'link':'lista-reserva-equipamentos',
+      'link':'lista-reservas-equipamento',
       'icon':'reader-outline'
     },
     {
