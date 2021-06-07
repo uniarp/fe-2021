@@ -27,7 +27,7 @@
     <ion-row *ngFor="let reservaSala of reservasSala">
       <ion-col>{{reservaSala.numerosala}}</ion-col>
       <ion-col>{{reservaSala.nome_professor}}</ion-col>
-      <ion-col>{{reservaSala.data}}</ion-col>
+      <ion-col>{{reservaSala.data | date:'dd/MM/yyyy'}}</ion-col>
       <ion-col>{{reservaSala.qtdalunos}}</ion-col>
       <ion-col>{{reservaSala.status}}</ion-col>
       <ion-col>{{reservaSala.periodo}}</ion-col>
