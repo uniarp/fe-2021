@@ -64,8 +64,8 @@ const routes: Routes = [
     loadChildren: () => import('../pages/lista-materiais-entregues/lista-materiais-entregues.module').then( m => m.ListaMateriaisEntreguesPageModule)
   },
   {
-    path: 'lista-sala',
-    loadChildren: () => import('../pages/lista-sala/lista-sala.module').then( m => m.ListaSalaPageModule)
+    path: 'lista-salas',
+    loadChildren: () => import('../pages/lista-salas/lista-salas.module').then( m => m.ListaSalasPageModule)
   },
   {
     path: 'lista-professor',
