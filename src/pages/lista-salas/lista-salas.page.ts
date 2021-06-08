@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { SalaService } from '../../services/sala.service';
 
 @Component({
-  selector: 'app-lista-sala',
-  templateUrl: './lista-sala.page.html',
-  styleUrls: ['./lista-sala.page.scss'],
+  selector: 'app-lista-salas',
+  templateUrl: './lista-salas.page.html',
+  styleUrls: ['./lista-salas.page.scss'],
 })
-export class ListaSalaPage  {
+export class ListaSalasPage  {
   
   salas : any;
 
