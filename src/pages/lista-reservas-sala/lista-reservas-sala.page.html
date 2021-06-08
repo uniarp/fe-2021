@@ -27,14 +27,24 @@
     <ion-row *ngFor="let reservaSala of reservasSala">
       <ion-col>{{reservaSala.numerosala}}</ion-col>
       <ion-col>{{reservaSala.nome_professor}}</ion-col>
-      <ion-col>{{reservaSala.data}}</ion-col>
+      <ion-col>{{reservaSala.data | date:'dd/MM/yyyy'}}</ion-col>
       <ion-col>{{reservaSala.qtdalunos}}</ion-col>
       <ion-col>{{reservaSala.status}}</ion-col>
       <ion-col>{{reservaSala.periodo}}</ion-col>
       <ion-col>{{reservaSala.nome_usuario}}</ion-col>
-      <ion-col>
-        <ion-button (click)="cadastrarEntregaChave()" fill="solid" expand="block" color="success">
+      <ion-col *ngIf= 'reservaSala.status_entregachave==null'>
+        <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="EntregaChave(reservaSala.id)">
           Entregar chave
+        </ion-button>
+      </ion-col>
+      <ion-col *ngIf= "reservaSala.status_entregachave=='entregue'">
+        <ion-button disable=true expand="block" fill="solid" color="secondary" shape="round" (click)="devolverChave(reservaSala.id)">
+          Devolver chave
+        </ion-button>
+      </ion-col>
+      <ion-col *ngIf= "reservaSala.status_entregachave=='devolvida'">
+        <ion-button disable=true expand="block" fill="clear" color="tertiary">
+          Chave já devolvida
         </ion-button>
       </ion-col>
     </ion-row>
