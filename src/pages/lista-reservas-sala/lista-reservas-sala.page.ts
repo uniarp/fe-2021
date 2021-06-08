@@ -80,7 +80,11 @@ export class ListaReservasSalaPage {
           "status":"entregue"
         }
         console.log("🚀 ~ ~ entrega", entrega)
-        this.entregaChaveService.cadastrar(entrega)
+        this.entregaChaveService.cadastrar(entrega).then(()=>{
+          this.reservaSalaService.listar().subscribe(dados => {
+            this.reservasSala = dados;
+          });
+        })
       }
     })
   }
@@ -93,8 +97,11 @@ export class ListaReservasSalaPage {
           "status":"devolvida",
           "dataDevolucao": data
         }
-        console.log("🚀 ~ ~ entrega",dados)
-        this.entregaChaveService.alterarStatus(id_reservaSala,dados)
+        this.entregaChaveService.alterarStatus(id_reservaSala,dados).then(()=>{
+          this.reservaSalaService.listar().subscribe(dados => {
+            this.reservasSala = dados;
+          });
+        })
       }
     })
   }
