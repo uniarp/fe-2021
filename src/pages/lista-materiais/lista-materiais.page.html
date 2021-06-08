@@ -13,20 +13,18 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-list *ngFor="let material of materiais">
-    <ion-item>
-      <ion-label>
-        {{material.nome}}
-      </ion-label>
-      <ion-label>
-        {{material.qtd}}
-      </ion-label> 
-      <ion-label>
-        {{material.marca}}
-      </ion-label>
-      <ion-label>
-        {{material.descricao}}
-      </ion-label>  
-    </ion-item>
-  </ion-list>
-</ion-content>
+  <ion-grid *ngIf="materiais != ''">
+      <ion-row>
+        <ion-col><h6>Lista de Materiais</h6></ion-col>
+        <ion-col><h6>Quantidade</h6></ion-col>
+        <ion-col><h6>Marca</h6></ion-col>
+        <ion-col><h6>Descrição/h6></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let material of materiais">
+        <ion-col>{{materiais.nome}}</ion-col>
+        <ion-col>{{materiais.quantidade}}</ion-col>
+        <ion-col>{{materiais.marca}}</ion-col>
+        <ion-col>{{materiais.descricao}}</ion-col>
+      </ion-row>
+    </ion-grid>
+   </ion-content>
