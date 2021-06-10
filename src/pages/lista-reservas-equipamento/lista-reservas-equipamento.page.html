@@ -5,6 +5,7 @@
     <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
     </ion-toolbar>
+    <ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
 </ion-header>
 
 <ion-content>
@@ -22,7 +23,7 @@
       <ion-col><h6>Data de Devolução</h6></ion-col>
       <ion-col><h6>Observação</h6></ion-col>
     </ion-row>
-    <ion-row *ngFor = "let reservaEquipamento of reservasEquipamento">
+    <ion-row *ngFor = "let reservaEquipamento of reservasEquipamento | filter: pesquisa">
       <ion-col>{{reservaEquipamento.tipo_equipamento}}</ion-col>
       <ion-col>{{reservaEquipamento.nome_professor}}</ion-col>
       <ion-col>{{reservaEquipamento.status}}</ion-col>
