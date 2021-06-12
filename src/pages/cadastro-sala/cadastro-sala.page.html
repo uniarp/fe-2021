@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de Salas</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="sala">
+    <ion-item>
+      <ion-label position="floating">Número da Sala:</ion-label>
+      <ion-input type = 'numeric'[(ngModel)]="sala.numero"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Localização - Bloco:</ion-label>
+      <ion-input type = 'text'[(ngModel)]="sala.bloco" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Localização - Andar:</ion-label>
+      <ion-input type = 'numeric'[(ngModel)]="sala.andar" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Capacidade:</ion-label>
+      <ion-input type = 'numeric'[(ngModel)]="sala.capacidade" ></ion-input>
+    </ion-item>
+    <ion-button (click)="cadastrar()" color="danger">Cadastrar</ion-button>
+    <ion-button (click)="cancelar()" color="danger">Cancelar</ion-button>
+  </ion-list>
+  <ion-button (click)="listar()" color="danger">Listar</ion-button>  
+</ion-content>

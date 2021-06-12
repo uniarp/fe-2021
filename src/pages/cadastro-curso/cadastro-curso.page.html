@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro Curso</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="curso">
+    <ion-item>
+      <ion-label position="floating">Nome Curso:</ion-label>
+      <ion-input type="text" [(ngModel)]="curso.nome"></ion-input>
+    </ion-item>
+    <ion-button (click)="cadastrar()" color="danger">Cadastrar</ion-button>
+    <ion-button (click)="cancelar()" color="danger">Cancelar</ion-button>
+  </ion-list>
+</ion-content>

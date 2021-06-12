@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Equipamentos Solicitados</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list *ngFor = "let lista of reservaSolicitadas">
+    <ion-item>
+      <ion-label>
+       Professor: {{lista.nome_professor}}
+      </ion-label>
+      <ion-label>
+        Tipo de equipamento: {{lista.tipo_equipamento}}
+      </ion-label> 
+      <ion-label>
+        Período: {{lista.periodo}}
+      </ion-label>
+      <ion-label>
+        Observacao: {{lista.observacao}}
+      </ion-label>  
+      <ion-label>Status: {{lista.status}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

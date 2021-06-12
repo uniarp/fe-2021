@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Chaves</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list inset >
+    <ion-item *ngFor="let chave of chaves">
+      <ion-label>Número:{{chave.numerosala}}</ion-label>
+      <ion-label>
+        Bloco:{{chave.bloco}}
+      </ion-label>
+      <ion-label>Andar: {{chave.andar}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

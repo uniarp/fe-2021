@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Entregar Material</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="entrega">
+    <ion-item>
+      <ion-label position="floating">Data de entrega:</ion-label>
+      <ion-datetime [(ngModel)]="entrega.data" pickerFormat="DD MM YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Quantidade:</ion-label>
+      <ion-input type = 'numeric'[(ngModel)]="entrega.qtd"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Professor:</ion-label>
+      <ion-select [(ngModel)]="entrega.professor">
+        <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
+          {{professor.nomecompleto}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Material:</ion-label>
+      <ion-select [(ngModel)]="entrega.material">
+        <ion-select-option *ngFor="let material of materiais" [value]="material.id">
+          {{material.marca}} {{material.nome}} 
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button (click)="cadastrar()" color="success">Entregar</ion-button>
+  </ion-list>
+  <ion-button (click)="listar()" color="danger">Listar</ion-button>
+
+</ion-content>
