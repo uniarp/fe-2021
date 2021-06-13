@@ -22,6 +22,7 @@
       <ion-col><h6>Data de Entrega</h6></ion-col>
       <ion-col><h6>Data de Devolução</h6></ion-col>
       <ion-col><h6>Observação</h6></ion-col>
+      <ion-col><h6>Ações</h6></ion-col>
     </ion-row>
     <ion-row *ngFor = "let reservaEquipamento of reservasEquipamento | filter: pesquisa">
       <ion-col>{{reservaEquipamento.tipo_equipamento}}</ion-col>
@@ -30,6 +31,22 @@
       <ion-col>{{reservaEquipamento.dataentrega}}</ion-col>
       <ion-col>{{reservaEquipamento.datadevolucao}}</ion-col>
       <ion-col>{{reservaEquipamento.observacao}}</ion-col>
+      <ion-col *ngIf= 'reservaEquipamento.status_entregaequipamento==null'>
+        <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="entregaEquipamento(reservaEquipamento.id)">
+          Entregar Equipamento
+        </ion-button>
+      </ion-col>
+      <ion-col *ngIf= "reservaEquipamento.status_entregaequipamento=='entregue'">
+        <ion-button disable=true expand="block" fill="solid" color="secondary" shape="round" (click)="devolverEquipamento(reservaEquipamento.id)">
+          Devolver Equipamento
+        </ion-button>
+      </ion-col>
+      <ion-col *ngIf= "reservaEquipamento.status_entregachave=='devolver'">
+        <ion-button disable=true expand="block" fill="clear" color="tertiary">
+          Equipamento Devolvido
+        </ion-button>
+      </ion-col>
+
     </ion-row>
   </ion-grid>
 </ion-content>
