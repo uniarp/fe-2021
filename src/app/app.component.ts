@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,14 @@ export class AppComponent {
   toReservation :boolean = false;
   toReport : boolean = false;
   
-  constructor() {
+  constructor(
+    public routeService:Router
+  ) {
+  }
+
+  home(){
+
+    this.routeService.navigateByUrl('/home')
   }
   
   isListed() {
