@@ -6,63 +6,24 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-label>Itens Recentes</ion-label>
 <ion-list>
-  <ion-button>Item recente 1</ion-button>
-  <ion-button>Item recente 2</ion-button>
-  <ion-button>Item recente 3</ion-button>
-  <ion-button>Item recente 4</ion-button>
-  <ion-button>Item recente 5</ion-button>
+  <ion-button>Item comum 1</ion-button>
+  <ion-button>Item comum 2</ion-button>
+  <ion-button>Item comum 3</ion-button>
+  <ion-button>Item comum 4</ion-button>
+  <ion-button>Item comum 5</ion-button>
+  <ion-button>Item comum 6</ion-button>
 </ion-list>
-<ion-label>Reservas de Sala</ion-label>
-  <ion-list>
-    <ion-button (click)="listarReservasSala()" color="danger">Listar</ion-button>
-    <ion-button (click)="cadastrarReservaSala()" color="danger">Cadastrar</ion-button>
-  </ion-list>
-<ion-content>
-  <ion-grid *ngIf="reservasSala != ''">
-    <ion-row>
-      <ion-col><h6>Sala</h6></ion-col>
-      <ion-col><h6>Professor</h6></ion-col>
-      <ion-col><h6>Data</h6></ion-col>
-      <ion-col><h6>Quantidade de Alunos</h6></ion-col>
-      <ion-col><h6>Status</h6></ion-col>
-      <ion-col><h6>Período</h6></ion-col>
-      <ion-col><h6>Cadastrado por</h6></ion-col>
-    </ion-row>
-    <ion-row *ngFor="let reservaSala of reservasSala">
-      <ion-col>{{reservaSala.numerosala}}</ion-col>
-      <ion-col>{{reservaSala.nome_professor}}</ion-col>
-      <ion-col>{{reservaSala.data}}</ion-col>
-      <ion-col>{{reservaSala.qtdalunos}}</ion-col>
-      <ion-col>{{reservaSala.status}}</ion-col>
-      <ion-col>{{reservaSala.periodo}}</ion-col>
-      <ion-col>{{reservaSala.nome_usuario}}</ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
-<ion-label>Reservas de Equipamento</ion-label>
-  <ion-list>
-    <ion-button (click)="listarReservasEquipamento()" color="danger">Listar</ion-button>
-    <ion-button (click)="cadastrarReservaEquipamento()" color="danger">Cadastrar</ion-button>
-  </ion-list>
-<ion-content>
-  <ion-grid *ngIf=" reservasEquipamento != ''">
-    <ion-row>
-      <ion-col><h6>Tipo de Equipamento</h6></ion-col>
-      <ion-col><h6>Professor</h6></ion-col>
-      <ion-col><h6>Status</h6></ion-col>
-      <ion-col><h6>Data de Entrega</h6></ion-col>
-      <ion-col><h6>Data de Devolução</h6></ion-col>
-      <ion-col><h6>Observação</h6></ion-col>
-    </ion-row>
-    <ion-row *ngFor = "let reservaEquipamento of reservasEquipamento">
-      <ion-col>{{reservaEquipamento.tipo_equipamento}}</ion-col>
-      <ion-col>{{reservaEquipamento.nome_professor}}</ion-col>
-      <ion-col>{{reservaEquipamento.status}}</ion-col>
-      <ion-col>{{reservaEquipamento.dataentrega}}</ion-col>
-      <ion-col>{{reservaEquipamento.datadevolucao}}</ion-col>
-      <ion-col>{{reservaEquipamento.observacao}}</ion-col>
-    </ion-row>
-  </ion-grid>
-</ion-content>
+<ion-tabs>
+  <ion-tab-bar slot="top">
+    <ion-tab-button tab="lista-reservas-sala">
+      <ion-label>Reservas de Sala</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="lista-reservas-equipamento">
+      <ion-label>Reservas de Equipamento</ion-label>
+    </ion-tab-button>
+    <ion-tab-button tab="dashboard">
+      <ion-label>Dashboard</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
