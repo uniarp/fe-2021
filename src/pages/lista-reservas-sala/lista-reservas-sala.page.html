@@ -5,6 +5,7 @@
     <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
     </ion-toolbar>
+    <ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
 </ion-header>
 
 <ion-content>
@@ -24,10 +25,10 @@
       <ion-col><h6>Cadastrado por</h6></ion-col>
       <ion-col><h6>Ações</h6></ion-col>
     </ion-row>
-    <ion-row *ngFor="let reservaSala of reservasSala">
+    <ion-row *ngFor="let reservaSala of reservasSala | filter:pesquisa">
       <ion-col>{{reservaSala.numerosala}}</ion-col>
       <ion-col>{{reservaSala.nome_professor}}</ion-col>
-      <ion-col>{{reservaSala.data}}</ion-col>
+      <ion-col>{{reservaSala.data | date:'dd/MM/yyyy'}}</ion-col>
       <ion-col>{{reservaSala.qtdalunos}}</ion-col>
       <ion-col>{{reservaSala.status}}</ion-col>
       <ion-col>{{reservaSala.periodo}}</ion-col>

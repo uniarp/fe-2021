@@ -188,7 +188,7 @@ export class AppComponent {
     },
     {
       'nome':'Salas',
-      'link':'lista-sala',
+      'link':'lista-salas',
       'icon':'reader-outline'
     },
     {

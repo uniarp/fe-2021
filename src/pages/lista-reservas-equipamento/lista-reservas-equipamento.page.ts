@@ -8,8 +8,10 @@ import { ReservaEquipamentoService } from '../../services/reserva-equipamento.se
   styleUrls: ['./lista-reservas-equipamento.page.scss'],
 })
 export class ListaReservasEquipamentoPage {
-
-  reservaEquipamento:any;
+  
+  pesquisa = '';
+  reservasEquipamento : any;
+  
   constructor(
     public reservaEquipamentoService:ReservaEquipamentoService,
     public routerService:Router
@@ -20,9 +22,9 @@ export class ListaReservasEquipamentoPage {
   }
 
   ionViewWillEnter() {
+    this.reservasEquipamento = [];
     this.reservaEquipamentoService.listar().subscribe(dados => {
-      this.reservaEquipamento = dados;
-      console.log(this.reservaEquipamento);
+      this.reservasEquipamento = dados;
     });
   }
 }

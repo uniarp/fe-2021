@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ListaSalaPageRoutingModule } from './lista-sala-routing.module';
+import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
-import { ListaSalaPage } from './lista-sala.page';
+import { DashboardPage } from './dashboard.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ListaSalaPageRoutingModule
+    DashboardPageRoutingModule
   ],
-  declarations: [ListaSalaPage]
+  declarations: [DashboardPage]
 })
-export class ListaSalaPageModule {}
+export class DashboardPageModule {}
