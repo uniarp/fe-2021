@@ -20,6 +20,8 @@ export class ListaReservasSalaPage {
     public alertController: AlertController,
     private entregaChaveService:EntregaChaveService
   ) {
+    let data = new Date();
+    this.pesquisa = `${(data.getFullYear())}-${('0'+(data.getMonth()+ 1)).slice(-2)}-${('0'+(data.getDate())).slice(-2)}`
   }
 
   cancelar (){

@@ -15,7 +15,10 @@ export class ListaReservasEquipamentoPage {
   constructor(
     public reservaEquipamentoService:ReservaEquipamentoService,
     public routerService:Router
-  ) { }
+  ) {
+    let data = new Date();
+    this.pesquisa = `${(data.getFullYear())}-${('0'+(data.getMonth()+ 1)).slice(-2)}-${('0'+(data.getDate())).slice(-2)}`
+   }
 
   novo(){
     this.routerService.navigateByUrl('/solicitar-equipamento');
