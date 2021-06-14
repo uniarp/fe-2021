@@ -8,14 +8,16 @@ import { ReservaEquipamentoService } from '../../services/reserva-equipamento.se
   styleUrls: ['./lista-reservas-equipamento.page.scss'],
 })
 export class ListaReservasEquipamentoPage {
-  
   pesquisa = '';
   reservasEquipamento : any;
   
   constructor(
     public reservaEquipamentoService:ReservaEquipamentoService,
     public routerService:Router
-  ) { }
+  ) {
+    let data = new Date();
+    this.pesquisa = `${(data.getFullYear())}-${('0'+(data.getMonth()+ 1)).slice(-2)}-${('0'+(data.getDate())).slice(-2)}`
+   }
 
   novo(){
     this.routerService.navigateByUrl('/solicitar-equipamento');
