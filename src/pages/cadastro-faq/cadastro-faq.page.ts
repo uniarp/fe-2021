@@ -19,8 +19,9 @@ export class CadastroFaqPage {
   }
 
   cadastrar(pergunta:Pergunta){
-    this.perguntaService.cadastrar(this.pergunta);
+    this.perguntaService.cadastrar(this.pergunta).then(()=>{
     this.routeService.navigateByUrl('/lista-pergunta')
+    })
   }
 
   cancelar(){
