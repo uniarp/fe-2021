@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Professor } from 'src/model/professor';
 import { ProfessorService } from '../../services/professor.service'
 
 @Component({
@@ -24,5 +25,6 @@ export class ListaProfessorPage  {
     this.professorService.listar().subscribe(dados => {
       this.professor = dados;
     });
+ 
   }
 }

@@ -32,4 +32,8 @@ export class CadastroCursoPage {
       this.routerService.navigate(['lista-cursos']);
     }
 
+    listar(){
+      this.routerService.navigate(['lista-cursos']);
+    }
+
 }
