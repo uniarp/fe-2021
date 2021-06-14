@@ -5,6 +5,7 @@
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
+  <ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
 </ion-header>
 <ion-content>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
@@ -12,7 +13,7 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-list *ngFor="let curso of curso">
+  <ion-list *ngFor="let curso of curso | filter: pesquisa">
       <ion-item>
           <ion-label>
             <h2>{{curso.nome}}</h2>
