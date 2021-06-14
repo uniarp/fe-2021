@@ -24,16 +24,13 @@ export class CadastroSalaPage {
 
   cadastrar() { 
     console.log(this.sala);
-    this.salaService.cadastrar(this.sala);
+    this.salaService.cadastrar(this.sala).then(()=>{
     this.routerService.navigate(['lista-sala']);  
+    })
   }
 
   cancelar() {
-    this.sala.andar = null;
-    this.sala.bloco = null;
-    this.sala.capacidade = null;
-    this.sala.id = null;
-    this.sala.numerosala = null;
+    this.sala = null
   }
 
   listar() {

@@ -22,19 +22,12 @@ export class CadastroProfessorPage {
     this.professor = new Professor()
   }
   cadastrar() {
-    this.professorService.cadastrar(this.professor);
-    this.routeService.navigateByUrl('/lista-professor');
+    this.professorService.cadastrar(this.professor).then(()=>{
+      this.routeService.navigateByUrl('/lista-professor');
+    })  
   } 
 
   cancelar(){
-    this.professor.id = null;
-    this.professor.email = null;
-    this.professor.login = null;
-    this.professor.nivel = null;
-    this.professor.nomecompleto = null;
-    this.professor.senha = null;
-  }
-  listar(){
-    this.routeService.navigateByUrl('/lista-professor');
+    this.routeService.navigateByUrl('/lista-professor')
   }
 }
