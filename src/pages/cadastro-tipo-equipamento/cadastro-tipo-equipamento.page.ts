@@ -25,8 +25,9 @@ export class CadastroTipoEquipamentoPage {
    * Método de cadastro de Salas
    */
   cadastrar() {
-    this.tipoEquipamentoService.cadastrar(this.tipoEquipamento);
+    this.tipoEquipamentoService.cadastrar(this.tipoEquipamento).then(()=>{
     this.routerService.navigate(['lista-tipos-equipamento']);
+    })
   }
 
   cancelar() {

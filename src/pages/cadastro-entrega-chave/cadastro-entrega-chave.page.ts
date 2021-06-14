@@ -36,8 +36,9 @@ export class CadastroEntregaChavePage {
   }
 
   cadastrar() {
-    this.entregaChaveService.cadastrar(this.entregaChave);
+    this.entregaChaveService.cadastrar(this.entregaChave).then(()=>{
     this.routerService.navigate(['lista-entregas-chave']);
+    })
   }
 
   cancelar() {
