@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-solicitar-material',
@@ -8,12 +7,9 @@ import { Router } from '@angular/router';
 })
 export class SolicitarMaterialPage implements OnInit {
 
-  constructor(public routerService:Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  cadastrar() {
-    this.routerService.navigateByUrl('/home')
-  }
 }

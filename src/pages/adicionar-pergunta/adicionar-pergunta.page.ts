@@ -12,7 +12,7 @@ export class AdicionarPerguntaPage implements OnInit {
   pergunta:Pergunta={};
   constructor(
     private perguntaService:PerguntaService,
-    private routerService:Router
+    private routeService:Router
   ) { }
 
   ngOnInit() {
@@ -20,10 +20,10 @@ export class AdicionarPerguntaPage implements OnInit {
 
   cadastrar(pergunta:Pergunta){
     this.perguntaService.cadastrar(pergunta);
-    this.routerService.navigateByUrl('/lista-pergunta')
+    this.routeService.navigateByUrl('/lista-pergunta')
   }
 
   cancelar(){
-    this.routerService.navigateByUrl('/home')
+    this.routeService.navigateByUrl('/lista-pergunta')
   }
 }
