@@ -32,7 +32,11 @@ export class CadastroVistoriaPage {
 
   cancelar() {
     console.log('Vistoria - cancelar');
-    this.routerService.navigateByUrl('/home')
+    this.vistoria.id = null;
+    this.vistoria.emConformidade = null;
+    this.vistoria.data = null;
+    this.vistoria.descricao = null;
+    this.vistoria.periodo = null;
   }
 
   listar() {

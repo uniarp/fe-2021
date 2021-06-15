@@ -30,7 +30,7 @@ export class CadastroProfessorPage {
   } 
 
   cancelar(){
-    this.routeService.navigateByUrl('/home')
+    this.routeService.navigateByUrl('/lista-professor')
   }
   listar() {
     this.routeService.navigate(['lista-professor']);

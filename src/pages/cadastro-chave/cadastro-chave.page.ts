@@ -35,7 +35,7 @@ export class CadastroChavePage {
   }
 
   cancelar() {
-    this.routerService.navigateByUrl('/home')
+    this.chave = null;
   }
 
   listar() {

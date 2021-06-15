@@ -41,7 +41,8 @@ export class SolicitarReservaSalaPage {
   }
 
   cancelar() {
-    this.routerService.navigateByUrl('/home')
+    this.reservaSala = null;
+    this.routerService.navigate(['lista-reservas-sala']);
   }
 
   novo() {

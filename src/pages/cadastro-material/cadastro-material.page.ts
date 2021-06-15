@@ -32,7 +32,11 @@ export class CadastroMaterialPage {
 
   cancelar(){
     console.log('CadastrarMaterial - cancelar');
-    this.routerService.navigateByUrl('/home')
+    this.material.nome = null;
+    this.material.quantidade = null;
+    this.material.id = null;
+    this.material.descricao = null;
+    this.material.marca = null;
   }
 
   listar(){

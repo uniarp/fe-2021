@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-<<<<<<< HEAD
-=======
 import { Curso } from 'src/model/curso';
 import { Disciplina } from 'src/model/disciplina';
 import { CursoService } from 'src/services/curso.service';
 import { DisciplinaService } from 'src/services/disciplina.service';
 import { ProfessorService } from 'src/services/professor.service';
->>>>>>> origin
 
 @Component({
   selector: 'app-cadastro-disciplina',
@@ -16,13 +13,9 @@ import { ProfessorService } from 'src/services/professor.service';
 })
 export class CadastroDisciplinaPage {
 
-<<<<<<< HEAD
-  constructor(public routerService : Router) { }
-=======
   disciplina : Disciplina;
   cursos : any;
   professores : any;
->>>>>>> origin
 
   constructor(
     private cursoService:CursoService,
@@ -41,13 +34,6 @@ export class CadastroDisciplinaPage {
     });
   }
 
-<<<<<<< HEAD
-  cancelar() {
-    this.routerService.navigateByUrl('/home')
-  }
-
-}
-=======
   cadastrar() {
     console.log(this.disciplina); 
     this.disciplinaService.cadastrar(this.disciplina).then(()=>{
@@ -59,4 +45,3 @@ export class CadastroDisciplinaPage {
     this.routeService.navigateByUrl('/lista-disciplinas')
   }
 }
->>>>>>> origin
