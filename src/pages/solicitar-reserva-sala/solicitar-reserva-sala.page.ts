@@ -35,8 +35,9 @@ export class SolicitarReservaSalaPage {
 
   cadastrar() {
     this.reservaSala.status = "solicitado";
-    this.reservaSalaSevice.cadastrar(this.reservaSala);
+    this.reservaSalaSevice.cadastrar(this.reservaSala).then(()=>{;
     this.routerService.navigate(['lista-reservas-sala']);
+    })
   }
 
   cancelar() {
