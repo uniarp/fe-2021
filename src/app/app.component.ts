@@ -94,7 +94,7 @@ export class AppComponent {
       'icon':'reader-outline'
     },
     {
-      'nome':'Solicitar Reserva de Sala',
+      'nome':'Sala',
       'link':'solicitar-reserva-sala',
       'icon':'reader-outline'
     }
@@ -112,7 +112,7 @@ export class AppComponent {
       'icon':'reader-outline'
     },
     {
-      'nome':' Sala',
+      'nome':'Sala',
       'link':'cadastro-sala',
       'icon':'reader-outline'
     },
@@ -207,7 +207,7 @@ export class AppComponent {
       'icon':'reader-outline'
     },
     {
-      'nome':'Entregas de Material',
+      'nome':'Entregas de Materiais',
       'link':'lista-entregas-material',
       'icon':'reader-outline'
     },
@@ -224,11 +224,6 @@ export class AppComponent {
     {
       'nome':'Vistorias',
       'link':'lista-vistorias',
-      'icon':'reader-outline'
-    },
-    {
-      'nome':'Adicionar Todas as Paginas a Lista',
-      'link':'adicionar-todas-paginas-lista',
       'icon':'reader-outline'
     },
     {
