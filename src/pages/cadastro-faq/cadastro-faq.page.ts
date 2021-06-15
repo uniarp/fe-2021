@@ -24,6 +24,6 @@ export class CadastroFaqPage {
   }
 
   cancelar(){
-    this.routeService.navigateByUrl('/lista-pergunta')
+    this.routeService.navigateByUrl('/home')
   }
 }

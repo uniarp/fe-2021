@@ -29,6 +29,8 @@ export class CadastroCursoPage {
   
     cancelar() {
       this.curso = null;
+      this.routerService.navigateByUrl('/home')
+
     }
   
     listar(){
