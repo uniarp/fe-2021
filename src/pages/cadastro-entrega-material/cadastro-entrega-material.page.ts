@@ -43,6 +43,7 @@ export class CadastroEntregaMaterialPage {
 
   cancelar() {
     this.entrega = null;
+    this.routerService.navigateByUrl('/home')
   }
 
   listar() {

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+<<<<<<< HEAD
+=======
 import { Software } from '../../model/software';
 import { SoftwareService } from '../../services/software.service';
+>>>>>>> origin
 
 @Component({
   selector: 'app-cadastro-software',
@@ -10,7 +13,11 @@ import { SoftwareService } from '../../services/software.service';
 })
 export class CadastroSoftwarePage {
 
+<<<<<<< HEAD
+  constructor(public routerService:Router) { }
+=======
   software:Software;
+>>>>>>> origin
 
   constructor(
     public softwareService:SoftwareService,
@@ -18,6 +25,11 @@ export class CadastroSoftwarePage {
       
      }
 
+<<<<<<< HEAD
+  cancelar() {
+    this.routerService.navigateByUrl('/home')
+  }
+=======
   ionViewDidEnter(){
     this.software= new Software();
     }
@@ -29,4 +41,5 @@ export class CadastroSoftwarePage {
     cancelar(){
       this.routeService.navigateByUrl('/lista-software')
     }
+>>>>>>> origin
 }
