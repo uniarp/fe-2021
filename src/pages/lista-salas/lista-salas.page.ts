@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Sala } from 'src/model/sala';
 import { SalaService } from '../../services/sala.service';
 
 @Component({
-  selector: 'app-lista-sala',
-  templateUrl: './lista-sala.page.html',
-  styleUrls: ['./lista-sala.page.scss'],
+  selector: 'app-lista-salas',
+  templateUrl: './lista-salas.page.html',
+  styleUrls: ['./lista-salas.page.scss'],
 })
-export class ListaSalaPage  {
+export class ListaSalasPage  {
   
   salas : any;
 
@@ -30,11 +31,11 @@ export class ListaSalaPage  {
     this.routerService.navigateByUrl('/cadastro-sala');
   }
 
-  excluir() {
-
+  alterar(id : Number, sala : Sala) {
+    this.salaService.alterar(id,sala)
   }
 
-  alterar() {
-
+  excluir(id : Number) {
+    this.salaService.excluir(id)
   }
 }

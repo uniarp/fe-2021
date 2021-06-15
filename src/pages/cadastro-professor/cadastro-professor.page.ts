@@ -23,9 +23,14 @@ export class CadastroProfessorPage {
   }
   cadastrar() {
     this.professorService.cadastrar(this.professor);
+    this.routeService.navigate(['lista-professor']);
   } 
 
   cancelar(){
     this.routeService.navigateByUrl('/home')
   }
+  listar() {
+    this.routeService.navigate(['lista-professor']);
+  }
+
 }

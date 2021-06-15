@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
-import { ListaReservasSalaPageRoutingModule } from './lista-reservas-sala-routing.module';
+import { ListaReservasEquipamentoPageRoutingModule } from './lista-reservas-equipamento-routing.module';
 
-import { ListaReservasSalaPage } from './lista-reservas-sala.page';
+import { ListaReservasEquipamentoPage } from './lista-reservas-equipamento.page';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 
 @NgModule({
@@ -14,16 +14,15 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
     CommonModule,
     FormsModule,
     IonicModule,
-    ListaReservasSalaPageRoutingModule,
+    ListaReservasEquipamentoPageRoutingModule,
     Ng2SearchPipeModule,
     RouterModule.forChild([
       {
         path: '',
-        component: ListaReservasSalaPage
+        component: ListaReservasEquipamentoPage
       }
     ])
   ],
-  declarations: [ListaReservasSalaPage]
+  declarations: [ListaReservasEquipamentoPage]
 })
-export class ListaReservasSalaPageModule {}
-
+export class ListaReservasEquipamentoPageModule {}

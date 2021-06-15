@@ -3,11 +3,11 @@ import { Router } from '@angular/router';
 import { EquipamentoService } from '../../services/equipamento.service';
 
 @Component({
-  selector: 'app-lista-de-equipamentos',
-  templateUrl: './lista-de-equipamentos.page.html',
-  styleUrls: ['./lista-de-equipamentos.page.scss'],
+  selector: 'app-lista-equipamentos',
+  templateUrl: './lista-equipamentos.page.html',
+  styleUrls: ['./lista-equipamentos.page.scss'],
 })
-export class ListaDeEquipamentosPage  {
+export class ListaEquipamentosPage  {
   
   equipamentos: any;
   

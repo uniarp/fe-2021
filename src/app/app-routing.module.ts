@@ -64,8 +64,8 @@ const routes: Routes = [
     loadChildren: () => import('../pages/lista-materiais-entregues/lista-materiais-entregues.module').then( m => m.ListaMateriaisEntreguesPageModule)
   },
   {
-    path: 'lista-sala',
-    loadChildren: () => import('../pages/lista-sala/lista-sala.module').then( m => m.ListaSalaPageModule)
+    path: 'lista-salas',
+    loadChildren: () => import('../pages/lista-salas/lista-salas.module').then( m => m.ListaSalasPageModule)
   },
   {
     path: 'lista-professor',
@@ -76,8 +76,8 @@ const routes: Routes = [
     loadChildren: () => import('../pages/lista-incidentes-resolvidos/lista-incidentes-resolvidos.module').then( m => m.ListaIncidentesResolvidosPageModule)
   },
   {
-    path: 'lista-reserva-equipamentos',
-    loadChildren: () => import('../pages/lista-reserva-equipamentos/lista-reserva-equipamentos.module').then( m => m.ListaReservaEquipamentosPageModule)
+    path: 'lista-reservas-equipamento',
+    loadChildren: () => import('../pages/lista-reservas-equipamento/lista-reservas-equipamento.module').then( m => m.ListaReservasEquipamentoPageModule)
   },
   {
     path: 'adicionar-todas-paginas-lista',
@@ -96,8 +96,8 @@ const routes: Routes = [
     loadChildren: () => import('../pages/faq/faq.module').then( m => m.FaqPageModule)
   },
   {
-    path: 'lista-de-equipamentos',
-    loadChildren: () => import('../pages/lista-de-equipamentos/lista-de-equipamentos.module').then( m => m.ListaDeEquipamentosPageModule)
+    path: 'lista-equipamentos',
+    loadChildren: () => import('../pages/lista-equipamentos/lista-equipamentos.module').then( m => m.ListaEquipamentosPageModule)
   },
   {
     path: 'buscar-salas',
@@ -152,8 +152,8 @@ const routes: Routes = [
     loadChildren: () => import('../pages/lista-materiais/lista-materiais.module').then( m => m.ListaMateriaisPageModule)
   },
   {
-    path: 'lista-de-cursos',
-    loadChildren: () => import('../pages/lista-de-cursos/lista-de-cursos.module').then( m => m.ListaDeCursosPageModule)
+    path: 'lista-cursos',
+    loadChildren: () => import('../pages/lista-cursos/lista-cursos.module').then( m => m.ListaCursosPageModule)
   },
   {
     path:'lista-equipamentos-solicitados',
@@ -169,9 +169,13 @@ const routes: Routes = [
   },
   {
     path:'lista-espera-sala',
-    loadChildren:()=>import('../pages/lista-espera-sala/lista-espera-sala.module').then(m=>m.ListaEsperaSalaPageModule)
+    loadChildren:()=>import('../pages/lista-espera-sala/lista-espera-sala.module').then(m=>m.ListaEsperaSalaPageModule
+    )
   },
-
+  {
+    path: 'lista-disciplinas',
+    loadChildren: () => import('../pages/lista-disciplinas/lista-disciplinas.module').then( m => m.ListaDisciplinasPageModule)
+  }
 ];
 
 @NgModule({

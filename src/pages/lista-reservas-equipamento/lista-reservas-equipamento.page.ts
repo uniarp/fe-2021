@@ -3,13 +3,15 @@ import { Router } from '@angular/router';
 import { ReservaEquipamentoService } from '../../services/reserva-equipamento.service';
 
 @Component({
-  selector: 'app-lista-reserva-equipamentos',
-  templateUrl: './lista-reserva-equipamentos.page.html',
-  styleUrls: ['./lista-reserva-equipamentos.page.scss'],
+  selector: 'app-lista-reservas-equipamentos',
+  templateUrl: './lista-reservas-equipamento.page.html',
+  styleUrls: ['./lista-reservas-equipamento.page.scss'],
 })
-export class ListaReservaEquipamentosPage {
-
-  reservaEquipamento:any;
+export class ListaReservasEquipamentoPage {
+  
+  pesquisa = '';
+  reservasEquipamento : any;
+  
   constructor(
     public reservaEquipamentoService:ReservaEquipamentoService,
     public routerService:Router
@@ -20,9 +22,9 @@ export class ListaReservaEquipamentosPage {
   }
 
   ionViewWillEnter() {
+    this.reservasEquipamento = [];
     this.reservaEquipamentoService.listar().subscribe(dados => {
-      this.reservaEquipamento = dados;
-      console.log(this.reservaEquipamento);
+      this.reservasEquipamento = dados;
     });
   }
 }
