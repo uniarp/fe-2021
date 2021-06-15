@@ -31,6 +31,7 @@ export class CadastroSalaPage {
 
   cancelar() {
     this.sala = null
+    this.routerService.navigateByUrl('/home')
   }
 
   listar() {
