@@ -42,7 +42,7 @@ export class CadastroEntregaChavePage {
 
   cancelar() {
     this.entregaChave = null;
-    this.routerService.navigateByUrl('lista-entregas-chave');
+    this.routerService.navigateByUrl('/home');
   }
 
   listar() {

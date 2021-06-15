@@ -26,6 +26,6 @@ export class CadastroProfessorPage {
   } 
 
   cancelar(){
-    this.routeService.navigateByUrl('/lista-professor')
+    this.routeService.navigateByUrl('/home')
   }
 }
