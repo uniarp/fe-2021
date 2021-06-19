@@ -56,17 +56,12 @@ export class AppComponent {
   }
   reportares = [
     {
-      'nome':'Cadastro Faq',
+      'nome':'Cadastro FAQ',
       'link':'cadastro-faq',
       'icon':'reader-outline'
     },
     {
-      'nome':'Faq',
-      'link':'faq',
-      'icon':'reader-outline'
-    },
-    {
-      'nome':'perguntas',
+      'nome':'Perguntas Frequentes',
       'link':'/lista-pergunta',
       'icon':'information-circle-outline'
     }
