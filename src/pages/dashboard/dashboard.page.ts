@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardPage implements OnInit {
 
-  constructor() { }
+  emHome : boolean;
+
+  constructor(public routerService : Router) {
+    this.emHome = this.routerService.url == "/home/dashboard";
+  }
 
   ngOnInit() {
   }

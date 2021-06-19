@@ -10,11 +10,14 @@ import { ReservaEquipamentoService } from '../../services/reserva-equipamento.se
 export class ListaReservasEquipamentoPage {
   pesquisa = '';
   reservasEquipamento : any;
+  emHome: boolean;
   
+
   constructor(
     public reservaEquipamentoService:ReservaEquipamentoService,
     public routerService:Router
   ) {
+    this.emHome = this.routerService.url == "/home/lista-reservas-equipamento";
     let data = new Date();
     this.pesquisa = `${(data.getFullYear())}-${('0'+(data.getMonth()+ 1)).slice(-2)}-${('0'+(data.getDate())).slice(-2)}`
    }
