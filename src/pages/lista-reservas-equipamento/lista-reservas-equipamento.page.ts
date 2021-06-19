@@ -11,11 +11,11 @@ export class ListaReservasEquipamentoPage {
   
   pesquisa = '';
   reservasEquipamento : any;
+  emHome: boolean;
   
-  constructor(
-    public reservaEquipamentoService:ReservaEquipamentoService,
-    public routerService:Router
-  ) { }
+  constructor(public reservaEquipamentoService:ReservaEquipamentoService, public routerService:Router) {
+    this.emHome = this.routerService.url == "/home/lista-reservas-equipamento";
+  }
 
   novo(){
     this.routerService.navigateByUrl('/solicitar-equipamento');
