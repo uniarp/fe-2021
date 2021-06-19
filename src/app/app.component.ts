@@ -94,7 +94,7 @@ export class AppComponent {
       'icon':'reader-outline'
     },
     {
-      'nome':'Sala',
+      'nome':'Solicitar Sala',
       'link':'solicitar-reserva-sala',
       'icon':'reader-outline'
     }
