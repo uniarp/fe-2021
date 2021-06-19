@@ -14,12 +14,10 @@ export class ListaReservasSalaPage {
   reservasSala : {}
   private entregaChave:any;
   alert:any
-  constructor(
-    public reservaSalaService : ReservaSalaService,
-    public routerService : Router, 
-    public alertController: AlertController,
-    private entregaChaveService:EntregaChaveService
-  ) {
+  emHome : boolean
+
+  constructor(public reservaSalaService : ReservaSalaService, public routerService : Router, public alertController: AlertController,private entregaChaveService:EntregaChaveService) {
+    this.emHome = this.routerService.url == "/home/lista-reservas-sala";
   }
 
   cancelar (){
