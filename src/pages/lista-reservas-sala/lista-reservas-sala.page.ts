@@ -10,10 +10,12 @@ import { ReservaSalaService } from '../../services/reserva-sala.service';
   styleUrls: ['./lista-reservas-sala.page.scss'],
 })
 export class ListaReservasSalaPage {
+  
   pesquisa = '';
   reservasSala : {}
   private entregaChave:any;
   alert:any
+  emHome : boolean;
 
   constructor(
     public reservaSalaService : ReservaSalaService,
