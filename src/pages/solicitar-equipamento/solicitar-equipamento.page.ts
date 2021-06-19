@@ -45,11 +45,7 @@ export class SolicitarEquipamentoPage{
   }
 
   cancelar() {
-    this.reservaEquipamento.dataEntrega = null;
-    this.reservaEquipamento.dataDevolucao = null;
-    this.reservaEquipamento.observacao = null;
-    this.reservaEquipamento.periodo = null;
-    this.reservaEquipamento.status = null;
+    this.routerService.navigateByUrl('/home')
   }
 
   listar() {

@@ -36,12 +36,14 @@ export class CadastroEntregaMaterialPage {
     this.entrega.usuario = {
       id : 1
     }
-    this.entregaService.cadastrar(this.entrega);
+    this.entregaService.cadastrar(this.entrega).then(()=>{
     this.routerService.navigate(['lista-entregas-material']);
+    })
   }
 
   cancelar() {
     this.entrega = null;
+    this.routerService.navigateByUrl('/home')
   }
 
   listar() {

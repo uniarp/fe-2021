@@ -14,10 +14,16 @@ export class ListaReservasSalaPage {
   reservasSala : {}
   private entregaChave:any;
   alert:any
-  emHome : boolean
 
-  constructor(public reservaSalaService : ReservaSalaService, public routerService : Router, public alertController: AlertController,private entregaChaveService:EntregaChaveService) {
+  constructor(
+    public reservaSalaService : ReservaSalaService,
+    public routerService : Router, 
+    public alertController: AlertController,
+    private entregaChaveService:EntregaChaveService
+  ) {
     this.emHome = this.routerService.url == "/home/lista-reservas-sala";
+    let data = new Date();
+    this.pesquisa = `${(data.getFullYear())}-${('0'+(data.getMonth()+ 1)).slice(-2)}-${('0'+(data.getDate())).slice(-2)}`;
   }
 
   cancelar (){
