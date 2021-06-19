@@ -8,7 +8,7 @@ import { CursoService } from '../../services/curso.service';
   styleUrls: ['./lista-cursos.page.scss'],
 })
 export class ListaCursosPage  {
-
+  pesquisa = '';
   curso: any;
 
   constructor(

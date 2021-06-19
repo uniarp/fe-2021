@@ -29,12 +29,14 @@ export class CadastroChavePage {
   }
 
   cadastrar() {
-    this.chaveService.cadastrar(this.chave);
+    this.chaveService.cadastrar(this.chave).then(()=>{
     this.routerService.navigate(['lista-chaves']);
+    })
   }
 
   cancelar() {
     this.chave = null;
+    this.routerService.navigateByUrl('/home')
   }
 
   listar() {
