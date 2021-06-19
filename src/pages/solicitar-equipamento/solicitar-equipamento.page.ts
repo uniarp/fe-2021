@@ -38,10 +38,9 @@ export class SolicitarEquipamentoPage{
 
   cadastrar(){
     this.reservaEquipamento.status= "reservado";
-    this.reservaEquipamentoService.cadastrar(this.reservaEquipamento);
-    console.log(this.reservaEquipamento);
-    this.routerService.navigate(['lista-reserva-equipamentos']);
-
+    this.reservaEquipamentoService.cadastrar(this.reservaEquipamento).then(()=>{
+      this.routerService.navigate(['lista-reservas-equipamento']);
+    });
   }
 
   cancelar() {
