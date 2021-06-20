@@ -13,13 +13,14 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-list inset >
-    <ion-item *ngFor="let chave of chaves">
-      <ion-label>Número:{{chave.numerosala}}</ion-label>
-      <ion-label>
-        Bloco:{{chave.bloco}}
-      </ion-label>
-      <ion-label>Andar: {{chave.andar}}</ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-grid *ngIf="chaves != ''">
+    <ion-row>
+      <ion-col><h6>Identificação</h6></ion-col>
+      <ion-col><h6>Número da sala</h6></ion-col>
+    </ion-row>
+    <ion-row *ngFor = "let chave of chaves">
+      <ion-col>{{chave.id}}</ion-col>
+      <ion-col>{{chave.numerosala}}</ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
