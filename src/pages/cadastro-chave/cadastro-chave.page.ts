@@ -25,18 +25,19 @@ export class CadastroChavePage {
     this.salaService.listar().subscribe(dados => {
       this.salas = dados;
     });
-    
   }
 
   cadastrar() {
+    console.log(this.chave);
     this.chaveService.cadastrar(this.chave).then(()=>{
-    this.routerService.navigate(['lista-chaves']);
-    })
+      this.routerService.navigate(['lista-chaves']);
+    });
   }
 
   cancelar() {
-    this.chave = null;
-    this.routerService.navigateByUrl('/home')
+    this.chave.sala = null;
+    this.chave.id = null;
+    this.routerService.navigateByUrl('/lista-chaves');
   }
 
   listar() {
