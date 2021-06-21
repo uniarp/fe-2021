@@ -27,6 +27,6 @@ export class CadastroSoftwarePage {
       })
     }
     cancelar(){
-      this.routeService.navigateByUrl('/lista-software')
+      this.routeService.navigateByUrl('/home')
     }
 }
