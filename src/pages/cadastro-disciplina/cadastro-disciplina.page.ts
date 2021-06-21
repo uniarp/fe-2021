@@ -42,6 +42,6 @@ export class CadastroDisciplinaPage {
   }
 
   cancelar(){
-    this.routeService.navigateByUrl('/lista-disciplinas')
+    this.routeService.navigateByUrl('/home')
   }
 }
