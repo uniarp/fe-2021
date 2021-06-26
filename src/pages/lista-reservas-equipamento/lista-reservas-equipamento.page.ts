@@ -10,6 +10,7 @@ import { EntregaService } from 'src/services/entrega.service';
   styleUrls: ['./lista-reservas-equipamento.page.scss'],
 })
 export class ListaReservasEquipamentoPage {
+  
   pesquisa = '';
 
   reservasEquipamento: any;
