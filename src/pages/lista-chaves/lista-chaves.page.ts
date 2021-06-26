@@ -26,10 +26,7 @@ export class ListaChavesPage {
   }
 
   cadastrarEntregaChave() {
-    this.routerService.navigateByUrl('/cadastro-entrega-chave');
+    this.routerService.navigateByUrl('/cadastro-chave');
   }
 
-  devolverEntregaChave() {
-    console.log('devolvendo');
-  }
 }

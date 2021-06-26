@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ReservaSalaService } from 'src/services/reserva-sala.service';
 
 @Component({
   selector: 'app-lista-espera-sala',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lista-espera-sala.page.scss'],
 })
 export class ListaEsperaSalaPage implements OnInit {
-
-  constructor() { }
+  reservas:any;
+  constructor(
+    private reservaSalaService:ReservaSalaService,
+  ) { }
 
   ngOnInit() {
   }
 
+  ionViewWillEnter(){
+    this.reservaSalaService.listaSolicitada().subscribe(dados=>{
+      this.reservas=dados;
+    })
+  }
 }
