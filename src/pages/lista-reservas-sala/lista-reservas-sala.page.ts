@@ -79,7 +79,7 @@ export class ListaReservasSalaPage {
   EntregaChave(id_reservaSala:number) {
     this.alertEntregarDevolver("Você está confirmando uma entrega de chave, deseja continuar?","Entrega de chave").then((resposta)=>{
       if(resposta==true){
-        let data = new Date().toLocaleString()
+        let data = new Date().toDateString()
         const entrega={
           "reservasala":id_reservaSala,
           "dataHoraEntrega":data,
@@ -98,7 +98,7 @@ export class ListaReservasSalaPage {
   devolverChave(id_reservaSala:number):void{
     this.alertEntregarDevolver("Você está confirmando uma devolução de chave, deseja continuar?","Devolução de chave").then((resposta)=>{
       if(resposta==true){
-        let data = new Date().toLocaleString();
+        let data = new Date().toDateString()
         const dados={
           "status":"devolvida",
           "dataDevolucao": data
