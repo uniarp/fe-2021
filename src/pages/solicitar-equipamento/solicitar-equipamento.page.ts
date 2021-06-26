@@ -38,18 +38,13 @@ export class SolicitarEquipamentoPage{
 
   cadastrar(){
     this.reservaEquipamento.status= "reservado";
-    this.reservaEquipamentoService.cadastrar(this.reservaEquipamento);
-    console.log(this.reservaEquipamento);
-    this.routerService.navigate(['lista-reserva-equipamentos']);
-
+    this.reservaEquipamentoService.cadastrar(this.reservaEquipamento).then(()=>{
+      this.routerService.navigate(['lista-reservas-equipamento']);
+    });
   }
 
   cancelar() {
-    this.reservaEquipamento.dataEntrega = null;
-    this.reservaEquipamento.dataDevolucao = null;
-    this.reservaEquipamento.observacao = null;
-    this.reservaEquipamento.periodo = null;
-    this.reservaEquipamento.status = null;
+    this.routerService.navigateByUrl('/home')
   }
 
   listar() {

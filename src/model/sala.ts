@@ -3,12 +3,9 @@ import { Localizacao } from "./localizacao";
 export class Sala {
     
   id?: Number;
-  numero?: Number;
-  localizacao?: Localizacao;
+  numerosala?: Number;
   capacidade?: Number;
-    
-  constructor() {
-    this.localizacao = new Localizacao();
-  }
+  bloco? : String;
+  andar? : Number;
 
 }

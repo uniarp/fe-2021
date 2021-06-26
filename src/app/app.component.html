@@ -2,13 +2,14 @@
   <ion-menu menuId="main-menu" content-id="main">
     <ion-header>
       <ion-toolbar>
-        <ion-title class="ion-text-center" >Menu</ion-title>
+        <ion-title class="ion-text-center" (click)="home()" ><ion-icon  name="home-outline"></ion-icon></ion-title>
+        
       </ion-toolbar>
      </ion-header>
      <ion-content>
        <ion-list>
          <ion-item no-lines (click)="isRegister()" detail="true">
-           <ion-icon name="add-circle" slot="start"> </ion-icon>
+           <ion-icon name="add-circle" > </ion-icon>
            <ion-label><dd>Cadastrar</dd> </ion-label>
          </ion-item>
          
@@ -22,10 +23,19 @@
           </ion-menu-toggle>
         </div>
          
-         <ion-item detail="true">
+        <ion-item no-lines (click)="isReservation()" detail="true">
           <ion-icon name="calendar"> </ion-icon>
           <ion-label><dd>Reservas</dd></ion-label>
         </ion-item>
+        <div *ngIf="toReservation==true" class="ion-padding">
+          <ion-menu-toggle  *ngFor="let reserva of reservas; let e = index">
+            <ion-item position="floating" (click)="activeIndex = e" routerDirection="root" [routerLink]="[reserva.link]" lines="none"
+              detail="true" [class.selected]="activeIndex == e">
+              <ion-icon slot="start" [name]="reserva.icon"></ion-icon>
+              <ion-label>{{ reserva.nome }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </div>
         <ion-item no-lines (click)="isListed()" detail="true">
           <ion-icon name="reader" slot="start"> </ion-icon>
           <ion-label>Listar</ion-label> 
@@ -40,10 +50,19 @@
             </ion-item>
           </ion-menu-toggle>
         </div>
-        <ion-item detail="true">
+        <ion-item no-lines (click)="isReport()" detail="true">
           <ion-icon name="alert-circle"> </ion-icon>
           <ion-label><dd>Reportar</dd></ion-label>
         </ion-item>
+        <div *ngIf="toReport==true" class="ion-padding">
+          <ion-menu-toggle  *ngFor="let reportar of reportares; let e = index">
+            <ion-item position="floating" (click)="activeIndex = e" routerDirection="root" [routerLink]="[reportar.link]" lines="none"
+              detail="true" [class.selected]="activeIndex == e">
+              <ion-icon slot="start" [name]="reportar.icon"></ion-icon>
+              <ion-label>{{ reportar.nome }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </div>
        </ion-list>
      </ion-content>
   </ion-menu>

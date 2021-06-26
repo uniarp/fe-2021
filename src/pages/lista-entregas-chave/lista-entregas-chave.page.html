@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Entregas Chaves</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+      <ion-fab-button color="success" >
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+    <ion-list *ngFor="let entregaChave of entregasChave">
+        <ion-item>
+            <ion-label>
+              <h2> {{entregaChave.id}} </h2>
+            </ion-label>
+            <ion-label>
+              <h2>{{entregaChave.nomecompleto}}</h2>
+            </ion-label>   
+            <ion-label>
+              <h2>{{entregaChave.numerosala}}</h2>
+            </ion-label>
+            <ion-label>
+              <h2>{{entregaChave.id_chave}}</h2>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
