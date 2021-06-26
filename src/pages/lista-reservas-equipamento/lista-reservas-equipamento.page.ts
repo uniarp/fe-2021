@@ -11,17 +11,17 @@ import { EntregaService } from 'src/services/entrega.service';
 })
 export class ListaReservasEquipamentoPage {
   pesquisa = '';
-  reservasEquipamento : any;
+  reservasEquipamento: any;
   alert: any;
 
   constructor(
-    public reservaEquipamentoService:ReservaEquipamentoService,
+    public reservaEquipamentoService: ReservaEquipamentoService,
     public alertController: AlertController,
-    public routerService:Router,
-    public entregaService:EntregaService
+    public routerService: Router,
+    public entregaService: EntregaService
   ) { }
 
-  novo(){
+  novo() {
     this.routerService.navigateByUrl('/solicitar-equipamento');
   }
 
@@ -58,16 +58,11 @@ export class ListaReservasEquipamentoPage {
 
     await alert.present();
   }
-  entregaEquipamento(id_equipamento:number) {
-    this.alertEntregarDevolver("Você está confirmando uma entrega de equipamento, deseja continuar?","Entrega de equipamento").then((resposta)=>{
-      if(resposta==true){
-        let data = new Date().toLocaleString()
-        const entrega={
-          "entregaEquipamento":id_equipamento,
-          "status":"entregue"
-        }
-        console.log("🚀 ~ ~ entrega", entrega)
-        this.reservaEquipamentoService.cadastrar(entrega).then(()=>{
+  entregaEquipamento(id: number){
+    this.alertEntregarDevolver("Você está confirmando uma entrega de equipamento, deseja continuar?", "Entrega de equipamento").then((resposta) => {
+      if (resposta == true) {
+        let data = new Date().toDateString();
+         this.reservaEquipamentoService.entregar(id, data).then(() => {
           this.reservaEquipamentoService.listar().subscribe(dados => {
             this.reservasEquipamento = dados;
           });
@@ -75,14 +70,14 @@ export class ListaReservasEquipamentoPage {
       }
     })
   }
-  devolverEquipamento(id_equipamento:number):void{
-    this.alertEntregarDevolver("Você está confirmando uma devolução de equipamento, deseja continuar?","Devolução de equipamento").then((resposta)=>{
-      if(resposta==true){
-        let data = new Date().toLocaleString();
-        const dados={
-          "status":"devolver",
+  devolverEquipamento(id_equipamento: number){
+    this.alertEntregarDevolver("Você está confirmando uma devolução de equipamento, deseja continuar?", "Devolução de equipamento").then((resposta) => {
+      if (resposta == true) {
+        let data = new Date().toDateString();
+        const dados = {
+          "status": "devolver",
         }
-        this.reservaEquipamentoService.alterar(id_equipamento,dados).then(()=>{
+        this.reservaEquipamentoService.devolver(id_equipamento, data).then(() => {
           this.reservaEquipamentoService.listar().subscribe(dados => {
             this.reservasEquipamento = dados;
           });
@@ -91,7 +86,7 @@ export class ListaReservasEquipamentoPage {
     })
   }
 
-  async alertEntregarDevolver(message:string,header:string): Promise<boolean> {
+  async alertEntregarDevolver(message: string, header: string): Promise<boolean> {
     let resultado: (confirm: boolean) => void;
     const promise = new Promise<boolean>(resolve => {
       resultado = resolve;
@@ -103,7 +98,7 @@ export class ListaReservasEquipamentoPage {
       buttons: [
         {
           text: 'Cancelar',
-          role:'cancel',
+          role: 'cancel',
           handler: () => resultado(false)
         },
         {

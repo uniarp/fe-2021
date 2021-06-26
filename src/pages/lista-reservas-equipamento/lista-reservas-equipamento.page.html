@@ -31,17 +31,17 @@
       <ion-col>{{reservaEquipamento.dataentrega}}</ion-col>
       <ion-col>{{reservaEquipamento.datadevolucao}}</ion-col>
       <ion-col>{{reservaEquipamento.observacao}}</ion-col>
-      <ion-col *ngIf= 'reservaEquipamento.status_entregaequipamento==null'>
+      <ion-col *ngIf="reservaEquipamento.status=='reservado'">
         <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="entregaEquipamento(reservaEquipamento.id)">
-          Entregar Equipamento
-        </ion-button>
+          Entregar Equipamento 
+        </ion-button> 
       </ion-col>
-      <ion-col *ngIf= "reservaEquipamento.status_entregaequipamento=='entregue'">
+      <ion-col *ngIf="reservaEquipamento.status=='Entregue'">
         <ion-button disable=true expand="block" fill="solid" color="secondary" shape="round" (click)="devolverEquipamento(reservaEquipamento.id)">
           Devolver Equipamento
         </ion-button>
       </ion-col>
-      <ion-col *ngIf= "reservaEquipamento.status_entregachave=='devolver'">
+      <ion-col *ngIf="reservaEquipamento.status=='Devolvido'">
         <ion-button disable=true expand="block" fill="clear" color="tertiary">
           Equipamento Devolvido
         </ion-button>
