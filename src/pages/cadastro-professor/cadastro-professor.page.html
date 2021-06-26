@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro Professor</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="professor">
+    <ion-item>
+      <ion-label position="floating">Login</ion-label>
+      <ion-input type = "text" [(ngModel)]="professor.login"></ion-input>
+    </ion-item> 
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input type= "password" [(ngModel)]="professor.senha"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Nome completo</ion-label>
+      <ion-input type="text" [(ngModel)]="professor.nomeCompleto"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating" >Nível</ion-label>
+      <ion-input type="number" [(ngModel)]="professor.nivel"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input type="email" [(ngModel)]="professor.email"></ion-input>
+    </ion-item>
+   
+  </ion-list>
+  
+  <ion-button  (click)="cadastrar(professor)"  color="danger">Cadastrar</ion-button>
+  <ion-button (click)="cancelar()"  color="danger">Cancelar</ion-button><br>
+  <ion-button (click)="listar()" color="danger">Listar</ion-button> 
+</ion-content>

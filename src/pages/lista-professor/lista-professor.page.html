@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Professores</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-grid *ngIf="professor != ''">
+    <ion-row>
+      <ion-col><h6>Nome Completo</h6></ion-col>
+      <ion-col><h6>Login</h6></ion-col>
+      <ion-col><h6>Nivel</h6></ion-col>
+      <ion-col><h6>E-Mail</h6></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let professor of professor">
+      <ion-col>{{professor.nomecompleto}}</ion-col>
+      <ion-col>{{professor.login}}</ion-col>
+      <ion-col>{{professor.nivel}}</ion-col>
+      <ion-col>{{professor.email}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  </ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro Chaves</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="chave">
+    <ion-item>
+      <ion-label position="floating">Sala</ion-label>
+      <ion-select [(ngModel)]="chave.sala">
+        <ion-select-option *ngFor="let sala of salas" [value]="sala.id">
+          {{sala.numerosala}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <br>
+    <ion-button (click)="cadastrar()" fill="solid" expand="block" color="success">Gravar</ion-button>
+    <br>
+    <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
+  </ion-list>
+</ion-content>

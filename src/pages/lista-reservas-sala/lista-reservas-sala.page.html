@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar *ngIf = "emHome == false">
+    <ion-title>Lista de Reservas Salas</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    </ion-toolbar>
+    <ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="danger" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-grid *ngIf="reservasSala != ''">
+    <ion-row>
+      <ion-col><h6>Sala</h6></ion-col>
+      <ion-col><h6>Professor</h6></ion-col>
+      <ion-col><h6>Data</h6></ion-col>
+      <ion-col><h6>Quantidade de Alunos</h6></ion-col>
+      <ion-col><h6>Status</h6></ion-col>
+      <ion-col><h6>Período</h6></ion-col>
+      <ion-col><h6>Cadastrado por</h6></ion-col>
+      <ion-col><h6>Ações</h6></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let reservaSala of reservasSala | filter:pesquisa">
+      <ion-col>{{reservaSala.numerosala}}</ion-col>
+      <ion-col>{{reservaSala.nome_professor}}</ion-col>
+      <ion-col>{{reservaSala.data | date:'dd/MM/yyyy'}}</ion-col>
+      <ion-col>{{reservaSala.qtdalunos}}</ion-col>
+      <ion-col>{{reservaSala.status}}</ion-col>
+      <ion-col>{{reservaSala.periodo}}</ion-col>
+      <ion-col>{{reservaSala.nome_usuario}}</ion-col>
+      <ion-col *ngIf= 'reservaSala.status_entregachave==null'>
+        <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="EntregaChave(reservaSala.id)">
+          Entregar chave
+        </ion-button>
+      </ion-col>
+      <ion-col *ngIf= "reservaSala.status_entregachave=='entregue'">
+        <ion-button disable=true expand="block" fill="solid" color="secondary" shape="round" (click)="devolverChave(reservaSala.id)">
+          Devolver chave
+        </ion-button>
+      </ion-col>
+      <ion-col *ngIf= "reservaSala.status_entregachave=='devolvida'">
+        <ion-button disable=true expand="block" fill="clear" color="tertiary">
+          Chave já devolvida
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

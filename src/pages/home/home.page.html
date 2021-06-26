@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Apoio Uniarp</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-row>
+  <ion-label>
+    Itens rápidos
+  </ion-label>
+</ion-row>
+<ion-row>
+  <ion-item *ngFor="let comum of comuns; let e = index" position="floating" (click)="activeIndex = e"
+    routerDirection="root" [routerLink]="[comum.link]" lines="none" detail="true" [class.selected]="activeIndex == e">
+    <ion-icon slot="start" [name]="comum.icon"></ion-icon>
+    <ion-label>{{ comum.nome }}</ion-label>
+  </ion-item>
+</ion-row>
+<ion-content>
+  <ion-tabs>
+    <ion-tab-bar slot="top">
+      <ion-tab-button tab="dashboard">
+        <ion-label>Dashboard</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="lista-reservas-sala">
+        <ion-label>Reservas de Sala</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="lista-reservas-equipamento">
+        <ion-label>Reservas de Equipamento</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

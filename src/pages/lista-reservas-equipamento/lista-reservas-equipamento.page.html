@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar *ngIf = "emHome == false">
+    <ion-title>Lista de Reserva Equipamentos</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-grid *ngIf=" reservasEquipamento != ''">
+    <ion-row>
+      <ion-col><h6>Tipo de Equipamento</h6></ion-col>
+      <ion-col><h6>Professor</h6></ion-col>
+      <ion-col><h6>Status</h6></ion-col>
+      <ion-col><h6>Data de Entrega</h6></ion-col>
+      <ion-col><h6>Data de Devolução</h6></ion-col>
+      <ion-col><h6>Observação</h6></ion-col>
+      <ion-col><h6>Ações</h6></ion-col>
+    </ion-row>
+    <ion-row *ngFor = "let reservaEquipamento of reservasEquipamento | filter: pesquisa">
+      <ion-col>{{reservaEquipamento.tipo_equipamento}}</ion-col>
+      <ion-col>{{reservaEquipamento.nome_professor}}</ion-col>
+      <ion-col>{{reservaEquipamento.status}}</ion-col>
+      <ion-col>{{reservaEquipamento.dataentrega}}</ion-col>
+      <ion-col>{{reservaEquipamento.datadevolucao}}</ion-col>
+      <ion-col>{{reservaEquipamento.observacao}}</ion-col>
+      <ion-col *ngIf="reservaEquipamento.status=='reservado'">
+        <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="entregaEquipamento(reservaEquipamento.id)">
+          Entregar Equipamento 
+        </ion-button> 
+      </ion-col>
+      <ion-col *ngIf="reservaEquipamento.status=='Entregue'">
+        <ion-button disable=true expand="block" fill="solid" color="secondary" shape="round" (click)="devolverEquipamento(reservaEquipamento.id)">
+          Devolver Equipamento
+        </ion-button>
+      </ion-col>
+      <ion-col *ngIf="reservaEquipamento.status=='Devolvido'">
+        <ion-button disable=true expand="block" fill="clear" color="tertiary">
+          Equipamento Devolvido
+        </ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

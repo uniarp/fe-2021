@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro Equipamento</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="equipamento">
+    <ion-item>
+      <ion-label position="floating">Tipo Equipamento:</ion-label>
+      <ion-select [(ngModel)]="equipamento.tipoEquipamento">
+        <ion-select-option *ngFor="let tipoEquipamento of tiposEquipamento" [value]="tipoEquipamento.id">
+          {{tipoEquipamento.nome}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Data Aquisição:</ion-label>
+      <ion-datetime [(ngModel)]="equipamento.dataAquisicao" pickerFormat="DD MM YYYY"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Marca:</ion-label>
+      <ion-input type="text" [(ngModel)]="equipamento.marca" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Status:</ion-label>
+      <ion-input type="text" [(ngModel)]="equipamento.status" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Modelo:</ion-label>
+      <ion-input type="text" [(ngModel)]="equipamento.modelo" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Sala:</ion-label>
+      <ion-select [(ngModel)]="equipamento.sala">
+        <ion-select-option *ngFor="let sala of salas" [value]="sala.id">
+          {{sala.numerosala}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button (click)="cadastrar()" color="danger">Cadastrar</ion-button>
+    <ion-button (click)="cancelar()" color="danger">Cancelar</ion-button>
+  </ion-list>
+</ion-content>
