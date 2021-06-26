@@ -31,7 +31,7 @@ export class CadastroTipoEquipamentoPage {
   }
 
   cancelar() {
-    this.tipoEquipamento = null;
+    this.tipoEquipamento.nome = null;
     this.routerService.navigateByUrl('/home')
   }
 
