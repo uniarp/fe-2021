@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Professor } from '../../model/professor';
 import { ProfessorService } from '../../services/professor.service';
@@ -9,29 +9,29 @@ import { ProfessorService } from '../../services/professor.service';
   styleUrls: ['./cadastro-professor.page.scss'],
 })
 export class CadastroProfessorPage {
-  
-  professor:Professor;
-  
-  constructor(
-    private professorService:ProfessorService,
-    private routeService:Router
-  ) { }
- 
 
-  ionViewWillEnter(){
+  professor: Professor;
+
+  constructor(
+    private professorService: ProfessorService,
+    private routeService: Router
+  ) { }
+
+
+  ionViewWillEnter() {
     this.professor = new Professor()
   }
+
   cadastrar() {
-
-    this.professorService.cadastrar(this.professor).then(()=>{
+    this.professorService.cadastrar(this.professor).then(() => {
       this.routeService.navigateByUrl('/lista-professor');
-    })  
-
-  } 
-
-  cancelar(){
-    this.routeService.navigateByUrl('/home')
+    });
   }
+
+  cancelar() {
+    this.routeService.navigateByUrl('/home');
+  }
+  
   listar() {
     this.routeService.navigate(['lista-professor']);
   }
