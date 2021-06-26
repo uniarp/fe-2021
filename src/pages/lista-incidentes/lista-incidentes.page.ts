@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IncidenteService } from '../services/incidente.service';
+import { IncidenteService } from '../../services/incidente.service';
 
 @Component({
   selector: 'app-lista-incidentes',
