@@ -13,20 +13,18 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-list *ngFor="let disciplina of disciplinas">
-    <ion-item>
-      <ion-label>
-        {{disciplina.nome}}
-      </ion-label>
-      <ion-label>
-        {{disciplina.periodo}}
-      </ion-label> 
-      <ion-label>
-        {{verDiasSemana(disciplina.diasemana)}}
-      </ion-label>
-      <ion-label>
-        {{disciplina.curso}}
-      </ion-label>  
-    </ion-item>
-  </ion-list>
+  <ion-grid *ngIf=" disciplinas != ''">
+    <ion-row>
+      <ion-col><h6>Nome</h6></ion-col>
+      <ion-col><h6>Período</h6></ion-col>
+      <ion-col><h6>Dia da Semana</h6></ion-col>
+      <ion-col><h6>Curso</h6></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let disciplina of disciplinas">
+      <ion-col>{{disciplina.nome}}</ion-col>
+      <ion-col>{{disciplina.periodo}}</ion-col> 
+      <ion-col>{{verDiasSemana(disciplina.diasemana)}}</ion-col>
+      <ion-col>{{disciplina.nome_curso}}</ion-col>  
+    </ion-row>
+  </ion-grid>
 </ion-content>
