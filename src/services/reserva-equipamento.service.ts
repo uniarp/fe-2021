@@ -7,8 +7,8 @@ import { ReservaEquipamento } from '../model/reserva-equipamento';
 })
 export class ReservaEquipamentoService {
 
-  // url = 'https://apoio-uniarp.herokuapp.com/reservasEquipamento/';
-  url = 'http://localhost:3000/reservasEquipamento/';
+   url = 'https://apoio-uniarp.herokuapp.com/reservasEquipamento/';
+
   constructor(public http: HttpClient) { }
 
   /* Em testes, sujeito a modificações
@@ -41,16 +41,16 @@ export class ReservaEquipamentoService {
   listaSolicitada() {
     return this.http.get(this.url + 'solicitada')
   }
- 
+
   entregar(id: number, data: any) {
     console.log(id, data);
     return new Promise((resolve, reject) => {
       this.http.post(this.url + id + '/entregar', data).subscribe(response => {resolve(response)
       })
-      
+
       console.log(id, data);
     });
-  } 
+  }
   devolver(id: number, data: any) {
     console.log(id, data);
     return new Promise((resolve, reject) => {
@@ -58,5 +58,5 @@ export class ReservaEquipamentoService {
       })
       console.log(this.url);
     });
-  } 
+  }
 }
