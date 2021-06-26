@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Cursos</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
+</ion-header>
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
+    <ion-fab-button color="success" >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list *ngFor="let curso of curso | filter: pesquisa">
+      <ion-item>
+          <ion-label>
+            <h2>{{curso.nome}}</h2>
+          </ion-label>   
+      </ion-item>
+  </ion-list>
+  </ion-content>

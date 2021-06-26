@@ -25,17 +25,14 @@ export class CadastroVistoriaPage {
   cadastrar() { //alterado o gravar para cadastrar
     console.log('Vistoria - cadastrar');
     // passar a vistoria que está sendo cadastrado
-    this.vistoriaService.cadastrar(this.vistoria);
+    this.vistoriaService.cadastrar(this.vistoria).then(()=>{
     this.routerService.navigate(['lista-vistorias']);
+    })
   }
 
   cancelar() {
     console.log('Vistoria - cancelar');
-    this.vistoria.id = null;
-    this.vistoria.emConformidade = null;
-    this.vistoria.data = null;
-    this.vistoria.descricao = null;
-    this.vistoria.periodo = null;
+    this.routerService.navigateByUrl('/home')
   }
 
   listar() {

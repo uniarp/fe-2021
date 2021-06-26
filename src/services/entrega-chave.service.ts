@@ -13,7 +13,7 @@ export class EntregaChaveService {
 
   /* Em testes, sujeito a modificações
   */
-  cadastrar(entregaChave : EntregaChave) {
+  cadastrar(entregaChave:any) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url + 'cadastrar', entregaChave).subscribe(response => {
         resolve(response);
@@ -29,6 +29,14 @@ export class EntregaChaveService {
 
   listar() {
     return this.http.get(this.url);
+  }
+
+  alterarStatus(id:number, data:any){
+    return new Promise((resolve, reject) => {
+      this.http.post(this.url + id + '/updatestatus',data).subscribe(response => {
+        resolve(response);
+      })
+    });
   }
 
   excluir(id : Number) {

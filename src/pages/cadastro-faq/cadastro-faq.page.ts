@@ -9,22 +9,27 @@ import { PerguntaService } from '../../services/pergunta.service';
   styleUrls: ['./cadastro-faq.page.scss'],
 })
 export class CadastroFaqPage {
+  
   pergunta:Pergunta;
+  
   constructor(
     private perguntaService:PerguntaService,
     private routeService:Router
-  ) { }
-  ionViewDidEnter(){
-  this.pergunta=new Pergunta();
+  ) {
+  }
+  ionViewDidEnter() {
+    this.pergunta = new Pergunta();
   }
 
-  cadastrar(pergunta:Pergunta){
-    this.perguntaService.cadastrar(this.pergunta);
+  cadastrar(pergunta:Pergunta) {
+    this.perguntaService.cadastrar(this.pergunta).then(()=>{
     this.routeService.navigateByUrl('/lista-pergunta')
+    })
   }
 
-  cancelar(){
+  cancelar() {
     this.pergunta.pergunta= null;
     this.pergunta.resposta= null;
+    this.routeService.navigateByUrl('/home')
   }
 }

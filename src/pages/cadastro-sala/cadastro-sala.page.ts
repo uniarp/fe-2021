@@ -24,8 +24,9 @@ export class CadastroSalaPage {
 
   cadastrar() {
     console.log(this.sala);
-    this.salaService.cadastrar(this.sala);
-    this.routerService.navigate(['lista-sala']);
+    this.salaService.cadastrar(this.sala).then(()=>{
+      this.routerService.navigate(['lista-sala']);  
+    });
   }
 
   cancelar() {
@@ -33,6 +34,7 @@ export class CadastroSalaPage {
     this.sala.localizacao.bloco= null;
     this.sala.localizacao.andar= null;
     this.sala.capacidade= null;
+    this.routerService.navigateByUrl('/home')
   }
 
   listar() {
