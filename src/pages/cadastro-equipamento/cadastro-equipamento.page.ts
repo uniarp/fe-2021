@@ -45,6 +45,7 @@ export class CadastroEquipamentoPage  {
 
   cancelar() {
     this.equipamento = null;
+    this.routerService.navigateByUrl('/home')
   }
 
   listar(){

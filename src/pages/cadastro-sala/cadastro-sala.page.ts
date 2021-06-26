@@ -24,12 +24,14 @@ export class CadastroSalaPage {
 
   cadastrar() { 
     console.log(this.sala);
-    this.salaService.cadastrar(this.sala);
+    this.salaService.cadastrar(this.sala).then(()=>{
     this.routerService.navigate(['lista-sala']);  
+    })
   }
 
   cancelar() {
     this.sala = null
+    this.routerService.navigateByUrl('/home')
   }
 
   listar() {

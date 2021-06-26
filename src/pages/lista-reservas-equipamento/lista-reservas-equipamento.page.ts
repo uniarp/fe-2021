@@ -11,7 +11,9 @@ import { EntregaService } from 'src/services/entrega.service';
 })
 export class ListaReservasEquipamentoPage {
   pesquisa = '';
+
   reservasEquipamento: any;
+  emHome: boolean;
   alert: any;
 
   constructor(
@@ -19,7 +21,11 @@ export class ListaReservasEquipamentoPage {
     public alertController: AlertController,
     public routerService: Router,
     public entregaService: EntregaService
-  ) { }
+  ) { 
+    this.emHome = this.routerService.url == "/home/lista-reservas-equipamento";
+    let data = new Date();
+    this.pesquisa = `${(data.getFullYear())}-${('0'+(data.getMonth()+ 1)).slice(-2)}-${('0'+(data.getDate())).slice(-2)}`
+    }
 
   novo() {
     this.routerService.navigateByUrl('/solicitar-equipamento');

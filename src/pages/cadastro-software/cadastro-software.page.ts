@@ -22,10 +22,11 @@ export class CadastroSoftwarePage {
     this.software= new Software();
     }
     cadastrar(software:Software){
-      this.softwareService.cadastrar(this.software);
+      this.softwareService.cadastrar(this.software).then(()=>{
       this.routeService.navigateByUrl('/lista-software')
+      })
     }
     cancelar(){
-      this.routeService.navigateByUrl('/lista-software')
+      this.routeService.navigateByUrl('/home')
     }
 }

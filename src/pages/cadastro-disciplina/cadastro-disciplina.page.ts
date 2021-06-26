@@ -36,11 +36,12 @@ export class CadastroDisciplinaPage {
 
   cadastrar() {
     console.log(this.disciplina); 
-    this.disciplinaService.cadastrar(this.disciplina);
+    this.disciplinaService.cadastrar(this.disciplina).then(()=>{
     this.routeService.navigateByUrl('/lista-disciplinas');
+    })
   }
 
   cancelar(){
-    this.routeService.navigateByUrl('/lista-disciplinas')
+    this.routeService.navigateByUrl('/home')
   }
 }

@@ -29,8 +29,10 @@
       <ion-label position="floating">Email</ion-label>
       <ion-input type="email" [(ngModel)]="professor.email"></ion-input>
     </ion-item>
-    <br>
-    <ion-button  (click)="cadastrar(professor)" fill="solid" expand="block" color="danger">Cadastrar</ion-button><br>
-    <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
+   
   </ion-list>
+  
+  <ion-button  (click)="cadastrar(professor)"  color="danger">Cadastrar</ion-button>
+  <ion-button (click)="cancelar()"  color="danger">Cancelar</ion-button><br>
+  <ion-button (click)="listar()" color="danger">Listar</ion-button> 
 </ion-content>
