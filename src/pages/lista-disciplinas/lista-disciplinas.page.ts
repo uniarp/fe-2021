@@ -22,7 +22,7 @@ export class ListaDisciplinasPage {
   novo() {
     this.routerService.navigateByUrl('/cadastro-disciplina');
   }
-  
+
   ionViewWillEnter() {
     this.disciplinas = [];
     this.disciplinaService.listar().subscribe(dados => {
