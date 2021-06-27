@@ -25,20 +25,17 @@ export class CadastroProfessorPage {
     this.professorService.cadastrar(this.professor);
   }
 
-  cancelar(){
+  cancelar() {
     this.professor.login = null;
     this.professor.senha = null;
-    this.professor.nomeCompleto = null;
+    this.professor.nomecompleto = null;
     this.professor.nivel = null;
     this.professor.email = null;
+    this.routeService.navigateByUrl('/home');
   }
 
   listar() {
     this.routeService.navigateByUrl('/lista-professor');
-  }
-
-  cancelar() {
-    this.routeService.navigateByUrl('/home');
   }
 
 }

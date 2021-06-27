@@ -1,8 +1,8 @@
 export class Professor {
-    id?:number
-    login?:string;
-    senha?:string;
-    nivel?:number;
-    nomeCompleto?: string;
-    email?:string;
+    id?: number
+    login?: string;
+    senha?: string;
+    nivel?: number;
+    nomecompleto?: string;
+    email?: string;
 }
