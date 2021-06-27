@@ -1,8 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>lista-incidentes</ion-title>
-  </ion-toolbar>
-</ion-header>
+    <ion-title>Lista de Incidentes</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+      </ion-buttons>
+      </ion-toolbar>
+  </ion-header>
 
 <ion-content>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
@@ -10,30 +13,25 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-list *ngFor = "let lista of incidentes">
-    <ion-item>
-      <ion-label>
-        {{lista.descricao}}
-      </ion-label>
-      <ion-label>
-        {{lista.tempoAbertura}}
-      </ion-label> 
-      <ion-label>
-        {{lista.status}}
-      </ion-label> 
-      <ion-label>
-        {{lista.tempoFechamento}}
-      </ion-label> 
-      <ion-label>
-        {{lista.resolucao}}
-      </ion-label> 
-      <ion-label>
-        {{lista.professor}}
-      </ion-label> 
-      <ion-label>
-        {{lista.sala}}
-      </ion-label> 
-    </ion-item>
-  </ion-list>
-
-</ion-content>
+  <ion-grid *ngIf="incidentes != ''">
+    <ion-row>
+      <ion-col><h6>Lista de Incidentes</h6></ion-col>
+      <ion-col><h6>Descrição</h6></ion-col>
+      <ion-col><h6>Tempo de Abertura</h6></ion-col>
+      <ion-col><h6>Status</h6></ion-col>
+      <ion-col><h6>Tempo de Fechamento</h6></ion-col>
+      <ion-col><h6>Resolução</h6></ion-col>
+      <ion-col><h6>Professor</h6></ion-col>
+      <ion-col><h6>Sala</h6></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let incidente of incidentes">
+      <ion-col>{{incidente.descricao}}</ion-col>
+      <ion-col>{{incidente.tempoAbertura}}</ion-col>
+      <ion-col>{{incidente.status}}</ion-col>
+      <ion-col>{{incidente.tempoFechamento}}</ion-col>
+      <ion-col>{{incidente.resolucao}}</ion-col>
+      <ion-col>{{incidente.professor}}</ion-col>
+      <ion-col>{{incidente.sala}}</ion-col>
+    </ion-row>
+  </ion-grid>
+ </ion-content>

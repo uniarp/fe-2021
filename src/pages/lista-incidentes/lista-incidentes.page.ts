@@ -11,9 +11,13 @@ export class ListaIncidentesPage  {
 
   incidentes:any;
   constructor(
-    public incidenteService:IncidenteService,
-    public routerService:Router
+    public routerService:Router,
+    public incidenteService:IncidenteService
   ) { }
+  
+  ngOnInit(){
+    this.incidentes = [];
+  }
 
   novo(){
     this.routerService.navigateByUrl('/cadastro-incidente');
@@ -25,6 +29,4 @@ export class ListaIncidentesPage  {
       console.log(this.incidentes);
     });
   }
-
-
 }
