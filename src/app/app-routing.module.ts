@@ -168,6 +168,10 @@ const routes: Routes = [
     loadChildren:()=>import('../pages/lista-chaves/lista-chaves.module').then(m=>m.ListaChavesPageModule)
   },
   {
+    path: 'lista-professores',
+    loadChildren: () => import('../pages/lista-professores/lista-professores.module').then( m => m.ListaProfessoresPageModule)
+  },
+  {
     path: 'lista-entregas-chave',
     loadChildren: () => import('../pages/lista-entregas-chave/lista-entregas-chave.module').then( m => m.ListaEntregasChavePageModule),
   },

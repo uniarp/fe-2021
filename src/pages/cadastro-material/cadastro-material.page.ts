@@ -21,7 +21,7 @@ export class CadastroMaterialPage {
     //instanciando  objeto da classe que vou cadastrari
     this.material = new Material();
   }
-
+ 
   cadastrar() {
     this.materialService.cadastrar(this.material).then(() => {
       this.routerService.navigate(['lista-materiais']);
