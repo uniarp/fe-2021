@@ -14,20 +14,18 @@
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
-    <ion-list *ngFor="let entregaChave of entregasChave">
-        <ion-item>
-            <ion-label>
-              <h2> {{entregaChave.id}} </h2>
-            </ion-label>
-            <ion-label>
-              <h2>{{entregaChave.nomecompleto}}</h2>
-            </ion-label>   
-            <ion-label>
-              <h2>{{entregaChave.numerosala}}</h2>
-            </ion-label>
-            <ion-label>
-              <h2>{{entregaChave.id_chave}}</h2>
-            </ion-label>
-        </ion-item>
-    </ion-list>
+    <ion-grid *ngFor="let entregaChave of entregasChave">
+        <ion-row>
+          <ion-col><h6>Id</h6></ion-col>
+          <ion-col><h6>Professor</h6></ion-col>
+          <ion-col><h6>Numero Sala</h6></ion-col>
+          <ion-col><h6>Id chave</h6></ion-col>
+        </ion-row>
+        <ion-row>
+              <ion-col> {{entregaChave.id}} </ion-col>
+              <ion-col>{{entregaChave.nomecompleto}}</ion-col>   
+              <ion-col>{{entregaChave.numerosala}}</ion-col>
+              <ion-col>{{entregaChave.id_chave}}</ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
