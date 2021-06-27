@@ -10,7 +10,7 @@ import { SalaService } from '../../services/sala.service';
   styleUrls: ['./cadastro-sala.page.scss'],
 })
 export class CadastroSalaPage {
-  
+
   sala: Sala;
 
   constructor(
@@ -22,14 +22,19 @@ export class CadastroSalaPage {
     this.sala = new Sala();
   }
 
-  cadastrar() { 
+  cadastrar() {
     console.log(this.sala);
-    this.salaService.cadastrar(this.sala);
-    this.routerService.navigate(['lista-sala']);  
+    this.salaService.cadastrar(this.sala).then(()=>{
+      this.routerService.navigate(['lista-sala']);  
+    });
   }
 
   cancelar() {
-    this.sala = null
+    this.sala.numero= null;
+    this.sala.localizacao.bloco= null;
+    this.sala.localizacao.andar= null;
+    this.sala.capacidade= null;
+    this.routerService.navigateByUrl('/home')
   }
 
   listar() {

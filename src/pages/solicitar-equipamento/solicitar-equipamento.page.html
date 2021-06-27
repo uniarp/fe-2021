@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Solicitar equipamento</ion-title>
+    <ion-title>Solicitar Equipamento</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
@@ -21,7 +21,7 @@
       <ion-label position="floating">Professor</ion-label>
       <ion-select [(ngModel)]="reservaEquipamento.professor">
         <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
-          {{professor.nomeCompleto}}
+          {{professor.login}}
         </ion-select-option>
       </ion-select>
     </ion-item>

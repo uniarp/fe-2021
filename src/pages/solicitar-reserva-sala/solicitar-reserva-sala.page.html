@@ -1,16 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Solicitar reserva de sala</ion-title>
-  </ion-toolbar>
+    <ion-title>Solicitar Reserva Sala</ion-title>
+    <ion-buttons slot="start">
+    <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    </ion-toolbar>
 </ion-header>
-
 <ion-content>
   <ion-list *ngIf="reservaSala">
     <ion-item >
       <ion-label position="floating">Sala</ion-label>
       <ion-select [(ngModel)]="reservaSala.sala">
-        <ion-select-option *ngFor="let sala of salas" [value]="sala.id">
-          {{sala.numero}} {{sala.localizacao.bloco}} {{sala.localizacao.andar}} {{sala.capacidade}} 
+        <ion-select-option *ngFor="let sala of salas" [value]="sala.id" >
+          Número: {{sala.numerosala}}
         </ion-select-option>
       </ion-select>
     </ion-item>
@@ -18,7 +20,7 @@
       <ion-label position="floating">Professor</ion-label>
       <ion-select [(ngModel)]="reservaSala.professor">
         <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
-          {{professor.nomeCompleto}}
+          {{professor.nomecompleto}}
         </ion-select-option>
       </ion-select>
     </ion-item>
@@ -37,14 +39,6 @@
     <ion-item>
       <ion-label position="floating">Quantidade de alunos:</ion-label>
       <ion-input [(ngModel)]="reservaSala.qtdAlunos"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Status:</ion-label>
-      <ion-select [(ngModel)]="reservaSala.periodo">
-        <ion-select-option value="solcitado">Solicitado</ion-select-option>
-        <ion-select-option value="reservado">Reservado</ion-select-option>
-        <ion-select-option value="cancelado">Cancelado</ion-select-option>
-      </ion-select>
     </ion-item>
     
     <br>

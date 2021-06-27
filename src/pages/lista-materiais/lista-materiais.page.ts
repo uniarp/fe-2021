@@ -15,9 +15,11 @@ export class ListaMateriaisPage{
     public materialService:MaterialService,
     public routerService:Router
     ) { }
-    ngOnInit(){
-      this.materiais = [];
-    }
+
+  ngOnInit(){
+    this.materiais = [];
+  }
+  
   novo() {
     this.routerService.navigateByUrl('/cadastro-material');
   }

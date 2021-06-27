@@ -12,34 +12,28 @@ export class CadastroMaterialPage {
 
   material: Material;
 
-  constructor(public materialService:MaterialService,
-    public routerService:Router) {
+  constructor(public materialService: MaterialService,
+    public routerService: Router) {
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     console.log('cadastro Material page - iondidviewENTER');
     //instanciando  objeto da classe que vou cadastrari
     this.material = new Material();
   }
-
-  cadastrar(){
-    console.log('Cadastro Material - cadastrar ');
-    //passar a equipamento que esta sendo cadastrada
-    this.materialService.cadastrar(this.material);
-    this.routerService.navigate(['lista-materiais']);
+ 
+  cadastrar() {
+    this.materialService.cadastrar(this.material).then(() => {
+      this.routerService.navigate(['lista-materiais']);
+    });
   }
 
-  cancelar(){
+  cancelar() {
     console.log('CadastrarMaterial - cancelar');
-    this.material.nome = null;
-    this.material.quantidade = null;
-    this.material.id = null;
-    this.material.descricao = null;
-    this.material.marca = null;
+    this.routerService.navigateByUrl('/home')
   }
 
-  listar(){
-    console.log('Cadastro Material - listar');
+  listar() {
     this.routerService.navigate(['lista-material']);
   }
 

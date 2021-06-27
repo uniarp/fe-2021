@@ -36,17 +36,18 @@ export class CadastroEntregaChavePage {
   }
 
   cadastrar() {
-    this.entregaChaveService.cadastrar(this.entregaChave);
-    this.routerService.navigate(['lista-chaves']);
+    this.entregaChaveService.cadastrar(this.entregaChave).then(()=>{
+    this.routerService.navigate(['lista-entregas-chave']);
+    })
   }
 
   cancelar() {
     this.entregaChave = null;
-    this.routerService.navigateByUrl('lista-reservas-sala');
+    this.routerService.navigateByUrl('/home');
   }
 
   listar() {
-    this.routerService.navigate(['lista-chaves']);
+    this.routerService.navigate(['lista-entregas-chave']);
   }
   
   novo() {

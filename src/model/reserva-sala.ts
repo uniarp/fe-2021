@@ -1,5 +1,6 @@
 import { Professor } from "./professor";
 import { Sala } from "./sala";
+import { Usuario } from "./usuario";
 
 export class ReservaSala {
 
@@ -10,5 +11,11 @@ export class ReservaSala {
     periodo? : String;
     sala? : Sala;
     professor? : Professor;
+    usuario : Usuario;
     
+    constructor() {
+        this.sala = new Sala();
+        this.professor = new Professor();
+        this.usuario = new Usuario();
+    }
 }
