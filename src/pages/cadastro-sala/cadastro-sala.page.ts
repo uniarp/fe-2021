@@ -14,8 +14,8 @@ export class CadastroSalaPage {
   sala: Sala;
 
   constructor(
-    public salaService:SalaService,
-    public routerService:Router
+    public salaService: SalaService,
+    public routerService: Router
   ) { }
 
   ionViewDidEnter() {
@@ -24,16 +24,16 @@ export class CadastroSalaPage {
 
   cadastrar() {
     console.log(this.sala);
-    this.salaService.cadastrar(this.sala).then(()=>{
-      this.routerService.navigate(['lista-sala']);  
+    this.salaService.cadastrar(this.sala).then(() => {
+      this.routerService.navigate(['lista-sala']);
     });
   }
 
   cancelar() {
-    this.sala.numero= null;
-    this.sala.localizacao.bloco= null;
-    this.sala.localizacao.andar= null;
-    this.sala.capacidade= null;
+    this.sala.numerosala = null;
+    this.sala.bloco = null;
+    this.sala.andar = null;
+    this.sala.capacidade = null;
     this.routerService.navigateByUrl('/home')
   }
 
