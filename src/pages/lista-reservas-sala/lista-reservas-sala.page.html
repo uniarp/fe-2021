@@ -37,6 +37,9 @@
         <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="EntregaChave(reservaSala.id)">
           Entregar chave
         </ion-button>
+        <ion-button color="primary" shape="round" expand="block" fill="solid" (click)="presentAlertMultipleButtons()">
+          Cancelar
+        </ion-button> 
       </ion-col>
       <ion-col *ngIf= "reservaSala.status_entregachave=='entregue'">
         <ion-button disable=true expand="block" fill="solid" color="secondary" shape="round" (click)="devolverChave(reservaSala.id)">

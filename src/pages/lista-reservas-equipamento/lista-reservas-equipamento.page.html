@@ -34,6 +34,9 @@
       <ion-col *ngIf="reservaEquipamento.status=='reservado'">
         <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="entregaEquipamento(reservaEquipamento.id)">
           Entregar Equipamento 
+        </ion-button>
+        <ion-button color="primary" shape="round" expand="block" fill="solid" (click)="presentAlertMultipleButtons()">
+          Cancelar
         </ion-button> 
       </ion-col>
       <ion-col *ngIf="reservaEquipamento.status=='Entregue'">
