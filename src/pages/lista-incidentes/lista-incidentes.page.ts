@@ -7,23 +7,23 @@ import { IncidenteService } from '../../services/incidente.service';
   templateUrl: './lista-incidentes.page.html',
   styleUrls: ['./lista-incidentes.page.scss'],
 })
-export class ListaIncidentesPage  {
+export class ListaIncidentesPage {
 
-  incidentes:any;
+  incidentes: any;
   constructor(
-    public routerService:Router,
-    public incidenteService:IncidenteService
+    public routerService: Router,
+    public incidenteService: IncidenteService
   ) { }
-  
-  ngOnInit(){
+
+  ngOnInit() {
     this.incidentes = [];
   }
 
-  novo(){
+  novo() {
     this.routerService.navigateByUrl('/cadastro-incidente');
   }
 
-  ionViewWillEnter(){
+  ionViewWillEnter() {
     this.incidenteService.listar().subscribe(dados => {
       this.incidentes = dados;
       console.log(this.incidentes);
