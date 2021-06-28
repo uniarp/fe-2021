@@ -38,7 +38,7 @@ export class ListaReservasEquipamentoPage {
       this.reservasEquipamento = dados;
     });
   }
-  async presentAlertMultipleButtons() {
+  async alertExcluir() {
     const alert = await this.alertController.create({
       header: 'Aviso',
       subHeader: 'Cancelamento de Reserva',

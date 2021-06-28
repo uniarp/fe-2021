@@ -4,6 +4,7 @@ import { AlertController } from '@ionic/angular';
 import { EntregaChaveService } from 'src/services/entrega-chave.service';
 import { ReservaSalaService } from '../../services/reserva-sala.service';
 
+
 @Component({
   selector: 'app-lista-reservas-sala',
   templateUrl: './lista-reservas-sala.page.html',
@@ -16,6 +17,7 @@ export class ListaReservasSalaPage {
   private entregaChave:any;
   alert:any
   emHome : boolean;
+  reservaSala: any;
 
   constructor(
     public reservaSalaService : ReservaSalaService,
@@ -36,7 +38,7 @@ export class ListaReservasSalaPage {
     console.log("Alterando reserva")    
   }
 
-  async presentAlertMultipleButtons() {
+  async alertExcluir() {
     const alert = await this.alertController.create({      
       header: 'Aviso',
       subHeader: 'Cancelamento de Reserva',
@@ -47,7 +49,7 @@ export class ListaReservasSalaPage {
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
-            // rota backend
+            this.reservaSalaService.excluir(this.reservaSala.id)
             console.log('Confirm Cancel');
           }
         }, {
