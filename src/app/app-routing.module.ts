@@ -183,6 +183,10 @@ const routes: Routes = [
   {
     path: 'lista-disciplinas',
     loadChildren: () => import('../pages/lista-disciplinas/lista-disciplinas.module').then( m => m.ListaDisciplinasPageModule)
+  },
+  {
+    path: 'cadastro-incidente',
+    loadChildren: () => import('../pages/cadastro-incidente/cadastro-incidente.module').then( m => m.CadastroIncidentePageModule)
   }
 ];
 
