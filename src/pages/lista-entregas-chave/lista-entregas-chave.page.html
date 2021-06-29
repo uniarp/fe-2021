@@ -5,27 +5,31 @@
     <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
     </ion-toolbar>
+    <ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
 </ion-header>
-
-<ion-content>
   <ion-content>
     <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
       <ion-fab-button color="success" >
         <ion-icon name="add"></ion-icon>
       </ion-fab-button>
     </ion-fab>
-    <ion-grid *ngFor="let entregaChave of entregasChave">
+    <ion-grid >
         <ion-row>
-          <ion-col><h6>Id</h6></ion-col>
+          
           <ion-col><h6>Professor</h6></ion-col>
           <ion-col><h6>Numero Sala</h6></ion-col>
           <ion-col><h6>Id chave</h6></ion-col>
+          <ion-col><h6>Data Hora Entrega</h6></ion-col>
+          <ion-col><h6>Data de Devolução</h6></ion-col>
         </ion-row>
-        <ion-row>
-              <ion-col> {{entregaChave.id}} </ion-col>
-              <ion-col>{{entregaChave.nomecompleto}}</ion-col>   
+
+        <ion-row *ngFor="let entregaChave of entregasChave | filter: pesquisa">
+              
+              <ion-col>{{entregaChave.nome_professor}}</ion-col>   
               <ion-col>{{entregaChave.numerosala}}</ion-col>
               <ion-col>{{entregaChave.id_chave}}</ion-col>
+              <ion-col>{{entregaChave.datahoraentrega | date:'dd/MM/yyyy HH:mm'}}</ion-col>
+              <ion-col>{{entregaChave.datahoradevolucao | date:'dd/MM/yyyy HH:mm'}}</ion-col>
         </ion-row>
     </ion-grid>
 </ion-content>
