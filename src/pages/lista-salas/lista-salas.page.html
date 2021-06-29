@@ -16,15 +16,19 @@
   <ion-grid *ngIf="salas != ''">
     <ion-row>
       <ion-col><h6>Número da Sala</h6></ion-col>
+      <ion-col><h6>Nome da Sala</h6></ion-col>
       <ion-col><h6>Bloco</h6></ion-col>
       <ion-col><h6>Andar</h6></ion-col>
       <ion-col><h6>Capacidade</h6></ion-col>
+      <ion-col><h6>Quantidade de computadores</h6></ion-col>
     </ion-row>
     <ion-row *ngFor = "let sala of salas">
       <ion-col>{{sala.numerosala}}</ion-col>
+      <ion-col>{{sala.nomesala}}</ion-col>
       <ion-col>{{sala.bloco}}</ion-col>
       <ion-col>{{sala.andar}}</ion-col>
       <ion-col>{{sala.capacidade}}</ion-col>
+      <ion-col>{{sala.qtdcomputadores}}</ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
