@@ -13,10 +13,8 @@ export class CadastroSalaPage {
 
   sala: Sala;
 
-  constructor(
-    public salaService: SalaService,
-    public routerService: Router
-  ) { }
+  constructor(public salaService: SalaService, public routerService: Router) {
+  }
 
   ionViewDidEnter() {
     this.sala = new Sala();
@@ -25,7 +23,7 @@ export class CadastroSalaPage {
   cadastrar() {
     console.log(this.sala);
     this.salaService.cadastrar(this.sala).then(() => {
-      this.routerService.navigate(['lista-sala']);
+      this.routerService.navigate(['lista-salas']);
     });
   }
 
@@ -38,7 +36,7 @@ export class CadastroSalaPage {
   }
 
   listar() {
-    this.routerService.navigate(['lista-sala']);
+    this.routerService.navigate(['lista-salas']);
   }
 
 }
