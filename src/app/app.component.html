@@ -2,69 +2,66 @@
   <ion-menu menuId="main-menu" content-id="main">
     <ion-header>
       <ion-toolbar>
-        <ion-title class="ion-text-center" (click)="home()" ><ion-icon  name="home-outline"></ion-icon></ion-title>
-        
+        <ion-title class="ion-text-center" (click)="home()">
+          <ion-label>Apoio Uniarp</ion-label>
+        </ion-title>
       </ion-toolbar>
-     </ion-header>
-     <ion-content>
-       <ion-list>
-         <ion-item no-lines (click)="isRegister()" detail="true">
-           <ion-icon name="add-circle" > </ion-icon>
-           <ion-label><dd>Cadastrar</dd> </ion-label>
-         </ion-item>
-         
-         <div *ngIf="toRegister==true" class="ion-padding">
-          <ion-menu-toggle  *ngFor="let cadastro of cadastros; let e = index">
-            <ion-item position="floating" (click)="activeIndex = e" routerDirection="root" [routerLink]="[cadastro.link]" lines="none"
-              detail="true" [class.selected]="activeIndex == e">
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-item no-lines (click)="home()">
+          <ion-icon name="home-outline"></ion-icon>
+          <ion-label>
+            <dd>Início</dd>
+          </ion-label>
+        </ion-item>
+        <ion-item no-lines (click)="isRegister()" detail="true">
+          <ion-icon name="add-circle"> </ion-icon>
+          <ion-label>
+            <dd>Cadastrar</dd>
+          </ion-label>
+        </ion-item>
+        <div *ngIf="toRegister==true" class="ion-padding">
+          <ion-menu-toggle *ngFor="let cadastro of cadastros; let e = index">
+            <ion-item position="floating" (click)="activeIndex = e" routerDirection="root"
+              [routerLink]="[cadastro.link]" lines="none" detail="true" [class.selected]="activeIndex == e">
               <ion-icon slot="start" [name]="cadastro.icon"></ion-icon>
-              <ion-label>{{ cadastro.nome }}</ion-label>
+              <ion-label>{{cadastro.nome}}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </div>
-         
         <ion-item no-lines (click)="isReservation()" detail="true">
           <ion-icon name="calendar"> </ion-icon>
-          <ion-label><dd>Reservas</dd></ion-label>
+          <ion-label>
+            <dd>Reservas</dd>
+          </ion-label>
         </ion-item>
         <div *ngIf="toReservation==true" class="ion-padding">
-          <ion-menu-toggle  *ngFor="let reserva of reservas; let e = index">
-            <ion-item position="floating" (click)="activeIndex = e" routerDirection="root" [routerLink]="[reserva.link]" lines="none"
-              detail="true" [class.selected]="activeIndex == e">
+          <ion-menu-toggle *ngFor="let reserva of reservas; let e = index">
+            <ion-item position="floating" (click)="activeIndex = e" routerDirection="root" [routerLink]="[reserva.link]"
+              lines="none" detail="true" [class.selected]="activeIndex == e">
               <ion-icon slot="start" [name]="reserva.icon"></ion-icon>
-              <ion-label>{{ reserva.nome }}</ion-label>
+              <ion-label>{{reserva.nome}}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </div>
         <ion-item no-lines (click)="isListed()" detail="true">
-          <ion-icon name="reader" slot="start"> </ion-icon>
-          <ion-label>Listar</ion-label> 
+          <ion-icon name="reader"> </ion-icon>
+          <ion-label>
+            <dd>Listar</dd>
+          </ion-label>
         </ion-item>
-
         <div *ngIf="toListed==true" class="ion-padding">
-          <ion-menu-toggle  *ngFor="let lista of listas; let i = index">
-            <ion-item position="floating" (click)="activeIndex = i" routerDirection="root" [routerLink]="[lista.link]" lines="none"
-              detail="true" [class.selected]="activeIndex == i">
+          <ion-menu-toggle *ngFor="let lista of listas; let i = index">
+            <ion-item position="floating" (click)="activeIndex = i" routerDirection="root" [routerLink]="[lista.link]"
+              lines="none" detail="true" [class.selected]="activeIndex == i">
               <ion-icon slot="start" [name]="lista.icon"></ion-icon>
-              <ion-label>{{ lista.nome }}</ion-label>
+              <ion-label>{{lista.nome}}</ion-label>
             </ion-item>
           </ion-menu-toggle>
         </div>
-        <ion-item no-lines (click)="isReport()" detail="true">
-          <ion-icon name="alert-circle"> </ion-icon>
-          <ion-label><dd>Reportar</dd></ion-label>
-        </ion-item>
-        <div *ngIf="toReport==true" class="ion-padding">
-          <ion-menu-toggle  *ngFor="let reportar of reportares; let e = index">
-            <ion-item position="floating" (click)="activeIndex = e" routerDirection="root" [routerLink]="[reportar.link]" lines="none"
-              detail="true" [class.selected]="activeIndex == e">
-              <ion-icon slot="start" [name]="reportar.icon"></ion-icon>
-              <ion-label>{{ reportar.nome }}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </div>
-       </ion-list>
-     </ion-content>
+      </ion-list>
+    </ion-content>
   </ion-menu>
   <ion-router-outlet id="main"></ion-router-outlet>
 </ion-app>
