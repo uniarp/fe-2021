@@ -7,11 +7,12 @@ import { IonicModule } from '@ionic/angular';
 import { ListaEntregasChavePageRoutingModule } from './lista-entregas-chave-routing.module';
 
 import { ListaEntregasChavePage } from './lista-entregas-chave.page';
-
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
+    Ng2SearchPipeModule,
     IonicModule,
     ListaEntregasChavePageRoutingModule
   ],

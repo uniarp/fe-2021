@@ -8,7 +8,7 @@ import { EntregaChaveService } from 'src/services/entrega-chave.service';
   styleUrls: ['./lista-entregas-chave.page.scss'],
 })
 export class ListaEntregasChavePage {
-
+  pesquisa = '';
   entregasChave : any;
 
   constructor(private routeService : Router, private entregasChaveService : EntregaChaveService) {
@@ -17,6 +17,7 @@ export class ListaEntregasChavePage {
   ionViewDidEnter() {
     this.entregasChave = [];
     this.entregasChaveService.listar().subscribe(dados => {
+      console.log(dados);
       this.entregasChave = dados;
     });
   }
