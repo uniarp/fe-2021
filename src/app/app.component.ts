@@ -15,6 +15,21 @@ export class AppComponent {
   
   listas = [
     {
+      'nome': 'Salas',
+      'link': 'lista-salas',
+      'icon': 'reader-outline'
+    },
+    {
+      'nome': 'Equipamentos',
+      'link': 'lista-equipamentos',
+      'icon': 'file-tray-stacked-outline'
+    },
+    {
+      'nome': 'Materiais',
+      'link': 'lista-materiais',
+      'icon': 'layers-outline'
+    },
+    {
       'nome': 'Cursos',
       'link': 'lista-cursos',
       'icon': 'school'
@@ -25,33 +40,18 @@ export class AppComponent {
       'icon': 'documents-outline'
     },
     {
-      'nome': 'Equipamentos',
-      'link': 'lista-equipamentos',
-      'icon': 'file-tray-stacked-outline'
-    },
-    {
-      'nome': 'Equipamentos Solicitados',
-      'link': 'lista-equipamentos-solicitados',
-      'icon': 'layers-outline'
-    },
-    {
-      'nome': 'Materiais',
-      'link': 'lista-materiais',
-      'icon': 'layers-outline'
-    },
-    {
       'nome': 'Professores',
       'link': 'lista-professor',
       'icon': 'person-outline'
     },
     {
-      'nome': 'Salas',
-      'link': 'lista-salas',
+      'nome': 'Tipos de Equipamento',
+      'link': 'lista-tipos-equipamento',
       'icon': 'reader-outline'
     },
     {
-      'nome': 'Esperas de Sala',
-      'link': 'lista-espera-sala',
+      'nome': 'Vistorias',
+      'link': 'lista-vistorias',
       'icon': 'reader-outline'
     },
     {
@@ -73,30 +73,10 @@ export class AppComponent {
       'nome': 'Entregas de Chave',
       'link': 'lista-entregas-chave',
       'icon': 'reader-outline'
-    },
-    {
-      'nome': 'Tipos de Equipamento',
-      'link': 'lista-tipos-equipamento',
-      'icon': 'reader-outline'
-    },
-    {
-      'nome': 'Vistorias',
-      'link': 'lista-vistorias',
-      'icon': 'reader-outline'
-    },
+    },    
     {
       'nome': 'Incidentes Resolvidos',
       'link': 'lista-incidentes-resolvidos',
-      'icon': 'reader-outline'
-    },
-    {
-      'nome': 'Reservas de Equipamento',
-      'link': 'lista-reservas-equipamento',
-      'icon': 'reader-outline'
-    },
-    {
-      'nome': 'Reservas de Sala',
-      'link': 'lista-reservas-sala',
       'icon': 'reader-outline'
     },
     {
@@ -108,13 +88,18 @@ export class AppComponent {
   
   reservas = [
     {
-      'nome': 'Solicitar Material',
-      'link': 'solicitar-material',
+      'nome': 'Reservas de Sala',
+      'link': 'lista-reservas-sala',
       'icon': 'reader-outline'
     },
     {
-      'nome': 'Entregar Material',
-      'link': 'cadastro-entrega-material',
+      'nome': 'Solicitar Sala',
+      'link': 'solicitar-reserva-sala',
+      'icon': 'reader-outline'
+    },
+    {
+      'nome': 'Esperas de Sala',
+      'link': 'lista-espera-sala',
       'icon': 'reader-outline'
     },
     {
@@ -123,18 +108,33 @@ export class AppComponent {
       'icon': 'reader-outline'
     },
     {
+      'nome': 'Reservas de Equipamento',
+      'link': 'lista-reservas-equipamento',
+      'icon': 'reader-outline'
+    },
+    {
       'nome': 'Solicitar Equipamento',
       'link': 'solicitar-equipamento',
       'icon': 'reader-outline'
     },
     {
-      'nome': 'Solicitar Sala',
-      'link': 'solicitar-reserva-sala',
+      'nome': 'Solicitar Material',
+      'link': 'solicitar-material',
+      'icon': 'reader-outline'
+    },
+    {
+      'nome': 'Entregar Material',
+      'link': 'cadastro-entrega-material',
       'icon': 'reader-outline'
     }
   ]
 
   cadastros = [
+    {
+      'nome': 'Sala',
+      'link': 'cadastro-sala',
+      'icon': 'reader-outline'
+    },
     {
       'nome': 'Equipamento',
       'link': 'cadastro-equipamento',
@@ -143,11 +143,6 @@ export class AppComponent {
     {
       'nome': 'Material',
       'link': 'cadastro-material',
-      'icon': 'reader-outline'
-    },
-    {
-      'nome': 'Sala',
-      'link': 'cadastro-sala',
       'icon': 'reader-outline'
     },
     {
@@ -176,13 +171,13 @@ export class AppComponent {
       'icon': 'reader-outline'
     },
     {
-      'nome': 'Chave',
-      'link': 'cadastro-chave',
+      'nome': 'Software',
+      'link': 'cadastro-software',
       'icon': 'reader-outline'
     },
     {
-      'nome': 'Software',
-      'link': 'cadastro-software',
+      'nome': 'Chave',
+      'link': 'cadastro-chave',
       'icon': 'reader-outline'
     },
     {
