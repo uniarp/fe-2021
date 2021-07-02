@@ -3,16 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home.page';
 
 const routes: Routes = [
-  {
+  /*{
     path: '',
     redirectTo: '/home/dashboard',
     pathMatch: 'full'
-  },
+  },*/
   {
     path: '',
     component: HomePage,
     children: [
-      {
+      /*{
         path: 'dashboard',
         children: [
           {
@@ -20,7 +20,7 @@ const routes: Routes = [
             loadChildren: () => import('../dashboard/dashboard.module').then(m => m.DashboardPageModule)
           }
         ]
-      },
+      },*/
       {
         path: 'lista-reservas-equipamento',
         children: [
