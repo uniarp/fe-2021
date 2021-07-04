@@ -9,9 +9,25 @@
 
 <ion-content>
   <ion-list *ngIf="vistoria">
+    <ion-item >
+      <ion-label position="floating">Sala</ion-label>
+      <ion-select [(ngModel)]="vistoria.sala">
+        <ion-select-option *ngFor="let sala of salas" [value]="sala.id" >
+          {{sala.numerosala}} {{sala.nomesala}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
     <ion-item>
-      <ion-label position="floating">Em conformidade:</ion-label>
-      <ion-input type = 'boolean'[(ngModel)]="vistoria.emConformidade" ></ion-input>
+      <ion-label position="floating">Equipamento</ion-label>
+      <ion-select [(ngModel)]="vistoria.equipamento">
+        <ion-select-option *ngFor="let equipamento of equipamentos" [value]="equipamento.id">
+          {{equipamento.nome}} {{equipamento.marca}} {{equipamento.modelo}} {{equipamento.id}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Em conformidade:</ion-label>
+      <ion-checkbox [(ngModel)]="vistoria.emconformidade"></ion-checkbox>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Data:</ion-label>
