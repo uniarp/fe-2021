@@ -65,7 +65,7 @@ export class AppComponent {
       'img': '/assets/custom_icons/icon_chave.png'
     },
     {
-      'nome': 'Entregas de Materiais',
+      'nome': 'Entregas de Material',
       'link': 'lista-entregas-material',
       'img': '/assets/custom_icons/icon_entrega_material.png'
     },
