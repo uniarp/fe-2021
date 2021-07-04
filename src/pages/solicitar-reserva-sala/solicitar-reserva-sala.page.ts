@@ -12,15 +12,15 @@ import { SalaService } from '../../services/sala.service';
 })
 export class SolicitarReservaSalaPage {
 
-  reservaSala : ReservaSala;
-  salas : any;
-  professores : any;
+  reservaSala: ReservaSala;
+  salas: any;
+  professores: any;
 
   constructor(
-    public reservaSalaSevice : ReservaSalaService, 
-    public salaService : SalaService, 
-    public professorService : ProfessorService,
-    public routerService : Router) {
+    public reservaSalaSevice: ReservaSalaService,
+    public salaService: SalaService,
+    public professorService: ProfessorService,
+    public routerService: Router) {
   }
 
   ionViewDidEnter() {
@@ -35,8 +35,9 @@ export class SolicitarReservaSalaPage {
 
   cadastrar() {
     this.reservaSala.status = "solicitado";
-    this.reservaSalaSevice.cadastrar(this.reservaSala).then(()=>{;
-    this.routerService.navigate(['lista-reservas-sala']);
+    this.reservaSalaSevice.cadastrar(this.reservaSala).then(() => {
+      ;
+      this.routerService.navigate(['lista-reservas-sala']);
     })
   }
 
@@ -48,5 +49,5 @@ export class SolicitarReservaSalaPage {
   novo() {
     this.routerService.navigateByUrl('solicitar-reserva-sala');
   }
-  
+
 }
