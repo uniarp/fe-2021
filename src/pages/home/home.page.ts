@@ -16,27 +16,27 @@ export class HomePage {
     {
       'nome': 'Materiais',
       'link': '/lista-materiais',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_material.png'
     },
     {
       'nome': 'Equipamentos',
       'link': '/lista-equipamentos',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_equipamento.png'
     },
     {
       'nome': 'Vistorias',
       'link': '/lista-vistorias',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_vistoria.png'
     },
     {
       'nome': 'Entregas de Material',
       'link': '/lista-entregas-material',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_entrega_material.png'
     },
     {
       'nome': 'Entregas de Chave',
       'link': '/lista-entregas-chave',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_entrega_chave.png'
     }
   ]
   
