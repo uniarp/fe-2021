@@ -17,72 +17,72 @@ export class AppComponent {
     {
       'nome': 'Salas',
       'link': 'lista-salas',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_sala.png'
     },
     {
       'nome': 'Equipamentos',
       'link': 'lista-equipamentos',
-      'icon': 'file-tray-stacked-outline'
+      'img': '/assets/custom_icons/icon_equipamento.png'
     },
     {
       'nome': 'Materiais',
       'link': 'lista-materiais',
-      'icon': 'layers-outline'
+      'img': '/assets/custom_icons/icon_material.png'
     },
     {
       'nome': 'Cursos',
       'link': 'lista-cursos',
-      'icon': 'school'
+      'img': '/assets/custom_icons/icon_curso.png'
     },
     {
       'nome': 'Disciplinas',
       'link': 'lista-disciplinas',
-      'icon': 'documents-outline'
+      'img': '/assets/custom_icons/icon_disciplina.png'
     },
     {
       'nome': 'Professores',
       'link': 'lista-professor',
-      'icon': 'person-outline'
+      'img': '/assets/custom_icons/icon_professor.png'
     },
     {
       'nome': 'Tipos de Equipamento',
       'link': 'lista-tipos-equipamento',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_tipo_equipamento.png'
     },
     {
       'nome': 'Vistorias',
       'link': 'lista-vistorias',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_vistoria.png'
     },
     {
       'nome': 'Softwares',
       'link': 'lista-software',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_software.png'
     },
     {
       'nome': 'Chaves',
       'link': 'lista-chaves',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_chave.png'
     },
     {
-      'nome': 'Entregas de Materiais',
+      'nome': 'Entregas de Material',
       'link': 'lista-entregas-material',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_entrega_material.png'
     },
     {
       'nome': 'Entregas de Chave',
       'link': 'lista-entregas-chave',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_entrega_chave.png'
     },    
     {
       'nome': 'Incidentes Resolvidos',
       'link': 'lista-incidentes-resolvidos',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_incidente.png'
     },
     {
       'nome': 'FAQ',
       'link': '/lista-pergunta',
-      'icon': 'information-circle-outline'
+      'img': '/assets/custom_icons/icon_questao.png'
     }
   ];
   
@@ -90,42 +90,42 @@ export class AppComponent {
     {
       'nome': 'Reservas de Sala',
       'link': 'lista-reservas-sala',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_reserva_sala.png'
     },
     {
       'nome': 'Solicitar Sala',
       'link': 'solicitar-reserva-sala',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_solicitar_sala.png'
     },
     {
       'nome': 'Esperas de Sala',
       'link': 'lista-espera-sala',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_espera_sala.png'
     },
     {
       'nome': 'Entregar Chave',
       'link': 'cadastro-entrega-chave',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_entregar_chave.png'
     },
     {
       'nome': 'Reservas de Equipamento',
       'link': 'lista-reservas-equipamento',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_reserva_equipamento.png'
     },
     {
       'nome': 'Solicitar Equipamento',
       'link': 'solicitar-equipamento',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_solicitar_equipamento.png'
     },
     {
       'nome': 'Solicitar Material',
       'link': 'solicitar-material',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_solicitar_material.png'
     },
     {
       'nome': 'Entregar Material',
       'link': 'cadastro-entrega-material',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_entrega_material.png'
     }
   ]
 
@@ -133,57 +133,57 @@ export class AppComponent {
     {
       'nome': 'Sala',
       'link': 'cadastro-sala',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_sala.png'
     },
     {
       'nome': 'Equipamento',
       'link': 'cadastro-equipamento',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_equipamento.png'
     },
     {
       'nome': 'Material',
       'link': 'cadastro-material',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_material.png'
     },
     {
       'nome': 'Curso',
       'link': 'cadastro-curso',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_curso.png'
     },
     {
       'nome': 'Disciplina',
       'link': 'cadastro-disciplina',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_disciplina.png'
     },
     {
       'nome': 'Professor',
       'link': 'cadastro-professor',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_professor.png'
     },
     {
       'nome': 'Tipo Equipamento',
       'link': 'cadastro-tipo-equipamento',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_tipo_equipamento.png'
     },
     {
       'nome': 'Vistoria',
       'link': 'cadastro-vistoria',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_vistoria.png'
     },
     {
       'nome': 'Software',
       'link': 'cadastro-software',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_vistoria.png'
     },
     {
       'nome': 'Chave',
       'link': 'cadastro-chave',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_chave.png'
     },
     {
       'nome': 'FAQ',
       'link': 'cadastro-faq',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_questao.png'
     }
   ];
 

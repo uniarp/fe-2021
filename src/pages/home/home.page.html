@@ -14,7 +14,7 @@
 <ion-row>
   <ion-item *ngFor="let comum of comuns; let e = index" position="floating" (click)="activeIndex = e"
     routerDirection="root" [routerLink]="[comum.link]" lines="none" detail="true" [class.selected]="activeIndex == e">
-    <ion-icon slot="start" [name]="comum.icon"></ion-icon>
+    <ion-img slot="start" [src]="comum.img"></ion-img>
     <ion-label>{{ comum.nome }}</ion-label>
   </ion-item>
 </ion-row>
