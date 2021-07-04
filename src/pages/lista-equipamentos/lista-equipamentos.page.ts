@@ -8,7 +8,7 @@ import { EquipamentoService } from '../../services/equipamento.service';
   styleUrls: ['./lista-equipamentos.page.scss'],
 })
 export class ListaEquipamentosPage  {
-  
+  pesquisa = '';
   equipamentos: any;
   
   constructor(

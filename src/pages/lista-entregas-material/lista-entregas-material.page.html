@@ -24,7 +24,7 @@
       <ion-col>{{entregaMaterial.nome_professor}}</ion-col>
       <ion-col>{{entregaMaterial.nome_material}}</ion-col>
       <ion-col>{{entregaMaterial.qtd}}</ion-col>
-      <ion-col>{{entregaMaterial.data}}</ion-col>
+      <ion-col>{{entregaMaterial.data | date:'dd/MM/yyyy HH:mm'}}</ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

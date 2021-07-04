@@ -12,6 +12,8 @@ import { VistoriaService } from '../../services/vistoria.service';
 export class ListaVistoriasPage {
 
   vistorias: any;
+  pesquisa = '';
+
 
   constructor(public vistoriaService: VistoriaService,
     public routerService: Router) {

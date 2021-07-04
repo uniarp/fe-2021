@@ -75,8 +75,8 @@ export class AppComponent {
       'img': '/assets/custom_icons/icon_entrega_chave.png'
     },    
     {
-      'nome': 'Incidentes Resolvidos',
-      'link': 'lista-incidentes-resolvidos',
+      'nome': 'Incidentes',
+      'link': 'lista-incidentes',
       'img': '/assets/custom_icons/icon_incidente.png'
     },
     {

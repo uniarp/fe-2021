@@ -5,15 +5,16 @@
     <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
     </ion-toolbar>
+    <ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
 </ion-header>
-
 <ion-content>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
     <ion-fab-button color="success" >
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-grid *ngIf="equipamentos != ''">
+  <ion-grid >
+    
     <ion-row>
       <ion-col><h6>Tipo de equipamento</h6></ion-col>
       <ion-col><h6>Data de aquisição</h6></ion-col>
@@ -22,9 +23,11 @@
       <ion-col><h6>Status</h6></ion-col>
       <ion-col><h6>Sala</h6></ion-col>
     </ion-row>
-    <ion-row *ngFor="let equipamento of equipamentos">
+    
+    <ion-row *ngFor="let equipamento of equipamentos | filter: pesquisa">
+      
       <ion-col>{{equipamento.nome}}</ion-col>
-      <ion-col>{{equipamento.dataaquisicao}}</ion-col>
+      <ion-col>{{equipamento.dataaquisicao | date:'dd/MM/yyyy HH:mm'}}</ion-col>
       <ion-col>{{equipamento.marca}}</ion-col>
       <ion-col>{{equipamento.modelo}}</ion-col>
       <ion-col>{{equipamento.status}}</ion-col>
