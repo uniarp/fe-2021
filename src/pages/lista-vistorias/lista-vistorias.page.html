@@ -1,10 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Lista de Vistoria</ion-title>
+    <ion-title>Lista de Vistorias</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
   </ion-toolbar>
+
   <ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
 </ion-header>
 
@@ -14,18 +15,34 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-grid *ngIf=" vistoria != ''">
+  <ion-grid *ngIf="vistorias != ''">
     <ion-row>
-      <ion-col><h6>Em conformidade</h6></ion-col>
-      <ion-col><h6>Data</h6></ion-col>
-      <ion-col><h6>Descriçao</h6></ion-col>
-      <ion-col><h6>Periodo</h6></ion-col>
+      <ion-col>
+        <h6>Sala</h6>
+      </ion-col>
+      <ion-col>
+        <h6>Equipamento</h6>
+      </ion-col>
+      <ion-col>
+        <h6>Em conformidade</h6>
+      </ion-col>
+      <ion-col>
+        <h6>Data</h6>
+      </ion-col>
+      <ion-col>
+        <h6>Descrição</h6>
+      </ion-col>
+      <ion-col>
+        <h6>Período</h6>
+      </ion-col>
     </ion-row>
-    <ion-row *ngFor="let lista of vistoria">
-      <ion-col>{{disciplina.nome}}</ion-col>
-      <ion-col>{{lista.data | date:'dd/MM/yyyy HH:mm'}}</ion-col>
-      <ion-col>{{lista.descricao}}</ion-col>
-      <ion-col>{{lista.periodo}}</ion-col>
+    <ion-row *ngFor="let vistoria of vistorias">
+      <ion-col>{{vistoria.numerosala}} {{vistoria.nomesala}}</ion-col>
+      <ion-col>{{vistoria.tipo_equipamento}} {{vistoria.marca_equipamento}} {{vistoria.modelo_equipamento}} {{vistoria.id_equipamento}}</ion-col>
+      <ion-col>{{vistoria.emconformidade}}</ion-col>
+      <ion-col>{{vistoria.data}}</ion-col>
+      <ion-col>{{vistoria.descricao}}</ion-col>
+      <ion-col>{{vistoria.periodo}}</ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>

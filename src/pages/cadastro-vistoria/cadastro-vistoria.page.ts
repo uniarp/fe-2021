@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EquipamentoService } from 'src/services/equipamento.service';
+import { SalaService } from 'src/services/sala.service';
 import { Vistoria } from '../../model/vistoria';
 import { VistoriaService } from '../../services/vistoria.service'
 
@@ -10,33 +12,39 @@ import { VistoriaService } from '../../services/vistoria.service'
 })
 export class CadastroVistoriaPage {
 
-  vistoria : Vistoria;
+  vistoria: Vistoria;
+  salas: any;
+  equipamentos: any;
 
   constructor(
-    public vistoriaService : VistoriaService,
-    public routerService : Router
-    ) { }
+    public vistoriaService: VistoriaService,
+    public equipamentoService: EquipamentoService,
+    public salaService: SalaService,
+    public routerService: Router
+  ) { }
 
   ionViewDidEnter() {
-    console.log('cadastro vistoria page - iondidviewENTER')
     this.vistoria = new Vistoria();
+    this.salaService.listar().subscribe(dados => {
+      this.salas = dados;
+    });
+    this.equipamentoService.listar().subscribe(dados => {
+      this.equipamentos = dados;
+    });
   }
 
-  cadastrar() { //alterado o gravar para cadastrar
-    console.log('Vistoria - cadastrar');
-    // passar a vistoria que está sendo cadastrado
-    this.vistoriaService.cadastrar(this.vistoria).then(()=>{
-    this.routerService.navigate(['lista-vistorias']);
+  cadastrar() {
+    console.log(this.vistoria)
+    this.vistoriaService.cadastrar(this.vistoria).then(() => {
+      this.routerService.navigate(['lista-vistorias']);
     })
   }
 
   cancelar() {
-    console.log('Vistoria - cancelar');
     this.routerService.navigateByUrl('/home')
   }
 
   listar() {
-    console.log('Vistoria - listar');
     this.routerService.navigate(['lista-vistorias']);
   }
 
