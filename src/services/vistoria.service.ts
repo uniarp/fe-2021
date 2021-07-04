@@ -15,7 +15,7 @@ export class VistoriaService {
   */
   cadastrar(vistoria : Vistoria) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url + 'cadastrar', Vistoria).subscribe(response => {
+      this.http.post(this.url + 'cadastrar', vistoria).subscribe(response => {
         resolve(response);
       })
     });
