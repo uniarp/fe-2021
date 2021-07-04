@@ -46,7 +46,7 @@
           </ion-menu-toggle>
         </div>
         <ion-item no-lines (click)="isListed()" detail="true">
-          <ion-icon name="reader"> </ion-icon>
+          <ion-img src="assets/custom_icons/icon_lista.png"> </ion-img>
           <ion-label>
             <dd>Listar</dd>
           </ion-label>
@@ -55,7 +55,7 @@
           <ion-menu-toggle *ngFor="let lista of listas; let i = index">
             <ion-item position="floating" (click)="activeIndex = i" routerDirection="root" [routerLink]="[lista.link]"
               lines="none" detail="true" [class.selected]="activeIndex == i">
-              <ion-icon slot="start" [name]="lista.icon"></ion-icon>
+              <ion-img slot="start" [src]=lista.img></ion-img>
               <ion-label>{{lista.nome}}</ion-label>
             </ion-item>
           </ion-menu-toggle>

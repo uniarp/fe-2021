@@ -17,72 +17,72 @@ export class AppComponent {
     {
       'nome': 'Salas',
       'link': 'lista-salas',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_sala.png'
     },
     {
       'nome': 'Equipamentos',
       'link': 'lista-equipamentos',
-      'icon': 'file-tray-stacked-outline'
+      'img': '/assets/custom_icons/icon_equipamento.png'
     },
     {
       'nome': 'Materiais',
       'link': 'lista-materiais',
-      'icon': 'layers-outline'
+      'img': '/assets/custom_icons/icon_material.png'
     },
     {
       'nome': 'Cursos',
       'link': 'lista-cursos',
-      'icon': 'school'
+      'img': '/assets/custom_icons/icon_curso.png'
     },
     {
       'nome': 'Disciplinas',
       'link': 'lista-disciplinas',
-      'icon': 'documents-outline'
+      'img': '/assets/custom_icons/icon_disciplina.png'
     },
     {
       'nome': 'Professores',
       'link': 'lista-professor',
-      'icon': 'person-outline'
+      'img': '/assets/custom_icons/icon_professor.png'
     },
     {
       'nome': 'Tipos de Equipamento',
       'link': 'lista-tipos-equipamento',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_tipo_equipamento.png'
     },
     {
       'nome': 'Vistorias',
       'link': 'lista-vistorias',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_vistoria.png'
     },
     {
       'nome': 'Softwares',
       'link': 'lista-software',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_software.png'
     },
     {
       'nome': 'Chaves',
       'link': 'lista-chaves',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_chave.png'
     },
     {
       'nome': 'Entregas de Materiais',
       'link': 'lista-entregas-material',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_entrega_material.png'
     },
     {
       'nome': 'Entregas de Chave',
       'link': 'lista-entregas-chave',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_entrega_chave.png'
     },    
     {
       'nome': 'Incidentes Resolvidos',
       'link': 'lista-incidentes-resolvidos',
-      'icon': 'reader-outline'
+      'img': '/assets/custom_icons/icon_incidente.png'
     },
     {
       'nome': 'FAQ',
       'link': '/lista-pergunta',
-      'icon': 'information-circle-outline'
+      'img': '/assets/custom_icons/icon_questao.png'
     }
   ];
   
