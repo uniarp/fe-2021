@@ -60,10 +60,6 @@ const routes: Routes = [
     loadChildren: () => import('../pages/cadastro-material/cadastro-material.module').then( m => m.CadastroMaterialPageModule)
   },
   {
-    path: 'lista-materiais-entregues',
-    loadChildren: () => import('../pages/lista-materiais-entregues/lista-materiais-entregues.module').then( m => m.ListaMateriaisEntreguesPageModule)
-  },
-  {
     path: 'lista-salas',
     loadChildren: () => import('../pages/lista-salas/lista-salas.module').then( m => m.ListaSalasPageModule)
   },
