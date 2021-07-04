@@ -15,16 +15,16 @@
   </ion-fab>
   <ion-grid *ngIf="materiais != ''">
       <ion-row>
-        <ion-col><h6>Lista de Materiais</h6></ion-col>
+        <ion-col><h6>Material</h6></ion-col>
         <ion-col><h6>Quantidade</h6></ion-col>
         <ion-col><h6>Marca</h6></ion-col>
         <ion-col><h6>Descrição</h6></ion-col>
       </ion-row>
       <ion-row *ngFor="let material of materiais">
-        <ion-col>{{materiais.nome}}</ion-col>
-        <ion-col>{{materiais.quantidade}}</ion-col>
-        <ion-col>{{materiais.marca}}</ion-col>
-        <ion-col>{{materiais.descricao}}</ion-col>
+        <ion-col>{{material.nome}}</ion-col>
+        <ion-col>{{material.qtd}}</ion-col>
+        <ion-col>{{material.marca}}</ion-col>
+        <ion-col>{{material.descricao}}</ion-col>
       </ion-row>
     </ion-grid>
    </ion-content>
