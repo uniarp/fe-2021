@@ -8,7 +8,7 @@ import { VistoriaService } from '../../services/vistoria.service';
   styleUrls: ['./lista-vistorias.page.scss'],
 })
 export class ListaVistoriasPage {
-
+  pesquisa='';
   vistoria : any;
 
   constructor(

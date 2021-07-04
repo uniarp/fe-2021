@@ -8,7 +8,7 @@ import { IncidenteService } from '../../services/incidente.service';
   styleUrls: ['./lista-incidentes.page.scss'],
 })
 export class ListaIncidentesPage {
-
+  pesquisa='';
   incidentes: any;
   constructor(
     public routerService: Router,

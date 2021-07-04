@@ -28,8 +28,8 @@
       <ion-col>{{reservaEquipamento.tipo_equipamento}}</ion-col>
       <ion-col>{{reservaEquipamento.nome_professor}}</ion-col>
       <ion-col>{{reservaEquipamento.status}}</ion-col>
-      <ion-col>{{reservaEquipamento.dataentrega}}</ion-col>
-      <ion-col>{{reservaEquipamento.datadevolucao}}</ion-col>
+      <ion-col>{{reservaEquipamento.dataentrega | date:'dd/MM/yyyy HH:mm'}}</ion-col>
+      <ion-col>{{reservaEquipamento.datadevolucao | date:'dd/MM/yyyy HH:mm'}}</ion-col>
       <ion-col>{{reservaEquipamento.observacao}}</ion-col>
       <ion-col *ngIf="reservaEquipamento.status=='reservado'">
         <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="entregaEquipamento(reservaEquipamento.id)">

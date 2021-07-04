@@ -2,35 +2,30 @@
   <ion-toolbar>
     <ion-title>Lista de Vistoria</ion-title>
     <ion-buttons slot="start">
-    <ion-menu-button menu="main-menu"></ion-menu-button>
+      <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
-    </ion-toolbar>
+  </ion-toolbar>
+  <ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
 </ion-header>
 
 <ion-content>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
-    <ion-fab-button color="success" >
+    <ion-fab-button color="success">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <div *ngIf = vistoria>
-
-    <ion-list *ngFor = "let lista of vistoria">
-    <ion-item>
-      <ion-label>
-        {{lista.emConformidade}}
-      </ion-label>
-      <ion-label>
-        {{lista.data}}
-      </ion-label> 
-      <ion-label>
-        {{lista.descricao}}
-      </ion-label> 
-      <ion-label>
-        {{lista.periodo}}
-      </ion-label> 
-    </ion-item>
-  </ion-list>
-</div>
-
+  <ion-grid *ngIf=" vistoria != ''">
+    <ion-row>
+      <ion-col><h6>Em conformidade</h6></ion-col>
+      <ion-col><h6>Data</h6></ion-col>
+      <ion-col><h6>Descriçao</h6></ion-col>
+      <ion-col><h6>Periodo</h6></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let lista of vistoria">
+      <ion-col>{{disciplina.nome}}</ion-col>
+      <ion-col>{{lista.data | date:'dd/MM/yyyy HH:mm'}}</ion-col>
+      <ion-col>{{lista.descricao}}</ion-col>
+      <ion-col>{{lista.periodo}}</ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

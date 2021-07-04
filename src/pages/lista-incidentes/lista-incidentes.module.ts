@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { ListaIncidentesPageRoutingModule } from './lista-incidentes-routing.module';
 
 import { ListaIncidentesPage } from './lista-incidentes.page';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    Ng2SearchPipeModule,
     ListaIncidentesPageRoutingModule
   ],
   declarations: [ListaIncidentesPage]
