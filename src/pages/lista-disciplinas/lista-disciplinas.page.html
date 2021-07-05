@@ -6,7 +6,7 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
+<ion-searchbar placeholder="Pesquisa ..." [(ngModel)]="pesquisa" animated="true"></ion-searchbar>
 <ion-content>
   <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="novo()">
     <ion-fab-button color="success" >
