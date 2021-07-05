@@ -7,12 +7,12 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="entregaChave">
+<!-- <ion-content *ngIf="entregaChave">
   <ion-item>
-    <ion-label position="floating">Professor</ion-label>
-    <ion-select [(ngModel)]="entregaChave.professor">
-      <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
-        {{professor.nomecompleto}}
+    <ion-label position="floating">Reserva Sala</ion-label>
+    <ion-select [(ngModel)]="entregaChave.reserva">
+      <ion-select-option *ngFor="let reservaSala of reservasSala" [value]="reservaSala.id">
+        {{reservaSala.numerosala}} {{reservaSala.nomesala}} {{reservaSala.nome_professor}}
       </ion-select-option>
     </ion-select>
   </ion-item>
@@ -37,3 +37,4 @@
   <br>
   <ion-button (click)="cancelar()" fill="solid" expand="block" color="danger">Cancelar</ion-button>
 </ion-content>
+!-->

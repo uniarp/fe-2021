@@ -14,7 +14,6 @@ export class ListaVistoriasPage {
   vistorias: any;
   pesquisa = '';
 
-
   constructor(public vistoriaService: VistoriaService,
     public routerService: Router) {
   }

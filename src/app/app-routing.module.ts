@@ -128,10 +128,6 @@ const routes: Routes = [
     loadChildren: () => import('../pages/cadastro-chave/cadastro-chave.module').then( m => m.CadastroChavePageModule)
   },
   {
-    path: 'cadastro-entrega-chave',
-    loadChildren: () => import('../pages/cadastro-entrega-chave/cadastro-entrega-chave.module').then( m => m.CadastroEntregaChavePageModule)
-  },
-  {
     path: 'cadastro-software',
     loadChildren: () => import('../pages/cadastro-software/cadastro-software.module').then( m => m.CadastroSoftwarePageModule)
   },
