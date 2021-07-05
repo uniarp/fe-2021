@@ -13,8 +13,9 @@
       <ion-label position="floating">Nome:</ion-label>
       <ion-input type = 'text'[(ngModel)]="tipoEquipamento.nome"></ion-input>
     </ion-item>
-    <ion-button (click)="cadastrar()" color="danger">Cadastrar</ion-button>
-    <ion-button (click)="cancelar()" color="danger">Cancelar</ion-button>
+    <ion-button (click)="cancelar()" color="secondary-contrast">Início</ion-button>
+    <ion-button (click)="listar()" color="secondary-contrast">Listar</ion-button>
+    <ion-button (click)="cadastrar()" color="primary">Cadastrar</ion-button>
   </ion-list>
-  <ion-button (click)="listar()" color="danger">Listar</ion-button>
+  
 </ion-content>

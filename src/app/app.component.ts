@@ -103,11 +103,6 @@ export class AppComponent {
       'img': '/assets/custom_icons/icon_espera_sala.png'
     },
     {
-      'nome': 'Entregar Chave',
-      'link': 'cadastro-entrega-chave',
-      'img': '/assets/custom_icons/icon_entregar_chave.png'
-    },
-    {
       'nome': 'Reservas de Equipamento',
       'link': 'lista-reservas-equipamento',
       'img': '/assets/custom_icons/icon_reserva_equipamento.png'
