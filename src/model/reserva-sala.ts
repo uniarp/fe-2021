@@ -12,12 +12,10 @@ export class ReservaSala {
     sala?: Sala;
     professor?: Professor;
     usuario: Usuario;
-    reservasala: ReservaSala;
 
     constructor() {
         this.sala = new Sala();
         this.professor = new Professor();
         this.usuario = new Usuario();
-        this.reservasala = new ReservaSala();
     }
 }
