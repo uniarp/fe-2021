@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('../pages/cadastro-equipamento/cadastro-equipamento.module').then( m => m.CadastroEquipamentoPageModule)
   },
   {
-    path: 'solicitar-material',
-    loadChildren: () => import('../pages/solicitar-material/solicitar-material.module').then( m => m.SolicitarMaterialPageModule)
-  },
-  {
     path: 'cadastro-entrega-material',
     loadChildren : () => import('../pages/cadastro-entrega-material/cadastro-entrega-material.module').then( m => m.CadastroEntregaMaterialPageModule)
   },
@@ -32,8 +28,8 @@ const routes: Routes = [
     loadChildren: () => import('../pages/cadastro-material/cadastro-material.module').then( m => m.CadastroMaterialPageModule)
   },
   {
-    path: 'lista-software',
-    loadChildren: () => import('../pages/lista-software/lista-software.module').then( m => m.ListaSoftwarePageModule)
+    path: 'lista-softwares',
+    loadChildren: () => import('../pages/lista-softwares/lista-softwares.module').then( m => m.ListaSoftwaresPageModule)
   },
   {
     path: 'solicitar-equipamento',
@@ -166,11 +162,6 @@ const routes: Routes = [
   {
     path: 'lista-entregas-chave',
     loadChildren: () => import('../pages/lista-entregas-chave/lista-entregas-chave.module').then( m => m.ListaEntregasChavePageModule),
-  },
-  {
-    path:'lista-espera-sala',
-    loadChildren:()=>import('../pages/lista-espera-sala/lista-espera-sala.module').then(m=>m.ListaEsperaSalaPageModule
-    )
   },
   {
     path: 'lista-disciplinas',
