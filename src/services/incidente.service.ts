@@ -13,7 +13,7 @@ export class IncidenteService {
 
   cadastrar(incidente: Incidente) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.url + 'cadastrar', Incidente).subscribe(response => {
+      this.http.post(this.url + 'cadastrar', incidente).subscribe(response => {
         resolve(response);
       })
     });

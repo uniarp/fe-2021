@@ -12,7 +12,7 @@
       <ion-label position="floating">Sala</ion-label>
       <ion-select [(ngModel)]="reservaSala.sala">
         <ion-select-option *ngFor="let sala of salas" [value]="sala.id" >
-          Número: {{sala.numerosala}}
+          {{sala.numerosala}} {{sala.nomesala}}
         </ion-select-option>
       </ion-select>
     </ion-item>

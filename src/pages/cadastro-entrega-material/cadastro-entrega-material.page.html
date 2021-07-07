@@ -17,7 +17,7 @@
       <ion-label position="floating">Material:</ion-label>
       <ion-select [(ngModel)]="entrega.material">
         <ion-select-option *ngFor="let material of materiais" [value]="material.id">
-          {{material.marca}} {{material.nome}}
+          {{material.nome}} {{material.marca}} 
         </ion-select-option>
       </ion-select>
     </ion-item>

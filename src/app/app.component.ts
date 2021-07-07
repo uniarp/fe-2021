@@ -56,7 +56,7 @@ export class AppComponent {
     },
     {
       'nome': 'Softwares',
-      'link': 'lista-software',
+      'link': 'lista-softwares',
       'img': '/assets/custom_icons/icon_software.png'
     },
     {
@@ -98,11 +98,6 @@ export class AppComponent {
       'img': '/assets/custom_icons/icon_solicitar_sala.png'
     },
     {
-      'nome': 'Esperas de Sala',
-      'link': 'lista-espera-sala',
-      'img': '/assets/custom_icons/icon_espera_sala.png'
-    },
-    {
       'nome': 'Reservas de Equipamento',
       'link': 'lista-reservas-equipamento',
       'img': '/assets/custom_icons/icon_reserva_equipamento.png'
@@ -111,11 +106,6 @@ export class AppComponent {
       'nome': 'Solicitar Equipamento',
       'link': 'solicitar-equipamento',
       'img': '/assets/custom_icons/icon_solicitar_equipamento.png'
-    },
-    {
-      'nome': 'Solicitar Material',
-      'link': 'solicitar-material',
-      'img': '/assets/custom_icons/icon_solicitar_material.png'
     },
     {
       'nome': 'Entregar Material',
@@ -168,7 +158,7 @@ export class AppComponent {
     {
       'nome': 'Software',
       'link': 'cadastro-software',
-      'img': '/assets/custom_icons/icon_vistoria.png'
+      'img': '/assets/custom_icons/icon_software.png'
     },
     {
       'nome': 'Chave',

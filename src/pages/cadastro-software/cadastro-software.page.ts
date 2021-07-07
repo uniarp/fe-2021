@@ -10,23 +10,23 @@ import { SoftwareService } from '../../services/software.service';
 })
 export class CadastroSoftwarePage {
 
-  software:Software;
+  software: Software;
 
   constructor(
-    public softwareService:SoftwareService,
-    public routeService:Router) {
-      
-     }
+    public softwareService: SoftwareService,
+    public routeService: Router) {
 
-  ionViewDidEnter(){
-    this.software= new Software();
-    }
-    cadastrar(software:Software){
-      this.softwareService.cadastrar(this.software).then(()=>{
-      this.routeService.navigateByUrl('/lista-software')
-      })
-    }
-    cancelar(){
-      this.routeService.navigateByUrl('/home')
-    }
+  }
+
+  ionViewDidEnter() {
+    this.software = new Software();
+  }
+  cadastrar(software: Software) {
+    this.softwareService.cadastrar(this.software).then(() => {
+      this.routeService.navigateByUrl('/lista-softwares')
+    })
+  }
+  cancelar() {
+    this.routeService.navigateByUrl('/home')
+  }
 }
