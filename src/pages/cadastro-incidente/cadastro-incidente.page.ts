@@ -43,9 +43,10 @@ export class CadastroIncidentePage {
 
   cancelar() {
     this.incidente.status = null;
-    this.incidente.dataAbertura = null;
+    this.incidente.tempoabertura = null;
     this.incidente.descricao = null;
-    this.incidente.dataFechamento = null;
+    this.incidente.tempofechamento = null;
+    this.routerService.navigate(['/home']);
   }
 
   listar() {

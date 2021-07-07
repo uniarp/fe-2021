@@ -21,7 +21,7 @@
       <ion-label position="floating">Professor</ion-label>
       <ion-select [(ngModel)]="reservaEquipamento.professor">
         <ion-select-option *ngFor="let professor of professores" [value]="professor.id">
-          {{professor.login}}
+          {{professor.nomecompleto}}
         </ion-select-option>
       </ion-select>
     </ion-item>
