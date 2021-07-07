@@ -2,22 +2,20 @@ import { Localizacao } from "./localizacao"
 import { Professor } from "./professor"
 import { Sala } from "./sala"
 
-export class Incidente { 
-    id:number
-    descricao?:string
-    dataAbertura?:Date
-    status?:string
-    dataFechamento?:Date
-    resolucao?:string
-    sala?:Sala
-    localizacao?:Localizacao
-    professor?:Professor
+export class Incidente {
+  
+  id: number
+  descricao?: string
+  tempoabertura?: string
+  status?: string
+  tempofechamento?: string
+  resolucao?: string
+  sala?: Sala
+  professor?: Professor
 
-    constructor(){
-        this.sala=new Sala();
-        this.localizacao=new Localizacao();
-        this.professor=new Professor();
-
-    }
+  constructor() {
+    this.sala = new Sala();
+    this.professor = new Professor();
+  }
 
 }
