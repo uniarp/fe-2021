@@ -23,6 +23,7 @@
       <ion-col><h6>Status</h6></ion-col>
       <ion-col><h6>Período</h6></ion-col>
       <ion-col><h6>Cadastrado por</h6></ion-col>
+      <ion-col><h6>Entrega de chave</h6></ion-col>
       <ion-col><h6>Ações</h6></ion-col>
     </ion-row>
     <ion-row *ngFor="let reservaSala of reservasSala | filter:pesquisa">
@@ -37,9 +38,6 @@
         <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="EntregaChave(reservaSala.id)">
           Entregar chave
         </ion-button>
-        <ion-button color="primary" shape="round" expand="block" fill="solid" (click)="alertExcluir(reservaSala.id)">
-          Excluir
-        </ion-button> 
       </ion-col>
       <ion-col *ngIf= "reservaSala.status_entregachave=='entregue'">
         <ion-button disable=true expand="block" fill="solid" color="secondary" shape="round" (click)="devolverChave(reservaSala.id)">
@@ -50,6 +48,12 @@
         <ion-button disable=true expand="block" fill="clear" color="tertiary">
           Chave já devolvida
         </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="primary" expand="block" fill="solid" (click)="alertExcluir(reservaSala.id)">
+          <ion-img src="assets/custom_icons/icon_remover.png">
+          </ion-img>
+        </ion-button> 
       </ion-col>
     </ion-row>
   </ion-grid>

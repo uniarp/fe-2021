@@ -17,7 +17,6 @@ export class ListaReservasSalaPage {
   private entregaChave: any;
   alert: any
   emHome: boolean;
-  reservaSala: any;
 
   constructor(
     public reservaSalaService: ReservaSalaService,
@@ -38,31 +37,27 @@ export class ListaReservasSalaPage {
     console.log("Alterando reserva")
   }
 
-  async alertExcluir() {
+  async alertExcluir(id: number) {
     const alert = await this.alertController.create({
       header: 'Aviso',
-      subHeader: 'Cancelamento de Reserva',
-      message: 'Tem certeza que deseja cancelar a reserva?',
+      subHeader: 'Exclusão de Reserva',
+      message: 'Tem certeza que deseja excluir a reserva?',
       buttons: [
         {
           text: 'Cancelar',
           role: 'cancel',
           cssClass: 'secondary',
           handler: () => {
-            this.reservaSalaService.excluir(this.reservaSala.id)
-            console.log('Confirm Cancel');
           }
         }, {
-          text: 'Confirmar',
+          text: 'Excluir',
           handler: () => {
-            // rota backend
-            console.log('Confirm Ok');
+            this.reservaSalaService.excluir(id).subscribe();
+            this.ionViewWillEnter();
           }
         }
       ]
-
     });
-
     await alert.present();
   }
 
