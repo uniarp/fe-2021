@@ -22,6 +22,7 @@
       <ion-col><h6>Data de Entrega</h6></ion-col>
       <ion-col><h6>Data de Devolução</h6></ion-col>
       <ion-col><h6>Observação</h6></ion-col>
+      <ion-col><h6>Entregar ou Devolver</h6></ion-col>
       <ion-col><h6>Ações</h6></ion-col>
     </ion-row>
     <ion-row *ngFor = "let reservaEquipamento of reservasEquipamento | filter: pesquisa">
@@ -33,23 +34,25 @@
       <ion-col>{{reservaEquipamento.observacao}}</ion-col>
       <ion-col *ngIf="reservaEquipamento.status=='reservado'">
         <ion-button  expand="block" fill="solid" color="primary" shape="round" (click)="entregaEquipamento(reservaEquipamento.id)">
-          Entregar Equipamento 
+          Entregar
         </ion-button>
-        <ion-button color="primary" shape="round" expand="block" fill="solid" (click)="alertExcluir()">
-          Excluir
-        </ion-button> 
       </ion-col>
       <ion-col *ngIf="reservaEquipamento.status=='Entregue'">
         <ion-button disable=true expand="block" fill="solid" color="secondary" shape="round" (click)="devolverEquipamento(reservaEquipamento.id)">
-          Devolver Equipamento
+          Devolver
         </ion-button>
       </ion-col>
       <ion-col *ngIf="reservaEquipamento.status=='Devolvido'">
         <ion-button disable=true expand="block" fill="clear" color="tertiary">
-          Equipamento Devolvido
+          Devolvido
         </ion-button>
       </ion-col>
-
+      <ion-col>
+        <ion-button color="primary" expand="block" fill="solid" (click)="alertExcluir(reservaEquipamento.id)">
+          <ion-img src="assets/custom_icons/icon_remover.png">
+          </ion-img>
+        </ion-button> 
+      </ion-col>
     </ion-row>
   </ion-grid>
 </ion-content>
