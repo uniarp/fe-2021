@@ -6,12 +6,12 @@ import { ReservaSala } from '../model/reserva-sala';
   providedIn: 'root'
 })
 export class ReservaSalaService {
-  
+
   url = 'https://apoio-uniarp.herokuapp.com/reservasSala/';
   
-  constructor(public http : HttpClient) { }
+  constructor(public http: HttpClient) { }
 
-  cadastrar(reservaSala : ReservaSala) {
+  cadastrar(reservaSala: ReservaSala) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url + 'cadastrar', reservaSala).subscribe(response => {
         resolve(response);
@@ -19,7 +19,7 @@ export class ReservaSalaService {
     });
   }
 
-  alterar(id : Number, reservaSala : ReservaSala) {
+  alterar(id: Number, reservaSala: ReservaSala) {
     return new Promise((resolve, reject) => {
       this.http.post(this.url + id + '/alterar', reservaSala);
     });
@@ -29,17 +29,15 @@ export class ReservaSalaService {
     return this.http.get(this.url);
   }
 
-  excluir(id : Number) {
-    return new Promise((resolve, reject) => {
-      this.http.get(this.url + id + '/excluir');
-    });
+  excluir(id: number) {
+    return this.http.delete(this.url + id + '/excluir'); 
   }
-  
-  buscar(id : Number) {
+
+  buscar(id: Number) {
     return this.http.get(this.url + id + '/buscar');
   }
 
-  listaSolicitada(){
-    return this.http.get(this.url+'solicitada')
+  listaSolicitada() {
+    return this.http.get(this.url + 'solicitada')
   }
 }
